@@ -3,7 +3,7 @@
   import path from "path";
 
   export default defineConfig(({ mode }) => ({
-    base: "/torres-pest-control/",
+    base: "/",
     server: {
       host: "::",
       port: 8081,
