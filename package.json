@@ -9,20 +9,17 @@
     "dev:maintenance": "vite --mode maintenance",
     "dev:construction": "vite --mode construction",
     "dev:live": "vite --mode production",
-
     "build": "vite build",
     "build:dev": "vite build --mode development",
     "build:live": "vite build --mode production",
     "build:construction": "vite build --mode construction",
     "build:maintenance": "vite build --mode maintenance",
-
     "copy404": "copy dist\\index.html dist\\404.html",
-
+    "add-cname": "echo torrespestcontrol.ph > dist/CNAME",
     "deploy": "gh-pages -d dist",
-    "deploy:live": "npm run build:live && npm run copy404 && npm run deploy",
+    "deploy:live": "npm run build:live && npm run add-cname && npm run copy404 && npm run deploy",
     "deploy:construction": "npm run build:construction && npm run copy404 && npm run deploy",
     "deploy:maintenance": "npm run build:maintenance && npm run copy404 && npm run deploy",
-    
     "lint": "eslint .",
     "preview": "vite preview"
   },
