@@ -6,13 +6,25 @@
   "homepage": "https://jcmangubat.github.io/torres-pest-control",
   "scripts": {
     "dev": "vite",
+    "dev:maintenance": "vite --mode maintenance",
+    "dev:construction": "vite --mode construction",
+    "dev:live": "vite --mode production",
+
     "build": "vite build",
     "build:dev": "vite build --mode development",
-    "lint": "eslint .",
-    "preview": "vite preview",
+    "build:live": "vite build --mode production",
+    "build:construction": "vite build --mode construction",
+    "build:maintenance": "vite build --mode maintenance",
+
     "copy404": "copy dist\\index.html dist\\404.html",
-    "predeploy": "npm run build && npm run copy404",
-    "deploy": "gh-pages -d dist"
+
+    "deploy": "gh-pages -d dist",
+    "deploy:live": "npm run build:live && npm run copy404 && npm run deploy",
+    "deploy:construction": "npm run build:construction && npm run copy404 && npm run deploy",
+    "deploy:maintenance": "npm run build:maintenance && npm run copy404 && npm run deploy",
+    
+    "lint": "eslint .",
+    "preview": "vite preview"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
