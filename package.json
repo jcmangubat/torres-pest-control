@@ -3,7 +3,6 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://jcmangubat.github.io/torres-pest-control",
   "scripts": {
     "dev": "vite",
     "dev:maintenance": "vite --mode maintenance",
@@ -18,8 +17,8 @@
     "add-cname": "echo torrespestcontrol.ph > dist/CNAME",
     "deploy": "gh-pages -d dist",
     "deploy:live": "npm run build:live && npm run add-cname && npm run copy404 && npm run deploy",
-    "deploy:construction": "npm run build:construction && npm run copy404 && npm run deploy",
-    "deploy:maintenance": "npm run build:maintenance && npm run copy404 && npm run deploy",
+    "deploy:construction": "npm run build:construction && npm run add-cname && npm run copy404 && npm run deploy",
+    "deploy:maintenance": "npm run build:maintenance && npm run add-cname && npm run copy404 && npm run deploy",
     "lint": "eslint .",
     "preview": "vite preview"
   },
