@@ -10,7 +10,8 @@
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview",
-    "predeploy": "npm run build",
+    "copy404": "copy dist\\index.html dist\\404.html",
+    "predeploy": "npm run build && npm run copy404",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
@@ -50,6 +51,7 @@
     "cmdk": "^1.0.0",
     "date-fns": "^3.6.0",
     "embla-carousel-react": "^8.3.0",
+    "framer-motion": "^12.23.6",
     "highlight.js": "^11.9.0",
     "input-otp": "^1.2.4",
     "lucide-react": "^0.462.0",
