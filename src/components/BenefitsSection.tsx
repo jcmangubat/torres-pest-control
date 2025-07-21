@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Leaf, Heart, Shield, Home } from "lucide-react";
 import tpc_bkg_4 from "@/assets/images/tpc-bkg-4.png";
+import "./../styles/benefitsSection.css";
 
 const BenefitsSection = () => {
   const benefits = [
@@ -45,10 +46,13 @@ const BenefitsSection = () => {
       {/* <div className="absolute inset-0 bg-black/30 dark:bg-black/50 z-0" /> */}
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="neon-text text-4xl font-bold text-gray-900 dark:text-white mb-4 transition-colors duration-500">
             Why Choose Torres Pest Control?
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <p
+            className="neon-text text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto transition-colors duration-500"
+            style={{ color: "rgb(255 255 255);" }}
+          >
             Safe, effective, and environmentally responsible pest control
             solutions
           </p>

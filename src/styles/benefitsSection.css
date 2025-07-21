@@ -1,0 +1,21 @@
+.neon-text {
+    color: #fff;
+    font-size: 4rem;
+    text-shadow: 0 0 5px #00ac0b, 0 0 10px #00ac0b, 0 0 20px #00ac0b, 0 0 40px #00ac0b, 0 0 80px #00ac0b;
+    /* animation: glow 1.5s infinite alternate; */
+}
+
+.neon-text-dark {
+    font-size: 4rem;
+    text-shadow: 0 0 5px #2a2b2b, 0 0 10px #2a2b2b, 0 0 20px #2a2b2b, 0 0 40px #2a2b2b, 0 0 80px #2a2b2b;
+    /* animation: glow 1.5s infinite alternate; */
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px #00ac0b, 0 0 10px #00ac0b, 0 0 20px #00ac0b, 0 0 40px #00ac0b, 0 0 80px #00ac0b;
+    }
+    100% {
+        text-shadow: 0 0 10px #deffd7, 0 0 20px #deffd7, 0 0 40px #deffd7, 0 0 80px #deffd7, 0 0 160px #deffd7;
+    }
+}

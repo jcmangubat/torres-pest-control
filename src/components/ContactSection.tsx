@@ -95,9 +95,33 @@ const ContactSection = () => {
                 type="email"
                 className="dark:bg-gray-800 dark:border-gray-600"
               />
+              <Input
+                placeholder="Your Phone Number"
+                type="phone"
+                className="dark:bg-gray-800 dark:border-gray-600"
+              />
+
+              {/* 🔽 Infestation Type Dropdown */}
+              <select
+                defaultValue=""
+                className="w-full px-4 py-3 rounded-md border dark:bg-gray-800 dark:border-gray-600 text-gray-700 dark:text-gray-300"
+              >
+                <option value="" disabled>
+                  Type of Infestation (optional)
+                </option>
+                <option value="none">None / Just Inquiry</option>
+                <option value="termites">Termites</option>
+                <option value="cockroaches">Cockroaches</option>
+                <option value="rodents">Rodents</option>
+                <option value="ants">Ants</option>
+                <option value="mosquitoes">Mosquitoes</option>
+                <option value="bedbugs">Bed Bugs</option>
+                <option value="others">Other Pest Problems</option>
+              </select>
+
               <Textarea
                 placeholder="Your Message"
-                rows={4}
+                rows={12}
                 className="dark:bg-gray-800 dark:border-gray-600"
               />
               <Button
