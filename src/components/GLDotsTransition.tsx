@@ -72,8 +72,27 @@ function TransitionPlane({
     });
   }, [fromTexture, toTexture, dots, center]);
 
+  // Get the image aspect ratio
+  const textureSize = fromTexture.image
+    ? [fromTexture.image.width, fromTexture.image.height]
+    : [1, 1];
+
+  const imageAspect = textureSize[0] / textureSize[1];
+  const canvasAspect = size.width / size.height;
+
+  let scaleX = 1;
+  let scaleY = 1;
+
+  if (imageAspect > canvasAspect) {
+    // Image is wider than canvas
+    scaleX = canvasAspect / imageAspect;
+  } else {
+    // Image is taller
+    scaleY = imageAspect / canvasAspect;
+  }
+
   return (
-    <mesh>
+    <mesh scale={[scaleX, scaleY, 1]}>
       <planeGeometry args={[size.width, size.height]} />
       <primitive object={shaderMaterial} ref={materialRef} attach="material" />
     </mesh>

@@ -3,6 +3,23 @@ import { Phone, Shield, CheckCircle } from "lucide-react";
 import HeroImageGallery from "./HeroImageGallery";
 import tpc_bkg_1 from "@/assets/images/tpc-bkg-1.avif";
 
+// const scrollToContact = () => {
+//   const el = document.getElementById("contact");
+//   if (el) el.scrollIntoView({ behavior: "smooth" });
+// };
+const scrollToContactAndFocusName = () => {
+  const el = document.getElementById("contact");
+  if (el) {
+    el.scrollIntoView({ behavior: "smooth" });
+
+    // Slight delay to ensure scrolling completes before focus
+    setTimeout(() => {
+      const nameInput = el.querySelector("input[placeholder='Your Name']") as HTMLInputElement;
+      if (nameInput) nameInput.focus();
+    }, 600); // tweak if needed
+  }
+};
+
 const HeroSection = () => {
   return (
     <section
@@ -32,6 +49,7 @@ const HeroSection = () => {
                 Call +63 917 139 1908
               </Button>
               <Button
+                onClick={scrollToContactAndFocusName}
                 size="lg"
                 variant="outline"
                 className="border-green-600 text-green-600 hover:bg-green-50 dark:border-green-400 dark:text-green-400 dark:hover:bg-gray-800 px-8 py-4 text-lg"
