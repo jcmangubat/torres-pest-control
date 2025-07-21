@@ -5,12 +5,12 @@ const ServicesSection = () => {
   const services = [
     {
       icon: <Bug className="h-8 w-8 text-red-600 dark:text-red-400" />,
-      title: "Cockroach Control",
-      description: "Complete elimination of cockroach infestations using safe, effective methods."
+      title: "General Pest Control",
+      description: "Complete elimination of infestations using safe, effective methods."
     },
     {
       icon: <Shield className="h-8 w-8 text-blue-600 dark:text-blue-400" />,
-      title: "Ant & Termite Treatment",
+      title: "Termite Control",
       description: "Protect your property from structural damage with our specialized treatments."
     },
     {
@@ -20,8 +20,8 @@ const ServicesSection = () => {
     },
     {
       icon: <Droplets className="h-8 w-8 text-purple-600 dark:text-purple-400" />,
-      title: "Dengue Mosquito Fogging",
-      description: "Targeted fogging to eliminate dengue-carrying mosquitoes."
+      title: "Fogging & Misting",
+      description: "Targeted fogging to eliminate disease-carrying insects like mosquitos."
     },
     {
       // icon: <Zap className="h-8 w-8 text-yellow-600 dark:text-yellow-400" />,
@@ -31,7 +31,7 @@ const ServicesSection = () => {
     },
     {
       icon: <Eye className="h-8 w-8 text-green-600 dark:text-green-400" />,
-      title: "Termite Inspections",
+      title: "Termite Inspections & Proofing",
       description: "Comprehensive inspections and preventive maintenance programs."
     }
   ];

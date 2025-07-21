@@ -6,15 +6,11 @@ import TestimonialSection from './TestimonialSection';
 import ContactSection from './ContactSection';
 import Footer from './Footer';
 
-const AppLayout = () => {
+const AppLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
       <Header />
-      <HeroSection />
-      <ServicesSection />
-      <BenefitsSection />
-      <TestimonialSection />
-      <ContactSection />
+      {children}
       <Footer />
     </div>
   );
