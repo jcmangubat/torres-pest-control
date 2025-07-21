@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Bug, Zap, Shield, Home, Droplets, Eye } from "lucide-react";
+import { Bug, Zap, Shield, Home, Droplets, Eye, Construction, Footprints, Rat } from "lucide-react";
 
 const ServicesSection = () => {
   const services = [
@@ -14,7 +14,7 @@ const ServicesSection = () => {
       description: "Protect your property from structural damage with our specialized treatments."
     },
     {
-      icon: <Home className="h-8 w-8 text-gray-600 dark:text-gray-400" />,
+      icon: <Rat className="h-8 w-8 text-gray-600 dark:text-gray-400" />,
       title: "Rodent Removal",
       description: "Safe removal of rats and mice to prevent disease and fire hazards."
     },
@@ -24,9 +24,10 @@ const ServicesSection = () => {
       description: "Targeted fogging to eliminate dengue-carrying mosquitoes."
     },
     {
-      icon: <Zap className="h-8 w-8 text-yellow-600 dark:text-yellow-400" />,
-      title: "Wasp Control",
-      description: "Professional wasp nest removal and prevention services."
+      // icon: <Zap className="h-8 w-8 text-yellow-600 dark:text-yellow-400" />,
+      icon: <Construction className="h-8 w-8 text-green-600 dark:text-green-400" />,
+      title: "Soil Treatment",
+      description: "Shields your foundation from termite threats before they even start."
     },
     {
       icon: <Eye className="h-8 w-8 text-green-600 dark:text-green-400" />,

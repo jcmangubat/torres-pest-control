@@ -5,7 +5,7 @@ import { ThemeProvider } from "./components/theme-provider.tsx";
 
 import UnderConstruction from "./pages/UnderConstruction.tsx";
 import UnderMaintenance from "./pages/UnderMaintenance.tsx";
-import { SITE_MODE } from "./config/siteMode.ts";
+import { SITE_MODE } from "./config/site-config.ts";
 
 const root = createRoot(document.getElementById("root")!);
 

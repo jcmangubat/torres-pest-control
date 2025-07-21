@@ -2,11 +2,12 @@ import { Button } from "@/components/ui/button";
 import { Phone, Shield, CheckCircle } from "lucide-react";
 import HeroImageGallery from "./HeroImageGallery";
 import tpc_bkg_1 from "@/assets/images/tpc-bkg-1.avif";
+import { HERO_RESPECT_THEME } from "@/config/site-config";
 
-// const scrollToContact = () => {
-//   const el = document.getElementById("contact");
-//   if (el) el.scrollIntoView({ behavior: "smooth" });
-// };
+type HeroSectionProps = {
+  respectTheme?: boolean;
+};
+
 const scrollToContactAndFocusName = () => {
   const el = document.getElementById("contact");
   if (el) {
@@ -14,16 +15,26 @@ const scrollToContactAndFocusName = () => {
 
     // Slight delay to ensure scrolling completes before focus
     setTimeout(() => {
-      const nameInput = el.querySelector("input[placeholder='Your Name']") as HTMLInputElement;
+      const nameInput = el.querySelector(
+        "input[placeholder='Your Name']"
+      ) as HTMLInputElement;
       if (nameInput) nameInput.focus();
     }, 600); // tweak if needed
   }
 };
 
-const HeroSection = () => {
+const HeroSection = ({
+  respectTheme = HERO_RESPECT_THEME,
+}: HeroSectionProps) => {
+  const themeClass = respectTheme ? "" : "dark";
+
   return (
+    // <section
+    //   className="relative bg-gradient-to-br from-green-50 to-blue-50 dark:from-gray-900 dark:to-gray-800 py-20 md:pt-32 overflow-hidden"
+    //   style={{ backgroundImage: `url(${tpc_bkg_1})` }}
+    // >
     <section
-      className="relative bg-gradient-to-br from-green-50 to-blue-50 dark:from-gray-900 dark:to-gray-800 py-20 md:pt-32 overflow-hidden"
+      className={`${themeClass} relative bg-gradient-to-br from-green-50 to-blue-50 dark:from-gray-900 dark:to-gray-800 py-20 md:pt-32 overflow-hidden`}
       style={{ backgroundImage: `url(${tpc_bkg_1})` }}
     >
       <div className="relative z-10 max-w-6xl mx-auto px-4">
