@@ -36,6 +36,7 @@ const MobileNav = ({ isScrolled }: MobileNavProps) => {
         className="w-full h-full p-0 border-none bg-white dark:bg-gray-900"
       >
         <div className="relative w-full h-full flex flex-col">
+          
           {/* Close button */}
           {/* <div className="absolute top-6 right-6 z-10">
             <Button 
@@ -61,6 +62,12 @@ const MobileNav = ({ isScrolled }: MobileNavProps) => {
               className="text-3xl font-medium text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 transition-colors duration-200"
             >
               About
+            </button>
+            <button
+              onClick={() => handleNavClick('#gallery')}
+              className="text-3xl font-medium text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 transition-colors duration-200"
+            >
+              Gallery
             </button>
             <button
               onClick={() => handleNavClick('#contact')}
