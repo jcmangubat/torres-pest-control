@@ -64,6 +64,12 @@ const MobileNav = ({ isScrolled }: MobileNavProps) => {
               About
             </button>
             <button
+              onClick={() => handleNavClick('/certificates')}
+              className="text-3xl font-medium text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 transition-colors duration-200"
+            >
+              Certificates
+            </button>
+            <button
               onClick={() => handleNavClick('#gallery')}
               className="text-3xl font-medium text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 transition-colors duration-200"
             >

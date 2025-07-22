@@ -77,6 +77,12 @@ const Header = () => {
                 About
               </a>
               <a
+                href="/certificates"
+                className="text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400"
+              >
+                Certificates
+              </a>
+              <a
                 href="/#gallery"
                 className="text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400"
               >

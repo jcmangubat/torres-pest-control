@@ -8,7 +8,8 @@ import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
-import About from "./pages/About";
+import AboutPage from "./pages/About";
+import CertificatesPage from "./pages/Certificates";
 
 const queryClient = new QueryClient();
 
@@ -36,7 +37,8 @@ const App = () => (
           <ScrollToHash />
           <Routes>
             <Route path="/" element={<Index />} />
-            <Route path="/about" element={<About />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/certificates" element={<CertificatesPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
