@@ -4,11 +4,26 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "@/components/theme-provider";
+import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import About from "./pages/About";
 
 const queryClient = new QueryClient();
+
+const ScrollToHash = () => {
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) {
+      const el = document.querySelector(hash);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [hash]);
+
+  return null;
+};
 
 const App = () => (
   <ThemeProvider defaultTheme="light">
@@ -17,6 +32,8 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
+          {/* 🌀 Handles anchor scroll on route change */}
+          <ScrollToHash />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/about" element={<About />} />

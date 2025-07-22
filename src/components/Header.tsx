@@ -37,21 +37,24 @@ const Header = () => {
       }
     `}
     >
-      <div className="max-w-6xl mx-auto px-4 py-4">
+      <div className="mx-auto w-full px-6 py-4 max-w-full lg:max-w-7xl xl:max-w-screen-xl">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <a href="/" className="flex items-center space-x-2">
               <img
                 src={tpc_00}
                 alt="Torres Pest Control Logo"
-                className="h-16 w-16 rounded-full"
+                className="h-20- w-20 rounded-full"
               />
               <div>
                 <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
                   <span className="text-red-600">TORRES</span>{" "}
                   <span className="text-blue-600">PEST CONTROL</span>
                 </h1>
-                <p className="text-sm text-gray-600 dark:text-gray-300">
+                <p
+                  className="text-sm text-gray-600 dark:text-gray-300"
+                  style={{ paddingLeft: "0.25rem" }}
+                >
                   Your Trusted Pest Control Specialist
                 </p>
               </div>
@@ -62,7 +65,7 @@ const Header = () => {
           {!isMobile && (
             <nav className="flex items-center space-x-6">
               <a
-                href="#services"
+                href="/#services"
                 className="text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400"
               >
                 Services
@@ -74,13 +77,13 @@ const Header = () => {
                 About
               </a>
               <a
-                href="#gallery"
+                href="/#gallery"
                 className="text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400"
               >
                 Gallery
               </a>
               <a
-                href="#contact"
+                href="/#contact"
                 className="text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400"
               >
                 Contact

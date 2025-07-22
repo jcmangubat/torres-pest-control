@@ -29,12 +29,8 @@ const HeroSection = ({
   const themeClass = respectTheme ? "" : "dark";
 
   return (
-    // <section
-    //   className="relative bg-gradient-to-br from-green-50 to-blue-50 dark:from-gray-900 dark:to-gray-800 py-20 md:pt-32 overflow-hidden"
-    //   style={{ backgroundImage: `url(${tpc_bkg_1})` }}
-    // >
     <section
-      className={`${themeClass} relative bg-gradient-to-br from-green-50 to-blue-50 dark:from-gray-900 dark:to-gray-800 py-20 md:pt-32 overflow-hidden`}
+      className={`${themeClass} relative bg-gradient-to-br from-green-50 to-blue-50 dark:from-gray-900 dark:to-gray-800 py-32 md:pt-48 overflow-hidden`}
       style={{ backgroundImage: `url(${tpc_bkg_1})` }}
     >
       <div className="relative z-10 max-w-6xl mx-auto px-4">
