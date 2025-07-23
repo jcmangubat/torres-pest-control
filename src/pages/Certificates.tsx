@@ -5,14 +5,9 @@ import { AppProvider } from "@/contexts/AppContext";
 import tpc_006 from "@/assets/images/tpc_006.jpg";
 
 // Importing certificate images
-import cert_msds from "@/assets/images/tpc_cert_1.png";
-import cert_ipm from "@/assets/images/tpc_cert_2.png";
-import cert_lto from "@/assets/images/tpc_cert_3.png";
-import cert_business from "@/assets/images/tpc_cert_4.png";
-import cert_fda_training from "@/assets/images/tpc_cert_5.png";
-import cert_sanitary from "@/assets/images/tpc_cert_6.png";
-import cert_contract from "@/assets/images/tpc_cert_7.png";
-import cert_insurance from "@/assets/images/tpc_cert_8.png";
+import cert_business from "@/assets/images/tpc_cert_1.jpg";
+import cert_sanitary from "@/assets/images/tpc_cert_3.jpg";
+import cert_lto from "@/assets/images/tpc_cert_2.jpg";
 
 const CertificatesPage = () => {
   return (
@@ -43,14 +38,9 @@ const CertificatesPage = () => {
         <section className="py-20 bg-white dark:bg-gray-900">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
             {[
+              { label: "Business Permit", image: cert_business },
               { label: "License to Operate", image: cert_lto },
               { label: "Sanitary Permit", image: cert_sanitary },
-              { label: "Business Permit", image: cert_business },
-              { label: "Insurance Certificate", image: cert_insurance },              
-              { label: "FDA Training Certificate", image: cert_fda_training },
-              { label: "Material Safety Data Sheet (MSDS)", image: cert_msds },
-              { label: "IPM Plan or Membership Certificate", image: cert_ipm },
-              { label: "Pest Control Service Contract (Template)", image: cert_contract },
             ].map(({ label, image }) => (
               <div
                 key={label}
