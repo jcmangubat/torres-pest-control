@@ -2,14 +2,35 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Phone, Mail, MessageCircle } from "lucide-react";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
+import emailjs from "@emailjs/browser";
 
 const ContactSection = () => {
   const nameInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    // Optional: handle autofocus when mounted or scrolled via IntersectionObserver
+    // Optional/todo: handle autofocus when mounted or scrolled via IntersectionObserver
   }, []);
+
+  const formRef = useRef<HTMLFormElement>(null);
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">(
+    "idle"
+  );
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus("sending");
+
+    emailjs
+      .sendForm(
+        "service_yu4cd0b", //"your_service_id",
+        "template_nqo3sfn", //"your_template_id",
+        formRef.current!,
+        "y0BZsBRAR3ts_udHQ" //"your_public_key"
+      )
+      .then(() => setStatus("sent"))
+      .catch(() => setStatus("error"));
+  };
 
   return (
     <section
@@ -84,18 +105,21 @@ const ContactSection = () => {
             </div>
           </div>
           <div>
-            <form className="space-y-4">
+            <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
               <Input
+                name="user_name"
                 ref={nameInputRef}
                 placeholder="Your Name"
                 className="dark:bg-gray-800 dark:border-gray-600"
               />
               <Input
+                name="user_email"
                 placeholder="Your Email"
                 type="email"
                 className="dark:bg-gray-800 dark:border-gray-600"
               />
               <Input
+                name="user_phone"
                 placeholder="Your Phone Number"
                 type="phone"
                 className="dark:bg-gray-800 dark:border-gray-600"
@@ -103,6 +127,7 @@ const ContactSection = () => {
 
               {/* 🔽 Infestation Type Dropdown */}
               <select
+                name="infestation_type"
                 defaultValue=""
                 className="w-full px-4 py-3 rounded-md border dark:bg-gray-800 dark:border-gray-600 text-gray-700 dark:text-gray-300"
               >
@@ -120,6 +145,7 @@ const ContactSection = () => {
               </select>
 
               <Textarea
+                name="message"
                 placeholder="Your Message"
                 rows={12}
                 className="dark:bg-gray-800 dark:border-gray-600"
@@ -130,6 +156,20 @@ const ContactSection = () => {
               >
                 Send Message
               </Button>
+
+              {status === "sending" && (
+                <p className="text-sm text-gray-500">Sending...</p>
+              )}
+              {status === "sent" && (
+                <p className="text-sm text-green-600">
+                  Message sent! Dennis will reply soon.
+                </p>
+              )}
+              {status === "error" && (
+                <p className="text-sm text-red-600">
+                  Something went wrong. Try again later.
+                </p>
+              )}
             </form>
           </div>
         </div>
