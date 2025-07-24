@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Davao City, Davao del Sur",
+    "position": [7.0644, 125.6077],
+    "description": "Eco-friendly pest control across one of the country’s safest cities."
+  },
+  {
+    "name": "Samal Island",
+    "position": [7.0835, 125.7058],
+    "description": "Island-grade protection for resorts and beachside properties."
+  },
+  {
+    "name": "Digos, Davao del Sur",
+    "position": [6.7435, 125.3552],
+    "description": "From farms to mountain lodges — keeping Mt. Apo’s gateway clean."
+  },
+  {
+    "name": "Panglao, Bohol",
+    "position": [9.5486, 123.7708],
+    "description": "Protecting beach resorts and eco-tourism sites around Alona Beach."
+  },
+  {
+    "name": "Cebu City, Visayas",
+    "position": [10.3167, 123.8907],
+    "description": "Trusted in business districts and heritage landmarks."
+  },
+  {
+    "name": "Dumaguete City",
+    "position": [9.3052, 123.3094],
+    "description": "We serve schools, coastal homes, and historic sites with care."
+  }
+]

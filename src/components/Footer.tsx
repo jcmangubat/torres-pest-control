@@ -5,7 +5,10 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <h3 className="text-xl font-semibold mb-4">Torres Pest Control</h3>
-            <p className="text-gray-300">Professional pest control services in Davao with 14-15 years of experience.</p>
+            <p className="text-gray-300">
+              Professional pest control services in Davao with 14-15 years of
+              experience.
+            </p>
           </div>
           <div>
             <h4 className="text-lg font-semibold mb-4">Services</h4>
@@ -23,7 +26,10 @@ const Footer = () => {
           </div>
         </div>
         <div className="border-t border-gray-700 mt-8 pt-8 text-center">
-          <p className="text-gray-400">&copy; 2025 Torres Pest Control. All rights reserved.</p>
+          <p className="text-gray-400">
+            &copy; {new Date().getFullYear()} Torres Pest Control. All rights
+            reserved.
+          </p>
         </div>
       </div>
     </footer>

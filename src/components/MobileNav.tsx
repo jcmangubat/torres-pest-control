@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, Moon, Sun, X } from "lucide-react";
 import { useTheme } from "./theme-provider";
+import { useNavigate } from "react-router-dom";
 
 interface MobileNavProps {
   isScrolled: boolean;
@@ -16,11 +17,23 @@ const MobileNav = ({ isScrolled }: MobileNavProps) => {
     setTheme(theme === "dark" ? "light" : "dark");
   };
 
+  const navigate = useNavigate();
+
   const handleNavClick = (href: string) => {
     setOpen(false);
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+    const isAnchorLink = href.startsWith("#") || href.startsWith("/#");
+    const hash = href.replace("/#", "#");
+    const pathOnly = href.split("#")[0];
+
+    const isOnCurrentPage = window.location.pathname === pathOnly;
+
+    if (isAnchorLink && isOnCurrentPage) {
+      const element = document.querySelector(hash);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      navigate(href);
     }
   };
 
@@ -39,13 +52,13 @@ const MobileNav = ({ isScrolled }: MobileNavProps) => {
           {/* Centered menu content */}
           <div className="flex-1 flex flex-col items-center justify-center space-y-8 px-8">
             <button
-              onClick={() => handleNavClick("#services")}
+              onClick={() => handleNavClick("/#services")}
               className="text-3xl font-medium text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 transition-colors duration-200"
             >
               Services
             </button>
             <button
-              onClick={() => handleNavClick("#about")}
+              onClick={() => handleNavClick("/about")}
               className="text-3xl font-medium text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 transition-colors duration-200"
             >
               About
@@ -57,13 +70,19 @@ const MobileNav = ({ isScrolled }: MobileNavProps) => {
               Certificates
             </button>
             <button
+              onClick={() => handleNavClick("/regions")}
+              className="text-3xl font-medium text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 transition-colors duration-200"
+            >
+              Served Regions
+            </button>
+            <button
               onClick={() => handleNavClick("/gallery")}
               className="text-3xl font-medium text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 transition-colors duration-200"
             >
               Gallery
             </button>
             <button
-              onClick={() => handleNavClick("#contact")}
+              onClick={() => handleNavClick("/#contact")}
               className="text-3xl font-medium text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 transition-colors duration-200"
             >
               Contact

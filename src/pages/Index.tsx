@@ -1,13 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { AppProvider } from "@/contexts/AppContext";
 import AppLayout from "@/components/AppLayout";
 import HeroSection from "@/components/HeroSection";
 import ServicesSection from "@/components/ServicesSection";
 import BenefitsSection from "@/components/BenefitsSection";
 import TestimonialSection from "@/components/TestimonialSection";
 import ContactSection from "@/components/ContactSection";
-import { AppProvider } from "@/contexts/AppContext";
 
 const Index: React.FC = () => {
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash) {
+      setTimeout(() => {
+        const element = document.querySelector(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+    }
+  }, []);
+
   return (
     <AppProvider>
       <AppLayout>

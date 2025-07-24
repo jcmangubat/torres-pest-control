@@ -23,7 +23,6 @@ const GalleryPage = () => {
     loadJSONFiles();
   }, []);
 
-  console.log("Loaded albums:", albums);
   return (
     <AppLayout>
       <div className="container mx-auto px-4">
