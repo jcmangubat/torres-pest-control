@@ -1,5 +1,5 @@
 import React from "react";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup, Tooltip } from "react-leaflet";
 import L from "leaflet";
 
 const createFAIcon = (colorClass: string = "text-green-600") => {
@@ -14,6 +14,7 @@ const createFAIcon = (colorClass: string = "text-green-600") => {
 type Region = {
   name: string;
   position: [number, number];
+  description: string;
 };
 
 type ServiceMapProps = {
@@ -38,7 +39,20 @@ const ServiceMap: React.FC<ServiceMapProps> = ({ regions }) => {
           position={region.position}
           icon={createFAIcon("text-red-600")}
         >
-          <Popup>{region.name}</Popup>
+          <Popup>
+            <strong>{region.name}</strong>
+            <br />
+            {region.description}
+          </Popup>
+
+          <Tooltip
+            direction="top"
+            offset={[0, -30]}
+            opacity={0.9}
+            permanent={false}
+          >
+            {region.description}
+          </Tooltip>
         </Marker>
       ))}
     </MapContainer>
