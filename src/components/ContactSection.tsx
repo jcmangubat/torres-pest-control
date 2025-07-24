@@ -23,10 +23,10 @@ const ContactSection = () => {
 
     emailjs
       .sendForm(
-        "service_yu4cd0b", //"your_service_id",
-        "template_nqo3sfn", //"your_template_id",
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         formRef.current!,
-        "y0BZsBRAR3ts_udHQ" //"your_public_key"
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       )
       .then(() => setStatus("sent"))
       .catch(() => setStatus("error"));
@@ -162,7 +162,7 @@ const ContactSection = () => {
               )}
               {status === "sent" && (
                 <p className="text-sm text-green-600">
-                  Message sent! Dennis will reply soon.
+                  Message sent! We will reply soon.
                 </p>
               )}
               {status === "error" && (
