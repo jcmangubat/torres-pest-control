@@ -23,7 +23,7 @@ const Index: React.FC = () => {
   return (
     <AppProvider>
       <AppLayout>
-        <div className="container mx-auto px-4">
+        <div className="mx-auto">
           <HeroSection />
           <ServicesSection />
           <BenefitsSection />

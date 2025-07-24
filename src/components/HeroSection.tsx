@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Phone, Shield, CheckCircle } from "lucide-react";
 import HeroImageGallery from "./HeroImageGallery";
-import tpc_bkg_1 from "@/assets/images/tpc-bkg-1.avif";
+import tpc_bkg_1 from "@/assets/images/hero/tpc_hero_1.png";
 import { HERO_RESPECT_THEME } from "@/config/site-config";
 
 type HeroSectionProps = {
@@ -30,17 +30,29 @@ const HeroSection = ({
 
   return (
     <section
-      className={`${themeClass} relative bg-gradient-to-br from-green-50 to-blue-50 dark:from-gray-900 dark:to-gray-800 py-32 md:pt-48 overflow-hidden`}
-      style={{ backgroundImage: `url(${tpc_bkg_1})` }}
+      id="hero-section"
+      className={`${themeClass} relative w-full bg-gradient-to-br from-green-50 to-blue-50 dark:from-gray-900 dark:to-gray-800 py-32 md:pt-48 overflow-hidden`}
     >
-      <div className="relative z-10 max-w-6xl mx-auto px-4">
+      <div
+        id="hero-bg-overlay"
+        className="absolute inset-0 bg-black/20 dark:bg-black/50"
+        style={{
+          backgroundImage: `url(${tpc_bkg_1})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          // filter: "sepia(1) brightness(0.3)",
+          // filter: "sepia(.5) brightness(0.5) contrast(1.2) saturate(1.2)",
+          filter: "sepia(.5) brightness(0.6) saturate(0.8) contrast(0.6)",
+        }}
+      ></div>
+      <div className="relative z-10 w-full px-4 md:px-12 lg:px-64">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="text-center lg:text-left">
             <div className="flex justify-center lg:justify-start mb-6">
               <Shield className="h-16 w-16 text-green-600 dark:text-green-400" />
             </div>
             <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-              Protecting Homes & Businesses in Davao
+              Your family deserves peace. <i>Not pests.</i>
             </h1>
             <p className="text-lg lg:text-xl text-gray-700 dark:text-gray-300 mb-8">
               Professional pest control services with 14-15 years of experience.
@@ -79,7 +91,10 @@ const HeroSection = ({
               </div>
             </div>
           </div>
-          <div className="flex justify-center">
+          <div
+            id="ads-player"
+            className="flex justify-center drop-shadow-[0_10px_10px_rgba(0,0,0,0.8)]"
+          >
             <HeroImageGallery />
           </div>
         </div>

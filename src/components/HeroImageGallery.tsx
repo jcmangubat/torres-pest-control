@@ -6,7 +6,7 @@ const HeroImageGallery = () => {
   return (
     <div
       id="her-img-gall"
-      className="relative aspect-square w-full max-w-xl mx-auto rounded-lg overflow-hidden shadow-2xl"
+      className="relative aspect-square w-full mx-auto rounded-lg overflow-hidden shadow-2xl"
     >
       <div className="absolute inset-0">
         <GLDotsTransition images={ads} />
