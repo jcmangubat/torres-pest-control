@@ -289,7 +289,7 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section id="services" className="py-20 bg-white dark:bg-gray-900">
+    <section id="services" className="pt-8 bg-gradient-to-br from-green-50 to-blue-50 dark:from-gray-800 dark:to-gray-900">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">

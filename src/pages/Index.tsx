@@ -7,6 +7,7 @@ import BenefitsSection from "@/components/BenefitsSection";
 import TestimonialSection from "@/components/TestimonialSection";
 import StatsSection from "@/components/StatsSection";
 import ContactSection from "@/components/ContactSection";
+import HowWeWorkSection from "@/components/HowWeWorkSection";
 
 const Index: React.FC = () => {
   useEffect(() => {
@@ -28,6 +29,7 @@ const Index: React.FC = () => {
           <HeroSection />
           <StatsSection/>
           <ServicesSection />
+          <HowWeWorkSection />
           <BenefitsSection />
           <TestimonialSection />
           <ContactSection />

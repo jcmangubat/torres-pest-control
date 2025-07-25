@@ -67,6 +67,7 @@
     "framer-motion": "^12.23.6",
     "highlight.js": "^11.9.0",
     "input-otp": "^1.2.4",
+    "keen-slider": "^6.8.6",
     "leaflet": "^1.9.4",
     "lg-thumbnail": "^1.2.1",
     "lg-video": "^1.4.0",
