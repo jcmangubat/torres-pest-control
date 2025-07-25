@@ -38,8 +38,10 @@ const Header = () => {
       }
     `}
     >
-      <div className="w-full px-6 py-4 max-w-full lg:max-w-7xl xl:max-w-screen-xl">
-        <div className="flex items-center justify-between">
+      {/* <div className="w-full px-6 py-4 max-w-full lg:max-w-7xl xl:max-w-screen-xl"> */}
+      <div className="w-full px-6 py-4 max-w-full xl:max-w-none">
+        <div className="flex items-center justify-between w-full">
+          {/* Logo */}
           <div className="flex items-center space-x-2">
             <a href="/" className="flex items-center space-x-2">
               <img
@@ -62,87 +64,71 @@ const Header = () => {
             </a>
           </div>
 
-          {/* Desktop Navigation */}
+          {/* Center Nav */}
           {!isMobile && (
-            <nav className="flex items-center space-x-6">
-              <a
-                href="/#services"
-                className="text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400"
-              >
+            <nav className="hidden md:flex items-center space-x-6 mx-auto">
+              <a href="/#services" className="nav-link">
                 Services
               </a>
-              <a
-                href="/about"
-                className="text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400"
-              >
+              <a href="/about" className="nav-link">
                 About
               </a>
-              <a
-                href="/certificates"
-                className="text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400"
-              >
+              <a href="/certificates" className="nav-link">
                 Certificates
               </a>
-              <a
-                href="/regions"
-                className="text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400"
-              >
+              <a href="/regions" className="nav-link">
                 Served Regions
               </a>
-              <a
-                href="/gallery"
-                className="text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400"
-              >
+              <a href="/gallery" className="nav-link">
                 Gallery
               </a>
-              <a
-                href="/#contact"
-                className="text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400"
-              >
+              <a href="/#contact" className="nav-link">
                 Contact
               </a>
-              <div className="w-full flex justify-end">
-                <div className="flex items-center gap-4 flex-wrap">
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    onClick={toggleTheme}
-                    className="p-2"
-                  >
-                    {theme === "dark" ? (
-                      <Sun className="h-5 w-5" />
-                    ) : (
-                      <Moon className="h-5 w-5" />
-                    )}
-                  </Button>
-
-                  <a
-                    href="https://facebook.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Facebook className="w-7 h-7 text-blue-600 hover:text-blue-800 transition" />
-                  </a>
-                  <a
-                    href="https://instagram.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Instagram className="w-7 h-7 text-pink-500 hover:text-pink-600 transition" />
-                  </a>
-                  <a
-                    href="https://youtube.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Youtube className="w-7 h-7 text-red-600 hover:text-red-700 transition" />
-                  </a>
-                </div>
-              </div>
             </nav>
           )}
 
-          {/* <!--Mobile Navigation--> */}
+          {/* Right: Social + Theme */}
+          {!isMobile && (
+            <div className="flex items-center gap-4">
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={toggleTheme}
+                className="p-2"
+              >
+                {theme === "dark" ? (
+                  <Sun className="h-5 w-5" />
+                ) : (
+                  <Moon className="h-5 w-5" />
+                )}
+              </Button>
+
+              <a
+                href="https://www.facebook.com/torrespestcontrolPH"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Facebook className="w-7 h-7 text-blue-600 hover:text-blue-800 transition" />
+              </a>
+              <a
+                href="https://www.instagram.com/torrespestcontrol_ph"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Instagram className="w-7 h-7 text-pink-500 hover:text-pink-600 transition" />
+              </a>
+              {/* <a
+                href="https://youtube.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Youtube className="w-7 h-7 text-red-600 hover:text-red-700 transition" />
+              </a> */}
+            </div>
+          )}
+
+          {/* Mobile nav fallback */}
           {isMobile && <MobileNav isScrolled={isScrolled} />}
         </div>
       </div>

@@ -4,6 +4,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, Moon, Sun, X } from "lucide-react";
 import { useTheme } from "./theme-provider";
 import { useNavigate } from "react-router-dom";
+import { Facebook, Instagram, Youtube } from "lucide-react";
 
 interface MobileNavProps {
   isScrolled: boolean;
@@ -88,8 +89,34 @@ const MobileNav = ({ isScrolled }: MobileNavProps) => {
               Contact
             </button>
 
-            {/* Theme toggle */}
-            <div className="pt-8">
+            <div className="pt-8 flex flex-col items-center space-y-4">
+              
+              {/* Social Icons */}
+              <div className="flex justify-center items-center gap-6">
+                <a
+                  href="https://www.facebook.com/torrespestcontrolPH"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Facebook className="w-7 h-7 text-blue-600 hover:text-blue-800 transition" />
+                </a>
+                <a
+                  href="https://www.instagram.com/torrespestcontrol_ph"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Instagram className="w-7 h-7 text-pink-500 hover:text-pink-600 transition" />
+                </a>
+                {/* <a
+                  href="https://youtube.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Youtube className="w-7 h-7 text-red-600 hover:text-red-700 transition" />
+                </a> */}
+              </div>
+
+              {/* Theme toggle */}
               <Button
                 variant="outline"
                 onClick={toggleTheme}
