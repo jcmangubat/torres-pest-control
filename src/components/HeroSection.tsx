@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Phone, Shield, CheckCircle } from "lucide-react";
-import HeroImageGallery from "./HeroImageGallery";
+import AdsGallery from "./AdsGallery";
 import tpc_bkg_1 from "@/assets/images/hero/tpc_hero_1.png";
 import { HERO_RESPECT_THEME } from "@/config/site-config";
 
@@ -95,7 +95,7 @@ const HeroSection = ({
             id="ads-player"
             className="flex justify-center drop-shadow-[0_10px_10px_rgba(0,0,0,0.8)]"
           >
-            <HeroImageGallery />
+            <AdsGallery />
           </div>
         </div>
       </div>

@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Leaf, Heart, Shield, Home, BadgeCheck } from "lucide-react";
-import tpc_bkg_4 from "@/assets/images/tpc-bkg-4.png";
+//import tpc_bkg_4 from "@/assets/images/tpc-bkg-4.png";
 import "./../styles/benefitsSection.css";
 
 const BenefitsSection = () => {
@@ -57,11 +57,12 @@ const BenefitsSection = () => {
     >
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="neon-text text-4xl font-bold text-gray-900 dark:text-white mb-4 transition-colors duration-500">
+          {/* <h2 className="neon-text text-4xl font-bold text-gray-900 dark:text-white mb-4 transition-colors duration-500"> */}
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 transition-colors duration-500">
             Why Choose Torres Pest Control?
           </h2>
           <p
-            className="neon-text text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto transition-colors duration-500"
+            className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto transition-colors duration-500"
             style={{ color: "rgb(255 255 255);" }}
           >
             Safe, effective, and environmentally responsible pest control
@@ -91,6 +92,15 @@ const BenefitsSection = () => {
               </CardContent>
             </Card>
           ))}
+        </div>
+
+        {/* Transition Image between Benefits and Credentials */}
+        <div className="mb-16 flex justify-center">
+          <img
+            src={"/images/tpc_26.jpg"}
+            alt="Pest control professionals at work"
+            className="rounded-2xl shadow-lg max-w-3xl w-full h-auto object-cover"
+          />
         </div>
 
         {/* Credentials & Accreditations */}

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { GLDotsTransition } from "./GLDotsTransition";
 import ads from "@/assets/ads.json";
 
-const HeroImageGallery = () => {
+const AdsGallery = () => {
   return (
     <div
       id="her-img-gall"
@@ -15,4 +15,4 @@ const HeroImageGallery = () => {
   );
 };
 
-export default HeroImageGallery;
+export default AdsGallery;

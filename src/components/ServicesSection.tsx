@@ -10,6 +10,8 @@ import {
   Footprints,
   Home,
   FileText,
+  Lightbulb,
+  Bomb
 } from "lucide-react";
 
 type ServiceProps = {
@@ -113,6 +115,14 @@ const ServicesSection = () => {
             "Full-structure vermin removal using controlled treatments.",
           imageSrc: "/images/services/tpc_srvc_4.png",
         },
+        {
+          icon: (
+            <Lightbulb className="h-8 w-8 text-green-600 dark:text-yellow-400" />
+          ),
+          title: "Insect Light Trap Installation",
+          description: "Effective indoor insect control using UV light traps.",
+          imageSrc: "/images/services/tpc_srvc_25.jpg",
+        },
       ],
     },
     {
@@ -140,6 +150,13 @@ const ServicesSection = () => {
           description:
             "Comprehensive inspections and preventive maintenance programs.",
           imageSrc: "/images/services/tpc_srvc_8.jpg",
+        },
+        {
+          icon: <Bomb className="h-8 w-8 text-red-600 dark:text-red-400" />,
+          title: "Mound Demolition",
+          description:
+            "Targeted destruction of termite mounds to prevent infestations.",
+          imageSrc: "/images/services/tpc_srvc_27.jpg",
         },
       ],
     },
@@ -213,7 +230,7 @@ const ServicesSection = () => {
           title: "Wall Injection Systems",
           description:
             "Interior termite treatment for sealed structures and wall cavities.",
-          imageSrc: "/images/services/tpc_srvc_17.jpg",
+          imageSrc: "/images/services/tpc_srvc_18.jpg",
         },
       ],
     },
@@ -254,7 +271,8 @@ const ServicesSection = () => {
             <FileText className="h-8 w-8 text-blue-700 dark:text-blue-400" />
           ),
           title: "Compliance Audit Preparation",
-          description: "Systematic pre-audit preparation and documentation review tailored to the needs of regulated industries, ensuring readiness for inspections, certification, and health department evaluations.",
+          description:
+            "Systematic pre-audit preparation and documentation review tailored to the needs of regulated industries, ensuring readiness for inspections, certification, and health department evaluations.",
           imageSrc: "/images/services/tpc_srvc_13.jpg",
         },
         {

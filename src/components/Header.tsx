@@ -6,6 +6,7 @@ import { useIsMobile } from "@/hooks/use-mobile";
 import MobileNav from "./MobileNav";
 import tpc_00 from "@/assets/images/tpc_00.jpg";
 import tpc_01 from "@/assets/images/tpc_01.jpg";
+import { Facebook, Instagram, Youtube } from "lucide-react";
 
 const Header = () => {
   const { theme, setTheme } = useTheme();
@@ -100,18 +101,44 @@ const Header = () => {
               >
                 Contact
               </a>
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={toggleTheme}
-                className="p-2"
-              >
-                {theme === "dark" ? (
-                  <Sun className="h-4 w-4" />
-                ) : (
-                  <Moon className="h-4 w-4" />
-                )}
-              </Button>
+              <div className="w-full flex justify-end">
+                <div className="flex items-center gap-4 flex-wrap">
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={toggleTheme}
+                    className="p-2"
+                  >
+                    {theme === "dark" ? (
+                      <Sun className="h-5 w-5" />
+                    ) : (
+                      <Moon className="h-5 w-5" />
+                    )}
+                  </Button>
+
+                  <a
+                    href="https://facebook.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Facebook className="w-7 h-7 text-blue-600 hover:text-blue-800 transition" />
+                  </a>
+                  <a
+                    href="https://instagram.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Instagram className="w-7 h-7 text-pink-500 hover:text-pink-600 transition" />
+                  </a>
+                  <a
+                    href="https://youtube.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Youtube className="w-7 h-7 text-red-600 hover:text-red-700 transition" />
+                  </a>
+                </div>
+              </div>
             </nav>
           )}
 

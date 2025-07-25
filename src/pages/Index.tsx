@@ -5,6 +5,7 @@ import HeroSection from "@/components/HeroSection";
 import ServicesSection from "@/components/ServicesSection";
 import BenefitsSection from "@/components/BenefitsSection";
 import TestimonialSection from "@/components/TestimonialSection";
+import StatsSection from "@/components/StatsSection";
 import ContactSection from "@/components/ContactSection";
 
 const Index: React.FC = () => {
@@ -25,6 +26,7 @@ const Index: React.FC = () => {
       <AppLayout>
         <div className="mx-auto">
           <HeroSection />
+          <StatsSection/>
           <ServicesSection />
           <BenefitsSection />
           <TestimonialSection />
