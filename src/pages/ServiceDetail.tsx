@@ -16,7 +16,9 @@ const ServiceDetailPage = () => {
         const text = await response.text();
         setContent(text);
       } catch {
-        setContent(`# Service Not Found\nThe requested service does not exist.`);
+        setContent(
+          `# Service Not Found\nThe requested service does not exist.`
+        );
       }
     };
 
@@ -75,7 +77,9 @@ const ServiceDetailPage = () => {
                     to={`/services/${service}`}
                     className="block text-sm text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400"
                   >
-                    {service.replace(/-/g, " ")}
+                    {service
+                      .replace(/-/g, " ")
+                      .replace(/\b\w/g, (char) => char.toUpperCase())}
                   </Link>
                 </li>
               ))}
