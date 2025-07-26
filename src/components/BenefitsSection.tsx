@@ -63,7 +63,7 @@ const BenefitsSection = () => {
           </h2>
           <p
             className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto transition-colors duration-500"
-            style={{ color: "rgb(255 255 255);" }}
+            style={{ color: "rgb(255 255 255)" }}
           >
             Safe, effective, and environmentally responsible pest control
             solutions

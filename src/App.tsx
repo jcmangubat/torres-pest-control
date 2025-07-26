@@ -13,6 +13,7 @@ import CertificatesPage from "./pages/Certificates";
 import GalleryPage from "./pages/Gallery";
 import ServicedRegionsPage from "./pages/ServicedRegions";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import ServiceDetailPage from "./pages/ServiceDetail";
 import "leaflet/dist/leaflet.css";
 
 const queryClient = new QueryClient();
@@ -41,6 +42,7 @@ const App = () => (
           <ScrollToHash />
           <Routes>
             <Route path="/" element={<Index />} />
+            <Route path="/services/:slug" element={<ServiceDetailPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/certificates" element={<CertificatesPage />} />
             <Route path="/regions" element={<ServicedRegionsPage />} />

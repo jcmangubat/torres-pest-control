@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-import slugify from "slugify"; // use this or a custom slug function
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Bug,
@@ -23,36 +21,26 @@ type ServiceProps = {
   imageSrc?: string;
 };
 
-const slugifyTitle = (title: string) =>
-  slugify(title, { lower: true, strict: true });
-
-const ServiceCard = ({ icon, title, description, imageSrc }: ServiceProps) => {
-  const slug = slugifyTitle(title);
-
-  return (
-    <Link to={`/services/${slug}`}>
-      <Card className="h-full flex flex-col justify-between hover:shadow-lg transition-shadow border-2 hover:border-green-200 dark:hover:border-green-600 dark:bg-gray-800 cursor-pointer">
-        <CardHeader className="text-center">
-          {imageSrc && (
-            <img
-              src={imageSrc}
-              alt={title}
-              className="w-full h-40 object-cover rounded-t-md mb-4"
-            />
-          )}
-          <div className="flex justify-center mb-4">{icon}</div>
-          <CardTitle className="text-xl dark:text-white">{title}</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <p className="text-gray-600 dark:text-gray-300 text-center">
-            {description}
-          </p>
-        </CardContent>
-      </Card>
-    </Link>
-  );
-};
-
+const ServiceCard = ({ icon, title, description, imageSrc }: ServiceProps) => (
+  <Card className="h-full flex flex-col justify-between hover:shadow-lg transition-shadow border-2 hover:border-green-200 dark:hover:border-green-600 dark:bg-gray-800">
+    <CardHeader className="text-center">
+      {imageSrc && (
+        <img
+          src={imageSrc}
+          alt={title}
+          className="w-full h-40 object-cover rounded-t-md mb-4"
+        />
+      )}
+      <div className="flex justify-center mb-4">{icon}</div>
+      <CardTitle className="text-xl dark:text-white">{title}</CardTitle>
+    </CardHeader>
+    <CardContent>
+      <p className="text-gray-600 dark:text-gray-300 text-center">
+        {description}
+      </p>
+    </CardContent>
+  </Card>
+);
 
 // Subcomponent: Service Group
 const ServiceGroup = ({

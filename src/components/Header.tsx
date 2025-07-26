@@ -39,7 +39,7 @@ const Header = () => {
     `}
     >
       {/* <div className="w-full px-6 py-4 max-w-full lg:max-w-7xl xl:max-w-screen-xl"> */}
-      <div className="w-full px-6 py-4 max-w-full xl:max-w-none">
+      <div className="w-full px-6 max-w-full xl:max-w-none">
         <div className="flex items-center justify-between w-full">
           {/* Logo */}
           <div className="flex items-center space-x-2">
