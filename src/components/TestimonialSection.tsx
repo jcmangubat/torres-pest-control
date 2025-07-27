@@ -128,6 +128,69 @@ const testimonials = [
 const TestimonialSection = () => {
   const timer = useRef<NodeJS.Timeout | null>(null);
 
+  // const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
+  //   loop: true,
+  //   mode: "free-snap",
+  //   slides: {
+  //     origin: "center",
+  //     perView: 3,
+  //     spacing: 32,
+  //   },
+  //   created(s) {
+  //     s.slides.forEach((slide, idx) => {
+  //       slide.classList.add("transition-all");
+  //     });
+  //   },
+  //   slideChanged(s) {
+  //     s.slides.forEach((slide, idx) => {
+  //       const el = slide;
+  //       el.classList.remove("scale-100", "opacity-100", "z-10");
+  //       el.classList.add("scale-90", "opacity-50", "z-0");
+  //     });
+  //     const current = s.slides[s.track.details.rel];
+  //     current.classList.remove("scale-90", "opacity-50", "z-0");
+  //     current.classList.add("scale-100", "opacity-100", "z-10");
+  //   },
+  // });
+
+  // const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
+  //   loop: true,
+  //   mode: "free-snap",
+  //   slides: {
+  //     origin: "center",
+  //     perView: 3,
+  //     spacing: 32,
+  //   },
+  //   breakpoints: {
+  //     "(max-width: 768px)": {
+  //       slides: {
+  //         perView: 1,
+  //         spacing: 16,
+  //       },
+  //     },
+  //     "(max-width: 1024px)": {
+  //       slides: {
+  //         perView: 2,
+  //         spacing: 24,
+  //       },
+  //     },
+  //   },
+  //   created(s) {
+  //     s.slides.forEach((slide) => {
+  //       slide.classList.add("transition-all");
+  //     });
+  //   },
+  //   slideChanged(s) {
+  //     s.slides.forEach((slide) => {
+  //       slide.classList.remove("scale-100", "opacity-100", "z-10");
+  //       slide.classList.add("scale-90", "opacity-50", "z-0");
+  //     });
+  //     const current = s.slides[s.track.details.rel];
+  //     current.classList.remove("scale-90", "opacity-50", "z-0");
+  //     current.classList.add("scale-100", "opacity-100", "z-10");
+  //   },
+  // });
+
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
     loop: true,
     mode: "free-snap",
@@ -136,16 +199,31 @@ const TestimonialSection = () => {
       perView: 3,
       spacing: 32,
     },
+    breakpoints: {
+      "(max-width: 768px)": {
+        slides: {
+          origin: "auto",
+          perView: 1,
+          spacing: 0,
+        },
+      },
+      "(max-width: 1024px)": {
+        slides: {
+          origin: "center",
+          perView: 2,
+          spacing: 24,
+        },
+      },
+    },
     created(s) {
-      s.slides.forEach((slide, idx) => {
+      s.slides.forEach((slide) => {
         slide.classList.add("transition-all");
       });
     },
     slideChanged(s) {
-      s.slides.forEach((slide, idx) => {
-        const el = slide;
-        el.classList.remove("scale-100", "opacity-100", "z-10");
-        el.classList.add("scale-90", "opacity-50", "z-0");
+      s.slides.forEach((slide) => {
+        slide.classList.remove("scale-100", "opacity-100", "z-10");
+        slide.classList.add("scale-90", "opacity-50", "z-0");
       });
       const current = s.slides[s.track.details.rel];
       current.classList.remove("scale-90", "opacity-50", "z-0");
