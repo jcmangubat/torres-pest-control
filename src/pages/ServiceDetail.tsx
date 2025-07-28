@@ -1,13 +1,16 @@
 import { useParams, Link } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import { useEffect, useState } from "react";
+import slugify from "slugify";
 import AppLayout from "@/components/AppLayout";
 import tpc_006 from "@/assets/images/tpc_006.jpg";
 
 const ServiceDetailPage = () => {
   const { slug } = useParams();
   const [content, setContent] = useState<string>("");
-  const [allServices, setAllServices] = useState<string[]>([]);
+  const [allServices, setAllServices] = useState<
+    { group: string; services: string[] }[]
+  >([]);
 
   useEffect(() => {
     const loadMarkdown = async () => {
@@ -24,9 +27,17 @@ const ServiceDetailPage = () => {
 
     const loadServiceList = async () => {
       try {
-        const response = await fetch("/content/services/index.json");
-        const serviceList: string[] = await response.json();
-        setAllServices(serviceList);
+        const response = await fetch("/content/services/grouped-services.json");
+        const serviceGroups = await response.json();
+
+        const grouped = serviceGroups.map((group: any) => ({
+          group: group.title,
+          services: group.services.map((s: any) =>
+            slugify(s.title, { lower: true, strict: true })
+          ),
+        }));
+
+        setAllServices(grouped); // Change type to match this structure
       } catch {
         setAllServices([]);
       }
@@ -64,7 +75,7 @@ const ServiceDetailPage = () => {
         </div>
 
         {/* Sidebar */}
-        <aside className="lg:col-span-1 border-l pl-4 dark:border-gray-700">
+        {/* <aside className="lg:col-span-1 border-l pl-4 dark:border-gray-700">
           <h3 className="text-xl font-semibold mb-4 text-gray-700 dark:text-gray-200">
             Other Services
           </h3>
@@ -84,6 +95,36 @@ const ServiceDetailPage = () => {
                 </li>
               ))}
           </ul>
+        </aside>
+         */}
+
+        <aside>
+          <h3 className="text-xl font-semibold mb-4 text-gray-700 dark:text-gray-200">
+            Other Services
+          </h3>
+          {allServices.map((group) => (
+            <div key={group.group} className="mb-4">
+              <h4 className="font-semibold text-gray-700 dark:text-gray-300">
+                {group.group}
+              </h4>
+              <ul className="ml-4 space-y-1">
+                {group.services
+                  .filter((s) => s !== slug)
+                  .map((s) => (
+                    <li key={s}>
+                      <Link
+                        to={`/services/${s}`}
+                        className="text-sm text-gray-600 dark:text-gray-400 hover:text-green-600 dark:hover:text-green-400"
+                      >
+                        {s
+                          .replace(/-/g, " ")
+                          .replace(/\b\w/g, (char) => char.toUpperCase())}
+                      </Link>
+                    </li>
+                  ))}
+              </ul>
+            </div>
+          ))}
         </aside>
       </div>
     </AppLayout>

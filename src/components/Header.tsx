@@ -76,6 +76,9 @@ const Header = () => {
               <a href="/certificates" className="nav-link">
                 Certificates
               </a>
+              <a href="/#testimonies" className="nav-link">
+                Testimonies
+              </a>
               <a href="/regions" className="nav-link">
                 Served Regions
               </a>
@@ -118,13 +121,13 @@ const Header = () => {
               >
                 <Instagram className="w-7 h-7 text-pink-500 hover:text-pink-600 transition" />
               </a>
-              {/* <a
+              <a
                 href="https://youtube.com"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <Youtube className="w-7 h-7 text-red-600 hover:text-red-700 transition" />
-              </a> */}
+              </a>
             </div>
           )}
 

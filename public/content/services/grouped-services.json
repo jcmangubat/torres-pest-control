@@ -1,0 +1,151 @@
+[
+  {
+    "title": "🛡️ General Pest & Vermin Control",
+    "services": [
+      {
+        "icon": "Bug",
+        "title": "General Pest Control",
+        "description": "Safe, effective elimination of common pests and vermin.",
+        "imageSrc": "/images/services/tpc_srvc_0.png"
+      },
+      {
+        "icon": "Rat",
+        "title": "Rodent Removal",
+        "description": "Strategic removal of rats and mice to reduce health and fire hazards.",
+        "imageSrc": "/images/services/tpc_srvc_3.jpg"
+      },
+      {
+        "icon": "Droplets",
+        "title": "Fogging & Misting",
+        "description": "Targeted mosquito and airborne insect control.",
+        "imageSrc": "/images/services/tpc_srvc_2.png"
+      }
+    ]
+  },
+  {
+    "title": "🪵 Termite Defense & Prevention",
+    "services": [
+      {
+        "icon": "Shield",
+        "title": "Termite Control",
+        "description": "Protect your property from structural damage with specialized treatments.",
+        "imageSrc": "/images/services/tpc_srvc_5.png"
+      },
+      {
+        "icon": "Construction",
+        "title": "Soil Treatment",
+        "description": "Shields your foundation from termite threats before they even start.",
+        "imageSrc": "/images/services/tpc_srvc_6.jpg"
+      },
+      {
+        "icon": "Eye",
+        "title": "Termite Inspections & Proofing",
+        "description": "Comprehensive inspections and preventive maintenance programs.",
+        "imageSrc": "/images/services/tpc_srvc_8.jpg"
+      },
+      {
+        "icon": "Bomb",
+        "title": "Mound Demolition",
+        "description": "Targeted destruction of termite mounds to prevent infestations.",
+        "imageSrc": "/images/services/tpc_srvc_27.jpg"
+      }
+    ]
+  },
+  {
+    "title": "🎯 Specialized Termite Systems",
+    "services": [
+      {
+        "icon": "Footprints",
+        "title": "Exterra Termite Baiting System",
+        "description": "Advanced termite baiting solution for long-term protection.",
+        "imageSrc": "/images/services/tpc_srvc_9.jpg"
+      },
+      {
+        "icon": "Footprints",
+        "title": "Extermix Termite Baiting System",
+        "description": "Alternative baiting strategy for diverse termite colonies.",
+        "imageSrc": "/images/services/tpc_srvc_10.jpg"
+      },
+      {
+        "icon": "Construction",
+        "title": "Drilling Services",
+        "description": "Precision drilling for bait placement and termite-proofing access.",
+        "imageSrc": "/images/services/tpc_srvc_11.jpg"
+      }
+    ]
+  },
+  {
+    "title": "🔧 Long-Term Termite Care",
+    "services": [
+      {
+        "icon": "Shield",
+        "title": "Termite Abatement Maintenance",
+        "description": "Ongoing inspections and treatments to maintain structural integrity.",
+        "imageSrc": "/images/services/tpc_srvc_16.png"
+      }
+    ]
+  },
+  {
+    "title": "🏡 Structural & Perimeter Shielding",
+    "services": [
+      {
+        "icon": "Home",
+        "title": "Perimeter Barrier Treatments",
+        "description": "Exterior spray solutions to defend your property perimeter.",
+        "imageSrc": "/images/services/tpc_srvc_17.jpg"
+      },
+      {
+        "icon": "Home",
+        "title": "Crawl Space & Attic Treatments",
+        "description": "Targeted vermin and pest control in concealed interior areas.",
+        "imageSrc": "/images/services/tpc_srvc_15.jpg"
+      },
+      {
+        "icon": "Footprints",
+        "title": "Wall Injection Systems",
+        "description": "Interior termite treatment for sealed structures and wall cavities.",
+        "imageSrc": "/images/services/tpc_srvc_18.jpg"
+      }
+    ]
+  },
+  {
+    "title": "🌿 Eco-Friendly & Child-Safe Options",
+    "services": [
+      {
+        "icon": "Droplets",
+        "title": "Organic Pest Control Solutions",
+        "description": "Low-toxicity, plant-based solutions for safe pest treatment.",
+        "imageSrc": "/images/services/tpc_srvc_20.jpg"
+      },
+      {
+        "icon": "Shield",
+        "title": "Child & Pet-Safe Protocols",
+        "description": "Specialized treatments for sensitive homes and spaces.",
+        "imageSrc": "/images/services/tpc_srvc_21.png"
+      }
+    ]
+  },
+  {
+    "title": "📋 Compliance & Sanitation Support",
+    "services": [
+      {
+        "icon": "FileText",
+        "title": "DOH Documentation Support",
+        "description": "Comprehensive documentation including government-issued permits, detailed service logs, and verified records maintained in alignment with local and national health department compliance requirements.",
+        "imageSrc": "/images/services/tpc_srvc_22.png"
+      },
+      {
+        "icon": "FileText",
+        "title": "Compliance Audit Preparation",
+        "description": "Systematic pre-audit preparation and documentation review tailored to the needs of regulated industries, ensuring readiness for inspections, certification, and health department evaluations.",
+        "imageSrc": "/images/services/tpc_srvc_13.jpg"
+      },
+      {
+        "icon": "SprayCan",
+        "title": "Virus Disinfection Services",
+        "description": "Professional disinfection services utilizing advanced fogging and sanitation techniques to eliminate viruses and pathogens from high-traffic environments such as schools, corporate offices, and healthcare facilities.",
+        "imageSrc": "/images/services/tpc_srvc_24.png"
+      }
+    ]
+  }
+]

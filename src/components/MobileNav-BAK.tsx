@@ -19,9 +19,23 @@ const MobileNav = ({ isScrolled }: MobileNavProps) => {
   };
 
   const navigate = useNavigate();
-  const handleNavClick = (path: string) => {
-    setOpen(false); // Close the menu on navigation
-    navigate(path);
+
+  const handleNavClick = (href: string) => {
+    setOpen(false);
+    const isAnchorLink = href.startsWith("#") || href.startsWith("/#");
+    const hash = href.replace("/#", "#");
+    const pathOnly = href.split("#")[0];
+
+    const isOnCurrentPage = window.location.pathname === pathOnly;
+
+    if (isAnchorLink && isOnCurrentPage) {
+      const element = document.querySelector(hash);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      navigate(href);
+    }
   };
 
   return (
@@ -82,6 +96,7 @@ const MobileNav = ({ isScrolled }: MobileNavProps) => {
             </button>
 
             <div className="pt-8 flex flex-col items-center space-y-4">
+              
               {/* Social Icons */}
               <div className="flex justify-center items-center gap-6">
                 <a
@@ -98,13 +113,13 @@ const MobileNav = ({ isScrolled }: MobileNavProps) => {
                 >
                   <Instagram className="w-7 h-7 text-pink-500 hover:text-pink-600 transition" />
                 </a>
-                <a
+                {/* <a
                   href="https://youtube.com"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <Youtube className="w-7 h-7 text-red-600 hover:text-red-700 transition" />
-                </a>
+                </a> */}
               </div>
 
               {/* Theme toggle */}

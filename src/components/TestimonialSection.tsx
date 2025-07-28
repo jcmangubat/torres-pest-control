@@ -1,15 +1,63 @@
 import React, { useEffect, useRef } from "react";
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
+import {
+  Facebook,
+  MessageCircle,
+  Building2,
+  Smile,
+  ThumbsUp,
+  User,
+  Star,
+} from "lucide-react";
 
 const autoplayInterval = 6000; // in milliseconds
 
+const getSourceIcon = (source: string) => {
+  if (source.includes("Facebook"))
+    return <Facebook className="w-5 h-5 text-blue-600 dark:text-blue-400" />;
+  if (source.includes("Google"))
+    return <Star className="w-5 h-5 text-yellow-500 dark:text-yellow-400" />;
+  if (source.includes("Client"))
+    return <User className="w-5 h-5 text-gray-500 dark:text-gray-300" />;
+  if (source.includes("Property"))
+    return <Building2 className="w-5 h-5 text-gray-600 dark:text-gray-400" />;
+  if (source.includes("Rental"))
+    return <Smile className="w-5 h-5 text-green-500 dark:text-green-400" />;
+  if (source.includes("New"))
+    return (
+      <ThumbsUp className="w-5 h-5 text-purple-500 dark:text-purple-400" />
+    );
+  return <MessageCircle className="w-5 h-5 text-gray-400 dark:text-gray-500" />;
+};
+
 const testimonials = [
+  {
+    name: "Chi Sec",
+    content:
+      "Thank you Torres Pest Control for a job well done. Haze Torres 👏👏👏",
+    source: "Facebook Mentions",
+    sourceLink: "https://www.facebook.com/share/193sKnTYJg/",
+  },
   {
     name: "Ma'am Coleen",
     content:
       "Thank you sa pagsalig Ma'am Coleen... arrived to a clean and safe environment.",
-    source: "Facebook Review",
+    source: "Facebook Mentions",
+  },
+  {
+    name: "Chi Sec",
+    content:
+      "Torres Pest Control is superb sa after sales service!!! #highlyrecommended",
+    source: "Facebook Mentions",
+    sourceLink: "https://www.facebook.com/share/p/1ArdVAoZdW/",
+  },
+  {
+    name: "Buddy Añabieza Baydal",
+    content:
+      "With Torres Pest Control – I just got recognized as one of their top fans! 🎉",
+    source: "Facebook Mentions",
+    sourceLink: "https://www.facebook.com/share/p/1b1QGfPG9G/",
   },
   {
     name: "Satisfied Customer",
@@ -128,69 +176,6 @@ const testimonials = [
 const TestimonialSection = () => {
   const timer = useRef<NodeJS.Timeout | null>(null);
 
-  // const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
-  //   loop: true,
-  //   mode: "free-snap",
-  //   slides: {
-  //     origin: "center",
-  //     perView: 3,
-  //     spacing: 32,
-  //   },
-  //   created(s) {
-  //     s.slides.forEach((slide, idx) => {
-  //       slide.classList.add("transition-all");
-  //     });
-  //   },
-  //   slideChanged(s) {
-  //     s.slides.forEach((slide, idx) => {
-  //       const el = slide;
-  //       el.classList.remove("scale-100", "opacity-100", "z-10");
-  //       el.classList.add("scale-90", "opacity-50", "z-0");
-  //     });
-  //     const current = s.slides[s.track.details.rel];
-  //     current.classList.remove("scale-90", "opacity-50", "z-0");
-  //     current.classList.add("scale-100", "opacity-100", "z-10");
-  //   },
-  // });
-
-  // const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
-  //   loop: true,
-  //   mode: "free-snap",
-  //   slides: {
-  //     origin: "center",
-  //     perView: 3,
-  //     spacing: 32,
-  //   },
-  //   breakpoints: {
-  //     "(max-width: 768px)": {
-  //       slides: {
-  //         perView: 1,
-  //         spacing: 16,
-  //       },
-  //     },
-  //     "(max-width: 1024px)": {
-  //       slides: {
-  //         perView: 2,
-  //         spacing: 24,
-  //       },
-  //     },
-  //   },
-  //   created(s) {
-  //     s.slides.forEach((slide) => {
-  //       slide.classList.add("transition-all");
-  //     });
-  //   },
-  //   slideChanged(s) {
-  //     s.slides.forEach((slide) => {
-  //       slide.classList.remove("scale-100", "opacity-100", "z-10");
-  //       slide.classList.add("scale-90", "opacity-50", "z-0");
-  //     });
-  //     const current = s.slides[s.track.details.rel];
-  //     current.classList.remove("scale-90", "opacity-50", "z-0");
-  //     current.classList.add("scale-100", "opacity-100", "z-10");
-  //   },
-  // });
-
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
     loop: true,
     mode: "free-snap",
@@ -249,7 +234,7 @@ const TestimonialSection = () => {
   }, [instanceRef]);
 
   return (
-    <section className="bg-gray-50 dark:bg-gray-900 py-12">
+    <section id="testimonies" className="bg-gray-50 dark:bg-gray-900 py-12">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-semibold text-center text-gray-800 dark:text-white mb-8">
           What Our Clients Say
@@ -271,8 +256,20 @@ const TestimonialSection = () => {
                   {t.name}
                 </p>
                 {t.source && (
-                  <p className="text-sm text-gray-500 dark:text-gray-400 mt-1 italic">
-                    {t.source}
+                  <p className="text-sm text-gray-500 dark:text-gray-400 mt-1 italic flex items-center justify-center gap-2">
+                    {getSourceIcon(t.source)}
+                    {t.sourceLink ? (
+                      <a
+                        href={t.sourceLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="underline"
+                      >
+                        {t.source}
+                      </a>
+                    ) : (
+                      <span>{t.source}</span>
+                    )}
                   </p>
                 )}
               </div>
