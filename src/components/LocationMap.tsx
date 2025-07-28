@@ -28,46 +28,22 @@ const LocationMap = () => {
     <div className="w-full h-[340px]">
       <MapContainer
         center={position}
-        zoom={17}
+        zoom={14}
         scrollWheelZoom={false}
         className="h-full w-full z-0"
       >
-        {/* <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        /> */}
-        {/* <TileLayer
-          url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
-          attribution='&copy; <a href="https://www.esri.com/">Esri</a>, Earthstar Geographics'
-        /> */}
-        {/* <TileLayer
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          attribution="&copy; OpenStreetMap contributors"
-        /> */}
-        {/* <TileLayer
-          url={`https://api.mapbox.com/styles/v1/mapbox/satellite-v9/tiles/{z}/{x}/{y}?access_token=YOUR_MAPBOX_ACCESS_TOKEN`}
-          attribution='&copy; <a href="https://www.mapbox.com/">Mapbox</a>'
-          tileSize={512}
-          zoomOffset={-1}
-        /> */}
-        <LayersControl position="topright">
-          <LayersControl.BaseLayer checked name="Street Map">
-            {/* <TileLayer
-              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-              attribution="&copy; OpenStreetMap contributors"
-            /> */}
-            <TileLayer
-              url="https://api.maptiler.com/maps/streets-v2/256/{z}/{x}/{y}.png?key=Vb0ZdKUrANwPJBYzwz7G"
-              attribution="&copy; MapTiler"
-            />
-          </LayersControl.BaseLayer>
-          <LayersControl.BaseLayer name="Satellite">
-            <TileLayer
-              url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
-              attribution="&copy; Esri"
-            />
-          </LayersControl.BaseLayer>
-        </LayersControl>
+        <TileLayer
+          attribution='&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://stamen.com/">Stamen</a>'
+          url="https://tiles.stadiamaps.com/tiles/stamen_terrain_background/{z}/{x}/{y}{r}.png?api_key=02cd7782-da88-4ad1-9d99-f2c60f5e8a54"
+        />
+        <TileLayer
+          attribution='&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://stamen.com/">Stamen</a>'
+          url="https://tiles.stadiamaps.com/tiles/stamen_terrain_lines/{z}/{x}/{y}{r}.png?api_key=02cd7782-da88-4ad1-9d99-f2c60f5e8a54"
+        />
+        <TileLayer
+          attribution='&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://stamen.com/">Stamen</a>'
+          url="https://tiles.stadiamaps.com/tiles/stamen_terrain_labels/{z}/{x}/{y}{r}.png?api_key=02cd7782-da88-4ad1-9d99-f2c60f5e8a54"
+        />
         <Marker position={position}>
           <Popup>Torres Pest Control</Popup>
         </Marker>
