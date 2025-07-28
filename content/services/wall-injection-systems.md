@@ -1,5 +1,4 @@
-# Wall Injection Systems  
-A powerful, discreet solution to eliminate pests hiding behind your walls.
+**A** powerful, discreet solution to eliminate pests hiding behind your walls.
 
 ![Wall Injection Systems Banner](/images/services/tpc_srvc_18.jpg)
 

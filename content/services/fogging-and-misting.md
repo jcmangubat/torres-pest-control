@@ -1,6 +1,4 @@
-# Fogging
-
-Our **Fogging** service targets flying pests like mosquitoes by dispersing ultra-fine insecticide mist into the air, reaching even hidden breeding grounds. It’s ideal for quick knockdown in residential, commercial, and outdoor spaces.
+**O**ur **Fogging** service targets flying pests like mosquitoes by dispersing ultra-fine insecticide mist into the air, reaching even hidden breeding grounds. It’s ideal for quick knockdown in residential, commercial, and outdoor spaces.
 
 ![Fogging Banner](/images/services/tpc_srvc_2.png)
 

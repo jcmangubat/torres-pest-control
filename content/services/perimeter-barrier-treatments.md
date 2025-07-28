@@ -1,5 +1,4 @@
-# Perimeter Barrier Treatments  
-Your property’s first line of defense against termites—silent protectors around your foundation.
+**Y**our property’s first line of defense against termites—silent protectors around your foundation.
 
 ![Perimeter Barrier Treatment Banner](/images/services/tpc_srvc_17.jpg)
 

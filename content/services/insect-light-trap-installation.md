@@ -1,5 +1,4 @@
-# Insect Light Trap Installation  
-A non-chemical, hygienic solution for controlling flying insects—ideal for food-sensitive environments.
+**A** non-chemical, hygienic solution for controlling flying insects—ideal for food-sensitive environments.
 
 ![Insect Light Trap Banner](/images/services/tpc_srvc_25.jpg)
 

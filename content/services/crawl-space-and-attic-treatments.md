@@ -1,5 +1,4 @@
-# Crawl Space and Attic Treatments  
-Hidden spaces shouldn’t be forgotten—protect your home from above and below.
+**H**idden spaces shouldn’t be forgotten—protect your home from above and below.
 
 ![Crawl Space and Attic Treatment Banner](/images/services/tpc_srvc_15.jpg)
 

@@ -1,5 +1,4 @@
-# Compliance Audit Preparation  
-We help you pass inspections with confidence—because prevention includes paperwork.
+**W**e help you pass inspections with confidence—because prevention includes paperwork.
 
 ![Compliance Audit Preparation Banner](/images/services/tpc_srvc_13.jpg)
 

@@ -1,5 +1,4 @@
-# Virus Disinfection Services  
-Protecting your space from invisible threats—because peace of mind matters.
+**P**rotecting your space from invisible threats—because peace of mind matters.
 
 ![Virus Disinfection Services Banner](/images/services/tpc_srvc_24.png)
 

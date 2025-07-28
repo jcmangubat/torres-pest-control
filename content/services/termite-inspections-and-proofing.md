@@ -1,5 +1,4 @@
-# Termite Inspections & Proofing  
-See what you can’t see—professional termite inspections and proofing to detect threats early and block them from coming back.
+**S**ee what you can’t see—professional termite inspections and proofing to detect threats early and block them from coming back.
 
 ![Termite Inspection Banner](/images/services/tpc_srvc_8.jpg)
 

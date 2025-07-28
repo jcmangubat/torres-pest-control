@@ -1,5 +1,4 @@
-# Termite Abatement Maintenance  
-Long-term protection through scheduled treatments—because termite defense shouldn’t be one-time.
+**L**ong-term protection through scheduled treatments—because termite defense shouldn’t be one-time.
 
 ![Termite Abatement Maintenance Banner](/images/services/tpc_srvc_16.png)
 

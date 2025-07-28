@@ -1,5 +1,4 @@
-# 🐜 General Pest Control  
-Say goodbye to everyday pests—with treatments that work, and safety you can count on.
+**S**ay goodbye to everyday pests—with treatments that work, and safety you can count on.
 
 ![General Pest Control Banner](/images/services/tpc_srvc_00.jpg)
 
