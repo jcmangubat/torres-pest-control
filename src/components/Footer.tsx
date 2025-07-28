@@ -24,7 +24,13 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Contact</h4>
             <p className="text-gray-300">Phone: +63 917 139 1908</p>
-            <p className="text-gray-300">Service Area: Davao, Philippines</p>
+            <p className="text-gray-300">
+              B11A L65 Martylville Subdivision
+              <br />
+              San Lorenzo Purok 13 Brgy Ula,
+              <br />
+              Tugbok, Davao City, Davao Del Sur, Philippines
+            </p>
             {/* Social Icons */}
             <div className="mt-8 flex justify-left items-center gap-6">
               <a
@@ -42,12 +48,12 @@ const Footer = () => {
                 <Instagram className="w-7 h-7 text-pink-500 hover:text-pink-600 transition" />
               </a>
               <a
-                  href="https://youtube.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Youtube className="w-7 h-7 text-red-600 hover:text-red-700 transition" />
-                </a>
+                href="https://youtube.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Youtube className="w-7 h-7 text-red-600 hover:text-red-700 transition" />
+              </a>
             </div>
           </div>
         </div>

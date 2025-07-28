@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Phone, Mail, MessageCircle } from "lucide-react";
+import { MapPin, Phone, Mail, MessageCircle } from "lucide-react";
 import { useRef, useEffect, useState } from "react";
 import emailjs from "@emailjs/browser";
 
@@ -65,6 +65,10 @@ const ContactSection = () => {
               Contact Information
             </h3>
             <div className="space-y-4">
+              <div className="flex items-center space-x-3">
+                <MapPin className="w-5 h-5 text-green-600 dark:text-green-400" />
+                <span>B11A L65 Martylville Subdivision <br/>San Lorenzo Purok 13 Brgy Ula, <br/>Tugbok, Davao City, Davao Del Sur, Philippines</span>
+              </div>
               <div className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-green-600 dark:text-green-400" />
                 <span className="text-gray-700 dark:text-gray-300">

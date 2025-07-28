@@ -45,7 +45,13 @@ const LocationMap = () => {
           url="https://tiles.stadiamaps.com/tiles/stamen_terrain_labels/{z}/{x}/{y}{r}.png?api_key=02cd7782-da88-4ad1-9d99-f2c60f5e8a54"
         />
         <Marker position={position}>
-          <Popup>Torres Pest Control</Popup>
+          <Popup>
+            B11A L65 Martylville Subdivision
+            <br />
+            San Lorenzo Purok 13 Brgy Ula,
+            <br />
+            Tugbok, Davao City, Davao Del Sur, Philippines
+          </Popup>
         </Marker>
       </MapContainer>
     </div>
