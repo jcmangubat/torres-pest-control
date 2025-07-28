@@ -1,8 +1,6 @@
-# Extermix Termite Baiting System
-
 ![Extermix Termite Baiting System Banner](/images/services/tpc_srvc_10.jpg)
 
-Termites can silently destroy a home or building from the inside out. With the **Extermix Termite Baiting System**, we take a smarter and safer approach to termite control. Instead of flooding your property with chemicals, this method uses scientifically designed bait stations to target and eliminate termite colonies at the source.
+**T**ermites can silently destroy a home or building from the inside out. With the **Extermix Termite Baiting System**, we take a smarter and safer approach to termite control. Instead of flooding your property with chemicals, this method uses scientifically designed bait stations to target and eliminate termite colonies at the source.
 
 ## What is Extermix?
 

@@ -1,5 +1,4 @@
-# Mound Demolition  
-Break the colony at its core. Our mound demolition service targets termites where they live—so they won’t live to come back.
+**B**reak the colony at its core. Our mound demolition service targets termites where they live—so they won’t live to come back.
 
 ![Mound Demolition Service Banner](/images/services/tpc_srvc_27.jpg)
 

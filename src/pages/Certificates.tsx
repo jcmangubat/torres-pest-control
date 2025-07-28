@@ -2,11 +2,14 @@ import React from "react";
 import AppLayout from "@/components/AppLayout";
 import { AppProvider } from "@/contexts/AppContext";
 import banner_services from "@/assets/images/banner-services.jpg";
+import Zoom from "react-medium-image-zoom";
+import "react-medium-image-zoom/dist/styles.css";
 
 // Importing certificate images
 import cert_business from "@/assets/images/tpc_cert_1.jpg";
 import cert_sanitary from "@/assets/images/tpc_cert_3.jpg";
 import cert_lto from "@/assets/images/tpc_cert_2.jpg";
+import SiteBreadcrumbs from "@/components/SiteBreadCrumbs";
 
 const CertificatesPage = () => {
   return (
@@ -37,8 +40,13 @@ const CertificatesPage = () => {
           </p>
         </div>
       </section>
-      <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+      <div className="container mx-auto px-4 pt-3">
+        <SiteBreadcrumbs />
+      </div>
+
+      {/* 📜 Certificates Section */}
+      <div className="container mx-auto px-4 pt-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {[
             { label: "Business Permit", image: cert_business },
             { label: "License to Operate", image: cert_lto },
@@ -46,9 +54,22 @@ const CertificatesPage = () => {
           ].map(({ label, image }) => (
             <div
               key={label}
-              className="bg-white dark:bg-gray-900 rounded-lg shadow-lg overflow-hidden border border-gray-200 dark:border-gray-800"
+              className="bg-white dark:bg-gray-900 rounded-lg shadow-md overflow-hidden border border-gray-200 dark:border-gray-800"
             >
-              <img src={image} alt={label} className="w-full h-auto" />
+              {/* <img
+                src={image}
+                alt={label}
+                className="w-full h-auto object-cover aspect-[3/4]"
+              /> */}
+
+              <Zoom>
+                <img
+                  src={image}
+                  alt={label}
+                  className="w-full h-auto object-cover aspect-[3/4] cursor-zoom-in"
+                />
+              </Zoom>
+
               <div className="p-4 text-center">
                 <h2 className="text-md font-semibold text-gray-700 dark:text-gray-300">
                   {label}

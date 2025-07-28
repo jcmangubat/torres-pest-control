@@ -1,5 +1,4 @@
-# Child and Pet Safe Protocols  
-Pest control with peace of mind—safe for the smallest and furriest members of your home.
+**P**est control with peace of mind—safe for the smallest and furriest members of your home.
 
 ![Child and Pet Safe Pest Control Banner](/images/services/tpc_srvc_21.png)
 

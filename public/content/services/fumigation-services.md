@@ -1,5 +1,4 @@
-# 🧯 Fumigation Services  
-Powerful treatment designed to reach even the hardest-to-access spaces—eliminating pests where they hide.
+**P**owerful treatment designed to reach even the hardest-to-access spaces—eliminating pests where they hide.
 
 ![Fumigation Banner](/images/services/tpc_srvc_4.png)
 

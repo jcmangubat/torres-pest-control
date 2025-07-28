@@ -1,6 +1,4 @@
-# Rodent Removal
-
-Our professional **Rodent Removal** service is designed to eliminate mice, rats, and other rodent pests swiftly and safely. We combine inspection, baiting, trapping, and prevention measures to secure your environment from rodent-borne threats.
+**O**ur professional **Rodent Removal** service is designed to eliminate mice, rats, and other rodent pests swiftly and safely. We combine inspection, baiting, trapping, and prevention measures to secure your environment from rodent-borne threats.
 
 ![Rodent Control Banner](/images/services/tpc_srvc_3.jpg)
 

@@ -1,5 +1,4 @@
-# Soil Treatment  
-Build on solid ground—protect your home from the ground up with expert soil treatment designed to block termites before they become a problem.
+**B**uild on solid ground—protect your home from the ground up with expert soil treatment designed to block termites before they become a problem.
 
 ![Soil Treatment Banner](/images/services/tpc_srvc_6.jpg)
 

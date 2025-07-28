@@ -1,6 +1,7 @@
 import React from "react";
 import AppLayout from "@/components/AppLayout";
 import tpc_grp0 from "@/assets/images/banner-about.jpg";
+import SiteBreadcrumbs from "@/components/SiteBreadCrumbs";
 
 const AboutPage = () => {
   return (
@@ -23,6 +24,9 @@ const AboutPage = () => {
             </p>
           </div>
         </section>
+        <div className="max-w-6xl mx-auto space-y-16 pt-3">
+          <SiteBreadcrumbs />
+        </div>
 
         {/* 📌 Company Details */}
         <section className="py-20 px-6 md:px-12 bg-white dark:bg-gray-900">

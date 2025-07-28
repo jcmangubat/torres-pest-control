@@ -1,5 +1,4 @@
-# Termite Control  
-Protect your property from the silent destruction of termites with customized treatment plans designed for long-term peace of mind.
+**P**rotect your property from the silent destruction of termites with customized treatment plans designed for long-term peace of mind.
 
 ![Termite Control Banner](/images/services/tpc_srvc_5.png)
 

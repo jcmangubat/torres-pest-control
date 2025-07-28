@@ -1,5 +1,4 @@
-# DOH Documentation Support  
-Stay compliant and confident—professional pest control with full Department of Health documentation.
+**S**tay compliant and confident—professional pest control with full Department of Health documentation.
 
 ![DOH Documentation Support Banner](/images/services/tpc_srvc_22.png)
 

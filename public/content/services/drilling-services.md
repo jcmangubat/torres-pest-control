@@ -1,8 +1,6 @@
-# Drilling Services for Termite Treatment
-
 ![Drilling Services Banner](/images/services/tpc_srvc_11.jpg)
 
-When termites have already made their way into hard-to-reach areas—beneath tiles, concrete, or foundations—ordinary treatment methods won’t be enough. That’s where **drilling services** come in. Our team uses precision drilling techniques to create access points, allowing termite treatment solutions to reach deep into hidden zones where colonies often nest.
+**W**hen termites have already made their way into hard-to-reach areas—beneath tiles, concrete, or foundations—ordinary treatment methods won’t be enough. That’s where **drilling services** come in. Our team uses precision drilling techniques to create access points, allowing termite treatment solutions to reach deep into hidden zones where colonies often nest.
 
 ## Why Is Drilling Necessary?
 

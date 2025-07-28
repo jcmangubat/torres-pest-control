@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import AppLayout from "@/components/AppLayout";
 import ServiceMap from "@/components/ServiceMap";
 import banner_services from "@/assets/images/banner-services.jpg";
+import SiteBreadcrumbs from "@/components/SiteBreadCrumbs";
 
 type Region = {
   name: string;
@@ -43,43 +44,30 @@ const ServicedRegionsPage = () => {
             Our Service Areas
           </h1>
           <p className="text-lg md:text-xl max-w-2xl mx-auto text-gray-200">
-            From coastal homes to bustling cities, Torres Pest Control is trusted across the Philippines.
+            From coastal homes to bustling cities, Torres Pest Control is
+            trusted across the Philippines.
           </p>
         </div>
       </section>
 
-      {/* Map and Info */}
-      <section className="bg-white dark:bg-gray-900 py-20 px-4">
-        <div className="max-w-7xl mx-auto space-y-12">
-          {/* <div className="text-center">
-            <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-4">
-              Where We Operate
-            </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-300">
-              Hover or tap the map below to explore the regions we actively serve.
-            </p>
-          </div> */}
-
-          <div className="w-full rounded-xl overflow-hidden shadow-2xl ring-1 ring-gray-200 dark:ring-gray-700">
-            <div className="h-[900px] md:h-[1000px] w-full">
-              <ServiceMap regions={servedRegions} />
-            </div>
-          </div>
-
-          <div className="text-center">
-            <p className="text-base text-gray-600 dark:text-gray-400">
-              If you’re in one of these areas and need help,{" "}
-              <a
-                href="#contact"
-                className="text-green-600 dark:text-green-400 underline hover:opacity-90"
-              >
-                reach out now
-              </a>{" "}
-              — we're just a message away.
-            </p>
-          </div>
+      <div className="container mx-auto px-4 pt-3">
+        <SiteBreadcrumbs />
+      </div>
+      <div className="container mx-auto px-4">
+        <ServiceMap regions={servedRegions} />
+        <div className="text-center">
+          <p className="text-base text-gray-600 dark:text-gray-400">
+            If you’re in one of these areas and need help,{" "}
+            <a
+              href="#contact"
+              className="text-green-600 dark:text-green-400 underline hover:opacity-90"
+            >
+              reach out now
+            </a>{" "}
+            — we're just a message away.
+          </p>
         </div>
-      </section>
+      </div>
     </AppLayout>
   );
 };

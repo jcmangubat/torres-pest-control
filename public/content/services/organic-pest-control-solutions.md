@@ -1,5 +1,4 @@
-# Organic Pest Control Solutions  
-Eco-friendly pest defense that’s safe for your family, pets, and the planet.
+**E**co-friendly pest defense that’s safe for your family, pets, and the planet.
 
 ![Organic Pest Control Banner](/images/services/tpc_srvc_20.jpg)
 

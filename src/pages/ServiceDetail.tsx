@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import slugify from "slugify";
 import AppLayout from "@/components/AppLayout";
 import banner_services from "@/assets/images/banner-services.jpg";
+import SiteBreadcrumbs from "@/components/SiteBreadCrumbs";
 
 const ServiceDetailPage = () => {
   const { slug } = useParams();
@@ -50,7 +51,7 @@ const ServiceDetailPage = () => {
   return (
     <AppLayout>
       {/* Hero Banner */}
-      <section
+      {/* <section
         className="relative h-[60vh] bg-cover bg-center"
         style={{
           backgroundImage: `url(${banner_services})`,
@@ -68,6 +69,37 @@ const ServiceDetailPage = () => {
           </div>
         </div>
       </section>
+      <div className="container mx-auto px-4 pt-3">
+        <SiteBreadcrumbs />
+      </div> */}
+
+      <section
+        className="relative h-[400px] flex items-center justify-center bg-cover bg-center bg-gradient-to-br from-green-50 to-blue-50 dark:from-gray-800 dark:to-gray-900"
+        style={{
+          backgroundImage: `url(${banner_services})`, // optional background
+          backgroundAttachment: "fixed",
+        }}
+      >
+        {/* style={{
+            backgroundImage: `url(${banner_services})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundAttachment: "fixed",
+            filter: "grayscale(100%)",
+          }} */}
+        <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
+        <div className="relative z-10 text-center text-white px-4">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            {slug?.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase())}
+          </h1>
+          <p className="text-lg md:text-xl max-w-2xl mx-auto text-gray-200">
+            Comprehensive Service Overview
+          </p>
+        </div>
+      </section>
+      <div className="container mx-auto px-4 pt-3">
+        <SiteBreadcrumbs />
+      </div>
 
       {/* Content */}
       <section className="max-w-7xl mx-auto px-4 py-16 grid grid-cols-1 lg:grid-cols-4 gap-10">

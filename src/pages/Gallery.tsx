@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import AppLayout from "@/components/AppLayout";
 import banner_services from "@/assets/images/banner-services.jpg";
 import GalleryAlbumsViewer from "@/components/GalleryAlbumsViewer";
+import SiteBreadcrumbs from "@/components/SiteBreadCrumbs";
 
 // GalleryPage component to display the gallery of albums
 const GalleryPage = () => {
@@ -44,6 +45,9 @@ const GalleryPage = () => {
           </p>
         </div>
       </section>
+      <div className="container mx-auto px-4 pt-3">
+        <SiteBreadcrumbs />
+      </div>
       <div className="container mx-auto px-4">
         <GalleryAlbumsViewer albums={albums} />
       </div>
