@@ -3,7 +3,7 @@ import ReactMarkdown from "react-markdown";
 import { useEffect, useState } from "react";
 import slugify from "slugify";
 import AppLayout from "@/components/AppLayout";
-import tpc_006 from "@/assets/images/tpc_006.jpg";
+import banner_services from "@/assets/images/banner-services.jpg";
 
 const ServiceDetailPage = () => {
   const { slug } = useParams();
@@ -37,7 +37,7 @@ const ServiceDetailPage = () => {
           ),
         }));
 
-        setAllServices(grouped); // Change type to match this structure
+        setAllServices(grouped);
       } catch {
         setAllServices([]);
       }
@@ -49,84 +49,71 @@ const ServiceDetailPage = () => {
 
   return (
     <AppLayout>
-      {/* Banner */}
-      <div
-        className="relative h-64 bg-cover bg-center"
-        style={{ backgroundImage: `url(${tpc_006})` }}
+      {/* Hero Banner */}
+      <section
+        className="relative h-[60vh] bg-cover bg-center"
+        style={{
+          backgroundImage: `url(${banner_services})`,
+          backgroundAttachment: "fixed",
+        }}
       >
-        <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-          <h1 className="text-white text-3xl md:text-4xl font-bold capitalize">
-            {slug?.replace(/-/g, " ")}
-          </h1>
+        <div className="absolute inset-0 bg-black/50 flex items-end">
+          <div className="max-w-4xl mx-auto px-6 pb-12 text-center">
+            <h1 className="text-4xl md:text-5xl font-bold text-white capitalize">
+              {slug?.replace(/-/g, " ")}
+            </h1>
+            <p className="text-lg text-gray-300 mt-2">
+              Comprehensive Service Overview
+            </p>
+          </div>
         </div>
-      </div>
+      </section>
 
-      {/* Main Content + Sidebar */}
-      <div className="max-w-7xl mx-auto px-4 py-12 grid grid-cols-1 lg:grid-cols-4 gap-8">
-        {/* Main Markdown */}
+      {/* Content */}
+      <section className="max-w-7xl mx-auto px-4 py-16 grid grid-cols-1 lg:grid-cols-4 gap-10">
+        {/* Markdown Content */}
         <div className="lg:col-span-3 prose dark:prose-invert max-w-none">
           <Link
             to="/#services"
-            className="mb-6 inline-block text-green-600 dark:text-green-400 hover:underline"
+            className="inline-block mb-6 text-green-600 dark:text-green-400 hover:underline"
           >
             ← Back to Services
           </Link>
           <ReactMarkdown>{content}</ReactMarkdown>
         </div>
 
-        {/* Sidebar */}
-        {/* <aside className="lg:col-span-1 border-l pl-4 dark:border-gray-700">
-          <h3 className="text-xl font-semibold mb-4 text-gray-700 dark:text-gray-200">
-            Other Services
+        {/* Sidebar: Other Services */}
+        <aside className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 shadow-sm lg:sticky top-32 mt-20">
+          <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-4">
+            Explore Other Services
           </h3>
-          <ul className="space-y-2">
-            {allServices
-              .filter((service) => service !== slug)
-              .map((service) => (
-                <li key={service}>
-                  <Link
-                    to={`/services/${service}`}
-                    className="block text-sm text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400"
-                  >
-                    {service
-                      .replace(/-/g, " ")
-                      .replace(/\b\w/g, (char) => char.toUpperCase())}
-                  </Link>
-                </li>
-              ))}
-          </ul>
+          <div>
+            {allServices.map((group) => (
+              <div key={group.group} className="mb-6 mt-10">
+                <h4 className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-2">
+                  {group.group}
+                </h4>
+                <ul className="space-y-1">
+                  {group.services
+                    .filter((s) => s !== slug)
+                    .map((s) => (
+                      <li key={s}>
+                        <Link
+                          to={`/services/${s}`}
+                          className="text-sm text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400"
+                        >
+                          {s
+                            .replace(/-/g, " ")
+                            .replace(/\b\w/g, (c) => c.toUpperCase())}
+                        </Link>
+                      </li>
+                    ))}
+                </ul>
+              </div>
+            ))}
+          </div>
         </aside>
-         */}
-
-        <aside>
-          <h3 className="text-xl font-semibold mb-4 text-gray-700 dark:text-gray-200">
-            Other Services
-          </h3>
-          {allServices.map((group) => (
-            <div key={group.group} className="mb-4">
-              <h4 className="font-semibold text-gray-700 dark:text-gray-300">
-                {group.group}
-              </h4>
-              <ul className="ml-4 space-y-1">
-                {group.services
-                  .filter((s) => s !== slug)
-                  .map((s) => (
-                    <li key={s}>
-                      <Link
-                        to={`/services/${s}`}
-                        className="text-sm text-gray-600 dark:text-gray-400 hover:text-green-600 dark:hover:text-green-400"
-                      >
-                        {s
-                          .replace(/-/g, " ")
-                          .replace(/\b\w/g, (char) => char.toUpperCase())}
-                      </Link>
-                    </li>
-                  ))}
-              </ul>
-            </div>
-          ))}
-        </aside>
-      </div>
+      </section>
     </AppLayout>
   );
 };

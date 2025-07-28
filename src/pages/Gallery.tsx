@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import AppLayout from "@/components/AppLayout";
-import tpc_006 from "@/assets/images/tpc_006.jpg";
+import banner_services from "@/assets/images/banner-services.jpg";
 import GalleryAlbumsViewer from "@/components/GalleryAlbumsViewer";
 
 // GalleryPage component to display the gallery of albums
@@ -25,30 +25,26 @@ const GalleryPage = () => {
 
   return (
     <AppLayout>
+      <section
+        className="relative h-[400px] flex items-center justify-center bg-cover bg-center bg-gradient-to-br from-green-50 to-blue-50 dark:from-gray-800 dark:to-gray-900"
+        style={{
+          backgroundImage: `url(${banner_services})`, // optional background
+          backgroundAttachment: "fixed",
+        }}
+      >
+        <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
+        <div className="relative z-10 text-center text-white px-4">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            Gallery of Our Work
+          </h1>
+          <p className="text-lg md:text-xl max-w-2xl mx-auto text-gray-200">
+            Explore our portfolio showcasing successful pest control
+            interventions across Davao City. From residential to commercial
+            spaces, we take pride in our effective and eco-friendly solutions.
+          </p>
+        </div>
+      </section>
       <div className="container mx-auto px-4">
-        {/* ...hero section... */}
-        <section
-          className="relative py-32 px-4 bg-gradient-to-br from-green-50 to-blue-50 dark:from-gray-800 dark:to-gray-900"
-          style={{
-            backgroundImage: `url(${tpc_006})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundAttachment: "fixed",
-            filter: "grayscale(100%)",
-          }}
-        >
-          <div className="max-w-5xl mx-auto text-center text-white dark:text-white backdrop-blur-sm p-6 rounded-lg">
-            <h1 className="text-5xl font-bold mb-4 transition-colors duration-500">
-              Gallery of Our Work
-            </h1>
-            <p className="text-xl max-w-2xl mx-auto transition-colors duration-500">
-              Explore our portfolio showcasing successful pest control
-              interventions across Davao City. From residential to commercial
-              spaces, we take pride in our effective and eco-friendly solutions.
-            </p>
-          </div>
-        </section>
-
         <GalleryAlbumsViewer albums={albums} />
       </div>
     </AppLayout>

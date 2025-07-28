@@ -24,8 +24,8 @@ type ServiceMapProps = {
 const ServiceMap: React.FC<ServiceMapProps> = ({ regions }) => {
   return (
     <MapContainer
-      center={[8.5, 124.5]}
-      zoom={8}
+      center={[10.5, 122.5]}
+      zoom={7}
       className="h-[1000px] w-full z-0"
     >
       <TileLayer
