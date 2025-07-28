@@ -1,7 +1,7 @@
 # 🐜 General Pest Control  
 Say goodbye to everyday pests—with treatments that work, and safety you can count on.
 
-![General Pest Control Banner](/images/tpc_182.jpg)
+![General Pest Control Banner](/images/services/tpc_srvc_00.jpg)
 
 Whether it’s cockroaches in the kitchen or mosquitoes at dusk, our General Pest Control service is built to protect your space using safe, proven, and DOH-approved methods. Every treatment is handled with care—just like we’re treating our own home.
 
