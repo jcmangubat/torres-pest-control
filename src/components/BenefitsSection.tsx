@@ -1,5 +1,11 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Leaf, Heart, Shield, Home, BadgeCheck } from "lucide-react";
+import {
+  Leaf,
+  Heart,
+  Shield,
+  Home,
+  BadgeCheck
+} from "lucide-react";
 import "./../styles/benefitsSection.css";
 
 const BenefitsSection = () => {
@@ -46,22 +52,19 @@ const BenefitsSection = () => {
     <section
       id="about"
       className="relative py-20 bg-gradient-to-br from-green-50 to-blue-50 dark:from-gray-800 dark:to-gray-900"
-      // style={{
-      //   backgroundImage: `url(${tpc_bkg_4})`,
-      //   backgroundAttachment: "fixed",
-      //   backgroundPosition: "center",
-      //   backgroundSize: "cover",
-      //   filter: "saturate(172%)",
-      // }}
     >
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 transition-colors duration-500">
+          <h2
+            className="text-4xl font-bold text-gray-900 dark:text-white mb-4"
+            data-aos="fade-up"
+          >
             Why Choose Torres Pest Control?
           </h2>
           <p
-            className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto transition-colors duration-500"
-            style={{ color: "rgb(255 255 255)" }}
+            className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto"
+            data-aos="fade-up"
+            data-aos-delay="100"
           >
             Safe, effective, and environmentally responsible pest control
             solutions
@@ -73,6 +76,9 @@ const BenefitsSection = () => {
           {benefits.map((benefit, index) => (
             <Card
               key={index}
+              data-aos="zoom-in-up"
+              data-aos-delay={index * 100}
+              data-aos-duration="700"
               className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm hover:shadow-xl transition-all duration-300"
             >
               <CardContent className="p-8">
@@ -93,9 +99,13 @@ const BenefitsSection = () => {
         </div>
 
         {/* Transition Image between Benefits and Credentials */}
-        <div className="mb-16 flex justify-center">
+        <div
+          className="mb-16 flex justify-center"
+          data-aos="fade-up"
+          data-aos-delay="300"
+        >
           <img
-            src={"/images/tpc_26.jpg"}
+            src={"/images/pest-control-professionals.jpg"}
             alt="Pest control professionals at work"
             className="rounded-2xl shadow-lg max-w-3xl w-full h-auto object-cover"
           />
@@ -103,10 +113,17 @@ const BenefitsSection = () => {
 
         {/* Credentials & Accreditations */}
         <div className="text-center mb-10">
-          <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+          <h3
+            className="text-2xl font-bold text-gray-900 dark:text-white mb-6"
+            data-aos="fade-up"
+          >
             Accreditations & Assurance
           </h3>
-          <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4 text-left text-gray-700 dark:text-gray-300 max-w-4xl mx-auto">
+          <ul
+            className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4 text-left text-gray-700 dark:text-gray-300 max-w-4xl mx-auto"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
             {credentials.map((item, idx) => (
               <li key={idx} className="flex items-start gap-3">
                 <BadgeCheck className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" />

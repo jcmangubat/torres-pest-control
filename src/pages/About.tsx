@@ -35,6 +35,7 @@ const AboutPage = () => {
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://torrespestcontrol.ph/about" />
       </Helmet>
+
       <div className="w-full">
         {/* 🌄 Hero Banner */}
         <section
@@ -43,7 +44,11 @@ const AboutPage = () => {
             backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url(${tpc_grp0})`,
           }}
         >
-          <div className="max-w-4xl px-4 mb-16">
+          <div
+            className="max-w-4xl px-4 mb-16"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+          >
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
               Locally Trusted. Family Safe.
             </h1>
@@ -53,6 +58,7 @@ const AboutPage = () => {
             </p>
           </div>
         </section>
+
         <div className="max-w-6xl mx-auto space-y-16 pt-3">
           <SiteBreadcrumbs />
         </div>
@@ -60,8 +66,7 @@ const AboutPage = () => {
         {/* 📌 Company Details */}
         <section className="py-20 px-6 md:px-12 bg-white dark:bg-gray-900">
           <div className="max-w-6xl mx-auto space-y-16">
-            {/* Split layout rows */}
-            {[
+            {[ 
               {
                 title: "Our Commitment",
                 content:
@@ -87,7 +92,7 @@ const AboutPage = () => {
                   idx % 2 === 1 ? "md:flex-row-reverse" : ""
                 }`}
               >
-                <div>
+                <div data-aos="fade-right" data-aos-delay={idx * 100}>
                   <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-4">
                     {item.title}
                   </h2>
@@ -95,7 +100,7 @@ const AboutPage = () => {
                     {item.content}
                   </p>
                 </div>
-                <div>
+                <div data-aos="fade-left" data-aos-delay={idx * 100 + 200}>
                   <img
                     src={item.imageUrl}
                     alt={item.title}
@@ -108,12 +113,24 @@ const AboutPage = () => {
         </section>
 
         {/* 🙋 Meet the Team */}
-        <section className="py-20 bg-gradient-to-br from-green-100 to-blue-100 dark:from-gray-800 dark:to-gray-900 px-6 md:px-12">
+        <section
+          className="py-20 bg-gradient-to-br from-green-100 to-blue-100 dark:from-gray-800 dark:to-gray-900 px-6 md:px-12"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+        >
           <div className="max-w-6xl mx-auto text-center">
-            <h2 className="text-4xl font-bold text-gray-800 dark:text-white mb-6">
+            <h2
+              className="text-4xl font-bold text-gray-800 dark:text-white mb-6"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
               Meet Our Team
             </h2>
-            <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
+            <p
+              className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
               Behind the company is a dedicated team of pest specialists trained
               in IPM, sanitation, and public safety. Our founder,{" "}
               <span className="font-semibold text-green-600 dark:text-green-400">
@@ -124,7 +141,11 @@ const AboutPage = () => {
             </p>
 
             {/* 👥 Gallery */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
+            <div
+              className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12"
+              data-aos="zoom-in-up"
+              data-aos-delay="300"
+            >
               {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
                 <div
                   key={i}

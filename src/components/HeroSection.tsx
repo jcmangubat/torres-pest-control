@@ -31,6 +31,10 @@ const HeroSection = ({
   return (
     <section
       id="hero-section"
+      // data-aos="fade-up"
+      // data-aos-delay="100"
+      // data-aos-easing="ease-out"
+      // data-aos-duration="1000"
       className={`${themeClass} relative w-full bg-gradient-to-br from-green-50 to-blue-50 dark:from-gray-900 dark:to-gray-800 py-32 md:pt-48 overflow-hidden`}
     >
       <div
@@ -47,18 +51,30 @@ const HeroSection = ({
       ></div>
       <div className="relative z-10 w-full px-4 md:px-12 lg:px-64">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="text-center lg:text-left">
+          <div data-aos="zoom-in" className="text-center lg:text-left">
             <div className="flex justify-center lg:justify-start mb-6">
               <Shield className="h-16 w-16 text-green-600 dark:text-green-400" />
             </div>
-            <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+            <h1
+              data-aos="fade-up"
+              data-aos-delay="100"
+              className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6"
+            >
               Your family deserves peace. <i>Not pests.</i>
             </h1>
-            <p className="text-lg lg:text-xl text-gray-700 dark:text-gray-300 mb-8">
+            <p
+              data-aos="fade-up"
+              data-aos-delay="200"
+              className="text-lg lg:text-xl text-gray-700 dark:text-gray-300 mb-8"
+            >
               Professional pest control services with 14-15 years of experience.
               Eco-friendly solutions that keep your family and environment safe.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
+            <div
+              data-aos="fade-up"
+              data-aos-delay="300"
+              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8"
+            >
               <Button
                 size="lg"
                 className="bg-green-600 hover:bg-green-700 dark:bg-green-700 dark:hover:bg-green-800 text-white px-8 py-4 text-lg"
@@ -76,7 +92,11 @@ const HeroSection = ({
                 Get Free Inspection
               </Button>
             </div>
-            <div className="flex flex-col sm:flex-row justify-center lg:justify-start items-center gap-6 text-sm text-gray-600 dark:text-gray-400">
+            <div
+              data-aos="fade-up"
+              data-aos-delay="400"
+              className="flex flex-col sm:flex-row justify-center lg:justify-start items-center gap-6 text-sm text-gray-600 dark:text-gray-400"
+            >
               <div className="flex items-center">
                 <CheckCircle className="h-5 w-5 text-green-600 dark:text-green-400 mr-2" />
                 Free Quotation
@@ -93,6 +113,8 @@ const HeroSection = ({
           </div>
           <div
             id="ads-player"
+            // data-aos="zoom-out"
+            // data-aos-delay="500"
             className="flex justify-center drop-shadow-[0_10px_10px_rgba(0,0,0,0.8)]"
           >
             <AdsGallery />

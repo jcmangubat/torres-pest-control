@@ -15,7 +15,7 @@ import {
   FileText,
   Lightbulb,
   Bomb,
-  Biohazard 
+  Biohazard,
 } from "lucide-react";
 
 type ServiceProps = {
@@ -33,7 +33,12 @@ const ServiceCard = ({ icon, title, description, imageSrc }: ServiceProps) => {
 
   return (
     <Link to={`/services/${slug}`}>
-      <Card className="h-full flex flex-col justify-between hover:shadow-lg transition-shadow border-2 hover:border-green-200 dark:hover:border-green-600 dark:bg-gray-800 cursor-pointer">
+      <Card
+        className="h-full flex flex-col justify-between hover:shadow-lg transition-shadow border-2 hover:border-green-200 dark:hover:border-green-600 dark:bg-gray-800 cursor-pointer"
+        data-aos="fade-up"
+        data-aos-delay="100"
+        data-aos-duration="700"
+      >
         <CardHeader className="text-center">
           {imageSrc && (
             <img
@@ -93,7 +98,10 @@ const ServiceGroup = ({
   }[];
 }) => (
   <section className="mb-16">
-    <h3 className="text-2xl font-semibold text-gray-800 dark:text-white mb-6">
+    <h3
+      data-aos="fade-right"
+      className="text-2xl font-semibold text-gray-800 dark:text-white mb-6"
+    >
       {title}
     </h3>
     <div
@@ -150,10 +158,17 @@ const ServicesSection = () => {
     >
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2
+            className="text-4xl font-bold text-gray-900 dark:text-white mb-4"
+            data-aos="fade-down"
+          >
             Our Professional Services
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <p
+            className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
             Pest, vermin, termite, and sanitation solutions trusted across Davao
             homes and businesses.
           </p>

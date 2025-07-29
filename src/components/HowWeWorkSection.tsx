@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import tpc_2012 from "../assets/images/tpc_2012.jpg";
 
 const HowWeWorkSection = () => {
@@ -43,25 +43,35 @@ const HowWeWorkSection = () => {
 
   return (
     <section className="pt-0 mb-10 bg-white dark:bg-gray-900 py-16 relative overflow-hidden transition-colors">
-      {/* <div
+      <div
         id="howwework-bg-overlay"
-        className="absolute inset-0 bg-black/20 dark:bg-black/50"
+        className="absolute inset-0 bg-black/30 dark:bg-black/70"
         style={{
           backgroundImage: `url(${tpc_2012})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          filter: "sepia(.5) brightness(0.6) saturate(0.8) contrast(0.6)",
+          filter: "brightness(0.5) saturate(0.8) contrast(0.6)",
+          opacity: 0.6,
         }}
-      ></div> */}
-      <div className="max-w-7xl mx-auto px-6">
-        <h2 className="text-4xl font-bold text-center text-green-700 dark:text-green-400 mb-14">
+      ></div>
+
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <h2
+          className="text-4xl font-bold text-center text-white-700 dark:text-white-400 mb-10 mt-5"
+          data-aos="fade-up"
+        >
           How We Work
         </h2>
 
-        {/* Responsive grid for 6 steps */}
-        <div className="grid gap-10 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-6 text-center relative z-10">
+        <div className="grid gap-10 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-6 text-center">
           {steps.map((step, index) => (
-            <div key={index} className="flex flex-col items-center">
+            <div
+              key={index}
+              className="flex flex-col items-center"
+              data-aos="zoom-in"
+              data-aos-delay={index * 100} // staggered animation
+              data-aos-duration="800"
+            >
               <div className="w-20 h-20 rounded-full bg-red-600 border-4 border-yellow-400 flex items-center justify-center text-white text-2xl shadow-lg">
                 {step.emoji}
               </div>

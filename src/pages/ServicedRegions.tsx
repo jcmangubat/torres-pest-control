@@ -30,32 +30,41 @@ const ServicedRegionsPage = () => {
 
   return (
     <AppLayout>
-      {/* Hero Section */}
+      {/* 🌄 Hero Section */}
       <section
         className="relative h-[400px] flex items-center justify-center bg-cover bg-center"
         style={{
-          backgroundImage: `url(${banner_services})`, // optional background
+          backgroundImage: `url(${banner_services})`,
           backgroundAttachment: "fixed",
         }}
       >
         <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
-        <div className="relative z-10 text-center text-white px-4">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Our Service Areas
-          </h1>
+        <div
+          className="relative z-10 text-center text-white px-4"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+        >
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Our Service Areas</h1>
           <p className="text-lg md:text-xl max-w-2xl mx-auto text-gray-200">
-            From coastal homes to bustling cities, Torres Pest Control is
-            trusted across the Philippines.
+            From coastal homes to bustling cities, Torres Pest Control is trusted across the Philippines.
           </p>
         </div>
       </section>
 
-      <div className="container mx-auto px-4 pt-3">
+      {/* Breadcrumbs */}
+      <div className="container mx-auto px-4 pt-3" data-aos="fade-in">
         <SiteBreadcrumbs />
       </div>
-      <div className="container mx-auto px-4">
+
+      {/* Map and Info */}
+      <div className="container mx-auto px-4" data-aos="fade-up" data-aos-delay="200">
         <ServiceMap regions={servedRegions} />
-        <div className="text-center">
+
+        <div
+          className="text-center mt-6"
+          data-aos="fade-up"
+          data-aos-delay="400"
+        >
           <p className="text-base text-gray-600 dark:text-gray-400">
             If you’re in one of these areas and need help,{" "}
             <a

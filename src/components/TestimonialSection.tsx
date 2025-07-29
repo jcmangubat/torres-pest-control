@@ -234,14 +234,14 @@ const TestimonialSection = () => {
   }, [instanceRef]);
 
   return (
-    <section id="testimonies" className="bg-gray-50 dark:bg-gray-900 py-12">
-      <div className="container mx-auto px-4">
+    <section id="testimonies" className="bg-gray-50 dark:bg-gray-900 py-10">
+      <div className="container mx-auto">
         <h2 className="text-3xl font-semibold text-center text-gray-800 dark:text-white mb-8">
           What Our Clients Say
         </h2>
         <div
           ref={sliderRef}
-          className="keen-slider w-full max-w-6xl mx-auto py-16 relative"
+          className="keen-slider w-full max-w-6xl mx-auto relative"
         >
           {testimonials.map((t, idx) => (
             <div
