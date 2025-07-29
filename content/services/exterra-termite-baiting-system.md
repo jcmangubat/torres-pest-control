@@ -1,6 +1,9 @@
-Take the fight to the nest—with smart baiting technology that eliminates termite colonies from the inside out.
+<span style="font-size:1.25rem; font-weight:600">T</span>ake the fight to the nest—with smart baiting technology that eliminates termite colonies from the inside out.
 
-![Exterra Termite Bait Banner](/images/services/tpc_srvc_9.jpg)
+<figure style="margin: 2rem auto; text-align: center;">
+  <img src="/images/services/exterra-termite-baiting-system.jpg" alt="Exterra Termite Bait Banner" style="max-width: 100%; border-radius: 0.5rem; box-shadow: 0 4px 20px rgba(0,0,0,0.1);" />
+  <figcaption style="margin-top: 0.5rem; font-size: 0.875rem; color: #666;">Exterra Termite Baiting System in Action</figcaption>
+</figure>
 
 **T**ermites don’t rest—and neither should your protection. The **Exterra Termite Baiting System** is a science-backed, eco-sensitive approach to wiping out entire termite colonies without invasive drilling or harsh chemicals.
 
@@ -14,9 +17,9 @@ Exterra is a premium, in-ground and above-ground termite baiting system used wor
 
 This system uses:
 
-- Smart monitoring stations strategically placed around your home  
-- A palatable, slow-acting bait termites prefer over wood  
-- A **transfer effect**—termites feed, return, and spread it through the colony  
+- Smart monitoring stations strategically placed around your home
+- A palatable, slow-acting bait termites prefer over wood
+- A **transfer effect**—termites feed, return, and spread it through the colony
 
 ---
 
@@ -26,11 +29,11 @@ Unlike traditional methods that try to block or kill on contact, **baiting works
 
 **Benefits include:**
 
-- 🎯 Targets the entire colony, including the queen  
-- 🧘 Less invasive—no drilling or soil disruption  
-- 🍃 Eco-friendly and family-safe  
-- 🔄 Continuous monitoring and proactive protection  
-- 🔍 Early detection—even before damage is visible  
+- 🎯 Targets the entire colony, including the queen
+- 🧘 Less invasive—no drilling or soil disruption
+- 🍃 Eco-friendly and family-safe
+- 🔄 Continuous monitoring and proactive protection
+- 🔍 Early detection—even before damage is visible
 
 ---
 
@@ -52,27 +55,27 @@ Unlike traditional methods that try to block or kill on contact, **baiting works
 
 ## 🧠 Did You Know?
 
-> The Exterra system uses **less than 1 gram** of active ingredient to eliminate an entire termite colony.  
->  
+> The Exterra system uses **less than 1 gram** of active ingredient to eliminate an entire termite colony.
+>
 > That’s precision. That’s peace of mind.
 
 ---
 
 ## 📦 What’s Included?
 
-- Site inspection by licensed technicians  
-- Full Exterra system installation  
-- Regular bait checks and top-ups  
-- Reporting and treatment updates  
-- Post-elimination monitoring for long-term safety  
+- Site inspection by licensed technicians
+- Full Exterra system installation
+- Regular bait checks and top-ups
+- Reporting and treatment updates
+- Post-elimination monitoring for long-term safety
 
 ---
 
 ## 🏡 Ideal For:
 
-- Homes with existing or suspected termite activity  
-- Sensitive areas—gardens, historic homes, child-friendly zones  
-- Owners wanting long-term, chemical-free protection  
+- Homes with existing or suspected termite activity
+- Sensitive areas—gardens, historic homes, child-friendly zones
+- Owners wanting long-term, chemical-free protection
 
 ---
 

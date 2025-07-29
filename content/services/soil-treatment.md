@@ -1,6 +1,9 @@
-**B**uild on solid ground—protect your home from the ground up with expert soil treatment designed to block termites before they become a problem.
+<span style="font-size:1.25rem; font-weight:600">B</span>uild on solid ground—protect your home from the ground up with expert soil treatment designed to block termites before they become a problem.
 
-![Soil Treatment Banner](/images/services/tpc_srvc_6.jpg)
+<figure style="margin: 2rem auto; text-align: center;">
+  <img src="/images/services/soil-treatment.jpg" alt="Soil Treatment Banner" style="max-width: 100%; border-radius: 0.5rem; box-shadow: 0 4px 20px rgba(0,0,0,0.1);" />
+  <figcaption style="margin-top: 0.5rem; font-size: 0.875rem; color: #666;">Soil Termite Treatment for Pre-Construction and Existing Structures</figcaption>
+</figure>
 
 Soil treatment is one of the most effective long-term solutions to prevent termite infestations—especially for new constructions and buildings in termite-prone areas. It creates a treated barrier beneath and around your structure to stop termites before they ever make contact with your property.
 

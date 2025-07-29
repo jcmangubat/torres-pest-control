@@ -1,6 +1,9 @@
-**P**est control with peace of mind—safe for the smallest and furriest members of your home.
+<span style="font-size:1.25rem; font-weight:600">P</span>est control with peace of mind—safe for the smallest and furriest members of your home.
 
-![Child and Pet Safe Pest Control Banner](/images/services/tpc_srvc_21.png)
+<figure style="margin: 2rem auto; text-align: center;">
+  <img src="/images/services/child-pet-safe-protocols.png" alt="Child and Pet Safe Pest Control Banner" style="max-width: 100%; border-radius: 0.5rem; box-shadow: 0 4px 20px rgba(0,0,0,0.1);" />
+  <figcaption style="margin-top: 0.5rem; font-size: 0.875rem; color: #666;">Child & Pet Safe Pest Control for Every Home</figcaption>
+</figure>
 
 At Torres Pest Control, we know your home isn't just a place—it's where your kids play, your pets roam, and your family grows. That’s why our **Child and Pet Safe Protocols** are thoughtfully designed to keep your loved ones protected while effectively eliminating pests.
 

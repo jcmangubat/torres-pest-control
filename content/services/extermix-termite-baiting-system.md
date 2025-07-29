@@ -1,4 +1,10 @@
-![Extermix Termite Baiting System Banner](/images/services/tpc_srvc_10.jpg)
+<span style="font-size:1.25rem; font-weight:600">E</span>liminate termites at the source using the Extermix Termite Baiting System — a professional-grade solution designed to wipe out entire colonies efficiently and discreetly.
+
+<figure style="margin: 2rem auto; text-align: center;">
+  <img src="/images/services/extermix-termite-baiting-system.jpg" alt="Extermix Termite Baiting System Banner" style="max-width: 100%; border-radius: 0.5rem; box-shadow: 0 4px 20px rgba(0,0,0,0.1);" />
+  <figcaption style="margin-top: 0.5rem; font-size: 0.875rem; color: #666;">Extermix Termite Baiting System in Action</figcaption>
+</figure>
+
 
 **T**ermites can silently destroy a home or building from the inside out. With the **Extermix Termite Baiting System**, we take a smarter and safer approach to termite control. Instead of flooding your property with chemicals, this method uses scientifically designed bait stations to target and eliminate termite colonies at the source.
 

@@ -1,6 +1,9 @@
-**B**reak the colony at its core. Our mound demolition service targets termites where they live—so they won’t live to come back.
+<span style="font-size:1.25rem; font-weight:600">B</span>reak the colony at its core. Our mound demolition service targets termites where they live—so they won’t live to come back.
 
-![Mound Demolition Service Banner](/images/services/tpc_srvc_27.jpg)
+<figure style="margin: 2rem auto; text-align: center;">
+  <img src="/images/services/mound-demolition.png" alt="Mound Demolition Service Banner" style="max-width: 100%; border-radius: 0.5rem; box-shadow: 0 4px 20px rgba(0,0,0,0.1);" />
+  <figcaption style="margin-top: 0.5rem; font-size: 0.875rem; color: #666;">Targeting Termite Colonies with Mound Demolition</figcaption>
+</figure>
 
 When termites build mounds, they’re not just making a home—they’re establishing a colony base for future infestations. These mounds often house the queen and thousands of workers, continuously threatening nearby structures. That’s why mound demolition is a critical part of long-term termite control.
 

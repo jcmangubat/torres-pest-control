@@ -1,6 +1,12 @@
-**S**tay compliant and confident—professional pest control with full Department of Health documentation.
+<span style="font-size:1.25rem; font-weight:600">S</span>tay compliant and confident—professional pest control with full Department of Health documentation.
 
-![DOH Documentation Support Banner](/images/services/tpc_srvc_22.png)
+<figure style="margin: 2rem auto; text-align: center;">
+  <img src="/images/services/doh-documentation-support.png" alt="DOH Documentation Support Banner" style="max-width: 100%; border-radius: 0.5rem; box-shadow: 0 4px 20px rgba(0,0,0,0.1);" />
+  <figcaption style="margin-top: 0.5rem; font-size: 0.875rem; color: #666;">
+    DOH Documentation Support Banner
+  </figcaption>
+</figure>
+
 
 When pest control is more than a necessity—when it's a requirement—Torres Pest Control ensures your business meets all Department of Health (DOH) standards. Our **DOH Documentation Support** service provides you with properly formatted reports and certificates needed for audits, inspections, and permits.
 

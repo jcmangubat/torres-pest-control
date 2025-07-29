@@ -1,6 +1,9 @@
-**S**ee what you can’t see—professional termite inspections and proofing to detect threats early and block them from coming back.
+<span style="font-size:1.25rem; font-weight:600">S</span>ee what you can’t see—professional termite inspections and proofing to detect threats early and block them from coming back.
 
-![Termite Inspection Banner](/images/services/tpc_srvc_8.jpg)
+<figure style="margin: 2rem auto; text-align: center;">
+  <img src="/images/services/termite-inspections-proofing.jpg" alt="Termite Inspection Banner" style="max-width: 100%; border-radius: 0.5rem; box-shadow: 0 4px 20px rgba(0,0,0,0.1);" />
+  <figcaption style="margin-top: 0.5rem; font-size: 0.875rem; color: #666;">Termite Inspection and Proofing for Long-Term Prevention</figcaption>
+</figure>
 
 Termites are silent destroyers, often causing severe damage before you even notice they’re there. Our inspection and proofing service is your first step toward total peace of mind—detecting current termite activity and identifying weak spots in your home before it’s too late.
 

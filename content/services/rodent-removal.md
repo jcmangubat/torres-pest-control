@@ -1,6 +1,9 @@
-**O**ur professional **Rodent Removal** service is designed to eliminate mice, rats, and other rodent pests swiftly and safely. We combine inspection, baiting, trapping, and prevention measures to secure your environment from rodent-borne threats.
+<span style="font-size:1.25rem; font-weight:600">O</span>ur professional <strong>Rodent Removal</strong> service is designed to eliminate mice, rats, and other rodent pests swiftly and safely. We combine inspection, baiting, trapping, and prevention measures to secure your environment from rodent-borne threats.
 
-![Rodent Control Banner](/images/services/tpc_srvc_3.jpg)
+<figure style="margin: 2rem auto; text-align: center;">
+  <img src="/images/services/rodent-removal.jpg" alt="Rodent Control Banner" style="max-width: 100%; border-radius: 0.5rem; box-shadow: 0 4px 20px rgba(0,0,0,0.1);" />
+  <figcaption style="margin-top: 0.5rem; font-size: 0.875rem; color: #666;">Rodent Control Service for Homes and Businesses</figcaption>
+</figure>
 
 ---
 
@@ -30,7 +33,7 @@ Each service includes:
 
 ## 🔒 Safety & Standards
 
-We adhere to integrated pest management practices and use **DOH-approved**, low-toxicity baiting products. Our approach protects children, pets, and the environment while delivering effective rodent control. All procedures meet the highest safety and regulatory standards. :contentReference[oaicite:1]{index=1}
+We adhere to integrated pest management practices and use **DOH-approved**, low-toxicity baiting products. Our approach protects children, pets, and the environment while delivering effective rodent control. All procedures meet the highest safety and regulatory standards.
 
 ---
 

@@ -1,6 +1,12 @@
-**A** non-chemical, hygienic solution for controlling flying insects—ideal for food-sensitive environments.
+<span style="font-size:1.25rem; font-weight:600">A</span> non-chemical, hygienic solution for controlling flying insects—ideal for food-sensitive environments.
 
-![Insect Light Trap Banner](/images/services/tpc_srvc_25.jpg)
+<figure style="margin: 2rem auto; text-align: center;">
+  <img src="/images/services/insect-light-trap.jpg" alt="Insect Light Trap Banner" style="max-width: 100%; border-radius: 0.5rem; box-shadow: 0 4px 20px rgba(0,0,0,0.1);" />
+  <figcaption style="margin-top: 0.5rem; font-size: 0.875rem; color: #666;">
+    Insect Light Trap Banner
+  </figcaption>
+</figure>
+
 
 Our Insect Light Trap Installation service provides effective monitoring and control of flying insects in commercial, food-handling, and healthcare environments. Using UV light technology, these traps attract and capture pests without the use of harmful chemicals.
 

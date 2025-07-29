@@ -1,12 +1,21 @@
-**S**ay goodbye to everyday pests—with treatments that work, and safety you can count on.
+<span style="font-size:1.25rem; font-weight:600">**S**</span>ay goodbye to everyday pests — with treatments that work, and safety you can count on.
 
-![General Pest Control Banner](/images/services/tpc_srvc_00.jpg)
+<figure style="margin: 2rem auto; text-align: center;">
+  <img 
+    src="/images/services/general-pest-control-all-pests.jpg" 
+    alt="General Pest Control Banner"
+    style="max-width: 100%; border-radius: 0.5rem; box-shadow: 0 4px 20px rgba(0,0,0,0.1);"
+  />
+  <figcaption style="margin-top: 0.5rem; font-size: 0.875rem; color: #666;">
+    General Pest Control for Homes and Businesses
+  </figcaption>
+</figure>
 
-Whether it’s cockroaches in the kitchen or mosquitoes at dusk, our General Pest Control service is built to protect your space using safe, proven, and DOH-approved methods. Every treatment is handled with care—just like we’re treating our own home.
+Whether it’s cockroaches in the kitchen or mosquitoes at dusk, our General Pest Control service is built to protect your space using safe, proven, and DOH-approved methods. Every treatment is handled with care — just like we’re treating our own home.
 
 ---
 
-## ✅ What We Cover  
+## ✅ What We Cover
 
 We take care of the most common pests seen in Iligan homes, businesses, and commercial spaces:
 
@@ -20,31 +29,31 @@ We take care of the most common pests seen in Iligan homes, businesses, and comm
 
 ---
 
-## 🧰 What to Expect  
+## 🧰 What to Expect
 
 Every visit includes:
 
 - A full inspection of your space  
-- Precise misting and spraying—indoors and outdoors  
+- Precise misting and spraying — indoors and outdoors  
 - Targeted treatments for cracks, crevices, and entry points  
 - Follow-up guidance tailored to your property  
 - Actionable tips to help keep pests away for good
 
 ---
 
-## 🛡️ Safety Is Non-Negotiable  
+## 🛡️ Safety Is Non-Negotiable
 
 Your safety comes first. We only use DOH-approved products that are safe for children, pets, and the environment. Our team follows strict protocols to ensure every treatment is worry-free.
 
 ---
 
-## 🔁 How Often Should You Treat?  
+## 🔁 How Often Should You Treat?
 
-For consistent protection, we recommend treatments every 3 months. If you just need a one-time service, we’re happy to help—no pressure.
+For consistent protection, we recommend treatments every 3 months. If you just need a one-time service, we’re happy to help — no pressure.
 
 ---
 
-## 📞 Book Your Free Inspection  
+## 📞 Book Your Free Inspection
 
 Let’s take the guesswork out of pest control. Contact us today for a **free site inspection** and customized treatment plan:
 

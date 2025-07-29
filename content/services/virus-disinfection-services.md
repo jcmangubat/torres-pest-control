@@ -1,6 +1,12 @@
-**P**rotecting your space from invisible threats—because peace of mind matters.
+<span style="font-size:1.25rem; font-weight:600">P</span>rotecting your space from invisible threats—because peace of mind matters.
 
-![Virus Disinfection Services Banner](/images/services/tpc_srvc_24.png)
+<figure style="margin: 2rem auto; text-align: center;">
+  <img src="/images/services/virus-disinfection-services.png" alt="Virus Disinfection Services Banner" style="max-width: 100%; border-radius: 0.5rem; box-shadow: 0 4px 20px rgba(0,0,0,0.1);" />
+  <figcaption style="margin-top: 0.5rem; font-size: 0.875rem; color: #666;">
+    Virus Disinfection Services Banner
+  </figcaption>
+</figure>
+
 
 Our **Virus Disinfection Services** are designed to eliminate harmful pathogens on surfaces and in the air. Whether you're reopening a business, ensuring workplace safety, or protecting your home, we use **hospital-grade disinfectants** and **industry-standard protocols** to neutralize viruses—including strains like COVID-19, Influenza, and Norovirus.
 
