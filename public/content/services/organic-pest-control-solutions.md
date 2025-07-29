@@ -1,6 +1,12 @@
-**E**co-friendly pest defense that’s safe for your family, pets, and the planet.
+<span style="font-size:1.25rem; font-weight:600">E</span>co-friendly pest defense that’s safe for your family, pets, and the planet.
 
-![Organic Pest Control Banner](/images/services/tpc_srvc_20.jpg)
+<figure style="margin: 2rem auto; text-align: center;">
+  <img src="/images/services/organic-pest-control-solutions.jpg" alt="Organic Pest Control Banner" style="max-width: 100%; border-radius: 0.5rem; box-shadow: 0 4px 20px rgba(0,0,0,0.1);" />
+  <figcaption style="margin-top: 0.5rem; font-size: 0.875rem; color: #666;">
+    Organic Pest Control Banner
+  </figcaption>
+</figure>
+
 
 Our **Organic Pest Control Solutions** are designed for those who want effective pest management—without the use of harsh chemicals. Using plant-based ingredients, essential oils, and nature-derived methods, we help you protect your space while keeping the environment in mind.
 

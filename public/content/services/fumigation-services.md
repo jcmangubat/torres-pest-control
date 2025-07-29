@@ -1,6 +1,16 @@
-**P**owerful treatment designed to reach even the hardest-to-access spaces—eliminating pests where they hide.
+<span style="font-size:1.25rem; font-weight:600">P</span>owerful treatment designed to reach even the hardest-to-access spaces—eliminating pests where they hide.
 
-![Fumigation Banner](/images/services/tpc_srvc_4.png)
+<figure style="margin: 2rem auto; text-align: center;">
+  <img
+    src="/images/services/fumigation.png"
+    alt="Fumigation Banner"
+    style="max-width: 100%; border-radius: 0.5rem; box-shadow: 0 4px 20px rgba(0,0,0,0.1);"
+  />
+  <figcaption style="margin-top: 0.5rem; font-size: 0.875rem; color: #666;">
+    Fumigation Service for Deep Pest Eradication
+  </figcaption>
+</figure>
+
 
 Our Fumigation Services offer deep-penetrating pest control ideal for stored products, warehouses, containers, and enclosed commercial spaces. Whether you're preparing for export or managing large inventory, our solutions are effective and regulation-compliant.
 

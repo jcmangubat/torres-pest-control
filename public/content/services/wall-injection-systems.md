@@ -1,6 +1,11 @@
-**A** powerful, discreet solution to eliminate pests hiding behind your walls.
+<span style="font-size:1.25rem; font-weight:600">A</span> powerful, discreet solution to eliminate pests hiding behind your walls.
 
-![Wall Injection Systems Banner](/images/services/tpc_srvc_18.jpg)
+<figure style="margin: 2rem auto; text-align: center;">
+  <img src="/images/services/wall-injection-systems.jpg" alt="Wall Injection Systems Banner" style="max-width: 100%; border-radius: 0.5rem; box-shadow: 0 4px 20px rgba(0,0,0,0.1);" />
+  <figcaption style="margin-top: 0.5rem; font-size: 0.875rem; color: #666;">
+    Wall Injection Systems Banner
+  </figcaption>
+</figure>
 
 Our **Wall Injection System** targets hidden infestations deep inside wall voids, cracks, and structural cavities—areas that traditional surface treatments can’t always reach. This method is especially effective for termites, ants, and other insects that travel through tight, concealed spaces.
 
@@ -26,20 +31,20 @@ With minimal disruption to your property, we inject precision-applied solutions 
 
 ## 🏡 Ideal For
 
-- Homes with known wall infestations (termites, ants, etc.)  
-- Buildings with drywall, hollow blocks, or wood paneling  
-- Properties where pests are reappearing despite surface treatments  
-- Commercial spaces needing internal structural protection  
+- Homes with known wall infestations (termites, ants, etc.)
+- Buildings with drywall, hollow blocks, or wood paneling
+- Properties where pests are reappearing despite surface treatments
+- Commercial spaces needing internal structural protection
 
 ---
 
 ## ✅ Why Choose Wall Injection?
 
-- Penetrates deeper than standard spray treatments  
-- Minimally invasive with no major construction required  
-- Targets pests at the source, not just the surface  
-- Helps protect load-bearing wood and structural integrity  
-- Fast, clean, and long-lasting pest defense  
+- Penetrates deeper than standard spray treatments
+- Minimally invasive with no major construction required
+- Targets pests at the source, not just the surface
+- Helps protect load-bearing wood and structural integrity
+- Fast, clean, and long-lasting pest defense
 
 ---
 
@@ -47,7 +52,7 @@ With minimal disruption to your property, we inject precision-applied solutions 
 
 Think pests are hiding in the walls? Let’s find out and stop them in their tracks:
 
-- ☎️ Call or Message: [Click here to contact us](/#contact)  
-- 🗂️ Full documentation available for property managers and home sellers  
+- ☎️ Call or Message: [Click here to contact us](/#contact)
+- 🗂️ Full documentation available for property managers and home sellers
 
 ---

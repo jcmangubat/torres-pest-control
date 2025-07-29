@@ -1,6 +1,12 @@
-**Y**our property’s first line of defense against termites—silent protectors around your foundation.
+<span style="font-size:1.25rem; font-weight:600">Y</span>our property’s first line of defense against termites—silent protectors around your foundation.
 
-![Perimeter Barrier Treatment Banner](/images/services/tpc_srvc_17.jpg)
+<figure style="margin: 2rem auto; text-align: center;">
+  <img src="/images/services/perimeter-barrier-treatments.jpg" alt="Perimeter Barrier Treatment Banner" style="max-width: 100%; border-radius: 0.5rem; box-shadow: 0 4px 20px rgba(0,0,0,0.1);" />
+  <figcaption style="margin-top: 0.5rem; font-size: 0.875rem; color: #666;">
+    Perimeter Barrier Treatment for Preventive Termite Defense
+  </figcaption>
+</figure>
+
 
 Our **Perimeter Barrier Treatment** creates a chemical shield around your home or building, preventing termites from ever reaching the structure. This proven method targets the soil where termites typically travel, forming a protective barrier that lasts for months and repels or eliminates colonies before they can cause damage.
 

@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import AppLayout from "@/components/AppLayout";
 import tpc_grp0 from "@/assets/images/banner-about.jpg";
 import SiteBreadcrumbs from "@/components/SiteBreadCrumbs";
@@ -6,6 +7,34 @@ import SiteBreadcrumbs from "@/components/SiteBreadCrumbs";
 const AboutPage = () => {
   return (
     <AppLayout>
+      <Helmet htmlAttributes={{ lang: "en" }}>
+        <meta charSet="utf-8" />
+        <title>About Us | Torres Pest Control Davao</title>
+        <meta
+          name="description"
+          content="Learn about Torres Pest Control – our mission, eco-conscious approach, and trusted team serving Davao homes and businesses for over 14 years."
+        />
+        <meta
+          name="keywords"
+          content="about Torres Pest Control, pest control team, IPM approach, Davao sanitation"
+        />
+        <meta name="author" content="Torres Pest Control PH" />
+        <meta
+          property="og:title"
+          content="About Us | Torres Pest Control Davao"
+        />
+        <meta
+          property="og:description"
+          content="Meet the team and learn how Torres Pest Control ensures safety, compliance, and pest-free homes in Davao."
+        />
+        <meta property="og:url" content="https://torrespestcontrol.ph/about" />
+        <meta
+          property="og:image"
+          content="https://torrespestcontrol.ph/images/og-banner.jpg"
+        />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://torrespestcontrol.ph/about" />
+      </Helmet>
       <div className="w-full">
         {/* 🌄 Hero Banner */}
         <section

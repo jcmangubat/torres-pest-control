@@ -1,6 +1,9 @@
-**P**rotect your property from the silent destruction of termites with customized treatment plans designed for long-term peace of mind.
+<span style="font-size:1.25rem; font-weight:600">P</span>rotect your property from the silent destruction of termites with customized treatment plans designed for long-term peace of mind.
 
-![Termite Control Banner](/images/services/tpc_srvc_5.png)
+<figure style="margin: 2rem auto; text-align: center;">
+  <img src="/images/services/termite-control.png" alt="Termite Control Banner" style="max-width: 100%; border-radius: 0.5rem; box-shadow: 0 4px 20px rgba(0,0,0,0.1);" />
+  <figcaption style="margin-top: 0.5rem; font-size: 0.875rem; color: #666;">Termite Control for Homes and Commercial Properties</figcaption>
+</figure>
 
 Termites are more than just a nuisance—they can quietly and steadily cause major structural damage to your home or building before you even realize it. Our Termite Control service is designed to stop these destructive pests in their tracks using safe, science-backed methods tailored to your environment.
 

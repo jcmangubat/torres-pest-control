@@ -1,6 +1,11 @@
-**L**ong-term protection through scheduled treatments—because termite defense shouldn’t be one-time.
+<span style="font-size:1.25rem; font-weight:600">T</span>ermite protection isn’t just a one-time job—it’s a long-term commitment. Our **Termite Abatement Maintenance Program** ensures ongoing defense against future infestations.
 
-![Termite Abatement Maintenance Banner](/images/services/tpc_srvc_16.png)
+<figure style="margin: 2rem auto; text-align: center;">
+  <img src="/images/services/termite-abatement-maintenance.png" alt="Termite Abatement Maintenance Banner" style="max-width: 100%; border-radius: 0.5rem; box-shadow: 0 4px 20px rgba(0,0,0,0.1);" />
+  <figcaption style="margin-top: 0.5rem; font-size: 0.875rem; color: #666;">
+    Long-Term Termite Defense for Homes and Businesses
+  </figcaption>
+</figure>
 
 Our **Termite Abatement Maintenance Program** is designed to provide continuous protection from termite activity through a series of scheduled treatments, inspections, and reinforcements. Think of it as a termite insurance plan—keeping your home or property monitored and protected year-round.
 

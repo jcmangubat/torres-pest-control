@@ -1,6 +1,8 @@
 import { useParams, Link } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
+import rehypeRaw from "rehype-raw";
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 import slugify from "slugify";
 import AppLayout from "@/components/AppLayout";
 import banner_services from "@/assets/images/banner-services.jpg";
@@ -9,6 +11,7 @@ import SiteBreadcrumbs from "@/components/SiteBreadCrumbs";
 const ServiceDetailPage = () => {
   const { slug } = useParams();
   const [content, setContent] = useState<string>("");
+  const [title, setTitle] = useState<string>("");
   const [allServices, setAllServices] = useState<
     { group: string; services: string[] }[]
   >([]);
@@ -18,14 +21,22 @@ const ServiceDetailPage = () => {
       try {
         const response = await fetch(`/content/services/${slug}.md`);
         const text = await response.text();
+
+        // Extract title from the first line (assuming markdown title starts with '#')
+        // const firstLine = text.split("\n")[0];
+        // const extractedTitle = firstLine.replace(/^#\s*/, "").trim();
+        // setTitle(extractedTitle);
+
+        setTitle(slug?.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase()) || "Service Detail");
         setContent(text);
       } catch {
-        setContent(
-          `# Service Not Found\nThe requested service does not exist.`
-        );
+        const fallback = `# Service Not Found\nThe requested service does not exist.`;
+        setTitle("Service Not Found");
+        setContent(fallback);
       }
     };
 
+    // Load the list of all services
     const loadServiceList = async () => {
       try {
         const response = await fetch("/content/services/grouped-services.json");
@@ -50,28 +61,35 @@ const ServiceDetailPage = () => {
 
   return (
     <AppLayout>
-      {/* Hero Banner */}
-      {/* <section
-        className="relative h-[60vh] bg-cover bg-center"
-        style={{
-          backgroundImage: `url(${banner_services})`,
-          backgroundAttachment: "fixed",
-        }}
-      >
-        <div className="absolute inset-0 bg-black/50 flex items-end">
-          <div className="max-w-4xl mx-auto px-6 pb-12 text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-white capitalize">
-              {slug?.replace(/-/g, " ")}
-            </h1>
-            <p className="text-lg text-gray-300 mt-2">
-              Comprehensive Service Overview
-            </p>
-          </div>
-        </div>
-      </section>
-      <div className="container mx-auto px-4 pt-3">
-        <SiteBreadcrumbs />
-      </div> */}
+      <Helmet>
+        <title>{title} | Torres Pest Control Davao</title>
+        <meta
+          name="description"
+          content={`Learn about ${title} – professional pest control in Davao. Safe, reliable, eco-conscious solutions from Torres Pest Control.`}
+        />
+        <meta name="author" content="Torres Pest Control PH" />
+        <meta
+          property="og:title"
+          content={`${title} | Torres Pest Control Davao`}
+        />
+        <meta
+          property="og:description"
+          content={`Explore ${title} – trusted pest and sanitation service for homes and businesses in Davao.`}
+        />
+        <meta
+          property="og:url"
+          content={`https://torrespestcontrol.ph/services/${slug}`}
+        />
+        <meta
+          property="og:image"
+          content="https://torrespestcontrol.ph/images/og-banner.jpg"
+        />
+        <meta name="robots" content="index, follow" />
+        <link
+          rel="canonical"
+          href={`https://torrespestcontrol.ph/services/${slug}`}
+        />
+      </Helmet>
 
       <section
         className="relative h-[400px] flex items-center justify-center bg-cover bg-center bg-gradient-to-br from-green-50 to-blue-50 dark:from-gray-800 dark:to-gray-900"
@@ -111,7 +129,7 @@ const ServiceDetailPage = () => {
           >
             ← Back to Services
           </Link>
-          <ReactMarkdown>{content}</ReactMarkdown>
+          <ReactMarkdown rehypePlugins={[rehypeRaw]}>{content}</ReactMarkdown>
         </div>
 
         {/* Sidebar: Other Services */}

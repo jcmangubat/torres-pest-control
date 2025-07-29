@@ -1,4 +1,12 @@
-![Drilling Services Banner](/images/services/tpc_srvc_11.jpg)
+<span style="font-size:1.25rem; font-weight:600">D</span>efend your foundation from termites with strategic drilling and soil injection — a proven method to deliver termiticide where it’s needed most.
+
+<figure style="margin: 2rem auto; text-align: center;">
+  <img src="/images/services/drilling-services.jpg" alt="Drilling Services Banner" style="max-width: 100%; border-radius: 0.5rem; box-shadow: 0 4px 20px rgba(0,0,0,0.1);" />
+  <figcaption style="margin-top: 0.5rem; font-size: 0.875rem; color: #666;">
+    Targeted Termite Protection via Drilling & Soil Injection
+  </figcaption>
+</figure>
+
 
 **W**hen termites have already made their way into hard-to-reach areas—beneath tiles, concrete, or foundations—ordinary treatment methods won’t be enough. That’s where **drilling services** come in. Our team uses precision drilling techniques to create access points, allowing termite treatment solutions to reach deep into hidden zones where colonies often nest.
 

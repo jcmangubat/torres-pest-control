@@ -15,6 +15,7 @@ import {
   FileText,
   Lightbulb,
   Bomb,
+  Biohazard 
 } from "lucide-react";
 
 type ServiceProps = {
@@ -75,6 +76,7 @@ const iconsMap: Record<string, JSX.Element> = {
     <Lightbulb className="h-8 w-8 text-green-600 dark:text-yellow-400" />
   ),
   Bomb: <Bomb className="h-8 w-8 text-red-600 dark:text-red-400" />,
+  Biohazard: <Biohazard className="h-8 w-8 text-red-600 dark:text-red-400" />,
 };
 
 // Subcomponent: Service Group
