@@ -4,14 +4,10 @@ import { Textarea } from "@/components/ui/textarea";
 import { MapPin, Phone, Mail, MessageCircle } from "lucide-react";
 import { useRef, useEffect, useState } from "react";
 import emailjs from "@emailjs/browser";
+import LocationMap from "./LocationMap";
 
 const ContactSection = () => {
   const nameInputRef = useRef<HTMLInputElement>(null);
-
-  useEffect(() => {
-    // Optional/todo: handle autofocus when mounted or scrolled via IntersectionObserver
-  }, []);
-
   const formRef = useRef<HTMLFormElement>(null);
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">(
     "idle"
@@ -37,6 +33,7 @@ const ContactSection = () => {
       id="contact"
       className="py-20 bg-gradient-to-br from-green-50 to-blue-50 dark:from-gray-800 dark:to-gray-900"
     >
+      <LocationMap />
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">

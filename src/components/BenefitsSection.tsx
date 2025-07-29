@@ -1,6 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Leaf, Heart, Shield, Home, BadgeCheck } from "lucide-react";
-//import tpc_bkg_4 from "@/assets/images/tpc-bkg-4.png";
 import "./../styles/benefitsSection.css";
 
 const BenefitsSection = () => {
@@ -57,7 +56,6 @@ const BenefitsSection = () => {
     >
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-16">
-          {/* <h2 className="neon-text text-4xl font-bold text-gray-900 dark:text-white mb-4 transition-colors duration-500"> */}
           <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 transition-colors duration-500">
             Why Choose Torres Pest Control?
           </h2>
