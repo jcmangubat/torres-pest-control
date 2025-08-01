@@ -1,7 +1,7 @@
 <span style="font-size:1.25rem; font-weight:600">O</span>ur <strong>Fogging</strong> service targets flying pests like mosquitoes by dispersing ultra-fine insecticide mist into the air, reaching even hidden breeding grounds. It’s ideal for quick knockdown in residential, commercial, and outdoor spaces.
 
 <figure style="margin: 2rem auto; text-align: center;">
-  <img src="/images/services/fogging-misting-2.png" alt="Fogging Banner" style="max-width: 100%; border-radius: 0.5rem; box-shadow: 0 4px 20px rgba(0,0,0,0.1);" />
+  <img src="/images/services/fogging-misting.png" alt="Fogging Banner" style="max-width: 100%; border-radius: 0.5rem; box-shadow: 0 4px 20px rgba(0,0,0,0.1);" />
   <figcaption style="margin-top: 0.5rem; font-size: 0.875rem; color: #666;">Mosquito Fogging for Homes, Gardens, and Commercial Zones</figcaption>
 </figure>
 
