@@ -7,6 +7,7 @@ import emailjs from "@emailjs/browser";
 import LocationMap from "./LocationMap";
 
 const ContactSection = () => {
+  const [propertyType, setPropertyType] = useState("");
   const nameInputRef = useRef<HTMLInputElement>(null);
   const formRef = useRef<HTMLFormElement>(null);
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">(
@@ -46,6 +47,195 @@ const ContactSection = () => {
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div>
+            <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
+              Send Us a Message
+            </h3>
+            <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
+              <Input
+                name="user_name"
+                ref={nameInputRef}
+                placeholder="Your Name"
+                className="dark:bg-gray-800 dark:border-gray-600"
+              />
+              <Input
+                name="user_email"
+                placeholder="Your Email"
+                type="email"
+                className="dark:bg-gray-800 dark:border-gray-600"
+              />
+              <Input
+                name="user_phone"
+                placeholder="Your Phone Number"
+                type="phone"
+                className="dark:bg-gray-800 dark:border-gray-600"
+              />
+
+              <select
+                name="infestation_type"
+                defaultValue=""
+                className="w-full px-4 py-3 rounded-md border dark:bg-gray-800 dark:border-gray-600 text-gray-700 dark:text-gray-300"
+              >
+                <option value="" disabled>
+                  Type of Infestation (optional)
+                </option>
+                <option value="none">None / Just Inquiry</option>
+                <option value="ants">Ants</option>
+                <option value="bedbugs">Bed Bugs</option>
+                <option value="Bees">
+                  Bees (Nesting in structures or high-risk areas)
+                </option>
+                <option value="beetles">
+                  Beetles (Carpet Beetles, Wood-Boring Beetles)
+                </option>
+                <option value="cockroaches">Cockroaches</option>
+                <option value="flea">Fleas (on pets or in the home)</option>
+                <option value="flies">Flies (House Flies, Fruit Flies)</option>
+                <option value="mosquitoes">Mosquitoes</option>
+                <option value="rodents">Rodents</option>
+                <option value="spiders">Spiders (House Spiders, Webs)</option>
+                <option value="termites">
+                  Termites (Subterranean, Drywood)
+                </option>
+                <option value="ticks">Ticks (on pets or in the yard)</option>
+                <option value="Wasps">Wasps (Lampinig / Paper Wasps)</option>
+                <option value="others">Other Pest Problems</option>
+              </select>
+
+              {/* 🏠 Property Type Dropdown */}
+              <select
+                name="property_type"
+                defaultValue=""
+                required
+                className="w-full px-4 py-3 rounded-md border dark:bg-gray-800 dark:border-gray-600 text-gray-700 dark:text-gray-300"
+              >
+                <option value="" disabled>
+                  What type of property you’d like us to visit for free?
+                </option>
+
+                {/* Residential */}
+                <option value="residential">
+                  Residential (Home, Apartment)
+                </option>
+
+                {/* Commercial / Business */}
+                <option value="commercial">
+                  Commercial (Shop, Storefront)
+                </option>
+                <option value="hospitality">Hospitality (Hotel, Resort)</option>
+                <option value="warehouse">Warehouse / Storage</option>
+                <option value="industrial">
+                  Industrial (Factory, Manufacturing Plant)
+                </option>
+
+                {/* Agricultural */}
+                <option value="agricultural">
+                  Agricultural (Farm, Poultry, Fishpond)
+                </option>
+
+                {/* Medical / Education */}
+                <option value="educational">
+                  Educational (School, Daycare)
+                </option>
+                <option value="medical">
+                  Medical Facility (Clinic, Hospital)
+                </option>
+
+                {/* Government / Institutional */}
+                <option value="government">Government Office</option>
+                <option value="religious">Religious Institution</option>
+                <option value="military">Military Facility / Barracks</option>
+                <option value="science-lab">Science Laboratory</option>
+
+                {/* Maritime */}
+                <option value="dock">Dock / Port Facility</option>
+                <option value="boat">Boat / Ship / Vessel</option>
+
+                {/* Other */}
+                <option value="vacant">Vacant Lot / Construction Site</option>
+                <option value="other">Other (Please Specify in Message)</option>
+              </select>
+
+              {/* 📅 Preferred Day to Call */}
+              <select
+                name="preferred_day"
+                defaultValue=""
+                className="w-full px-4 py-3 rounded-md border dark:bg-gray-800 dark:border-gray-600 text-gray-700 dark:text-gray-300"
+              >
+                <option value="" disabled>
+                  Preferred Day to Call
+                </option>
+                <option value="any">Any Day</option>
+                <option value="monday">Monday</option>
+                <option value="tuesday">Tuesday</option>
+                <option value="wednesday">Wednesday</option>
+                <option value="thursday">Thursday</option>
+                <option value="friday">Friday</option>
+                <option value="saturday">Saturday</option>
+                <option value="sunday">Sunday</option>
+              </select>
+
+              {/* ⏰ Preferred Time to Call */}
+              <select
+                name="preferred_time"
+                defaultValue=""
+                className="w-full px-4 py-3 rounded-md border dark:bg-gray-800 dark:border-gray-600 text-gray-700 dark:text-gray-300"
+              >
+                <option value="" disabled>
+                  Preferred Time to Call
+                </option>
+                <option value="any">Any Time of the Day</option>
+                <option value="morning">Morning (8AM – 11AM)</option>
+                <option value="afternoon">Afternoon (1PM – 4PM)</option>
+                <option value="evening">Evening (6PM – 8PM)</option>
+                <option value="urgent">Emergency / Urgent</option>
+              </select>
+
+              {/* Conditionally show extra fields */}
+              {(propertyType === "commercial" ||
+                propertyType === "warehouse") && (
+                <Input
+                  name="business_name"
+                  placeholder="Business Name"
+                  className="dark:bg-gray-800 dark:border-gray-600"
+                />
+              )}
+
+              {propertyType === "agricultural" && (
+                <Input
+                  name="farm_area"
+                  placeholder="Farm Area Size (e.g. 3 hectares)"
+                  className="dark:bg-gray-800 dark:border-gray-600"
+                />
+              )}
+              <Textarea
+                name="message"
+                placeholder="Your Message"
+                rows={12}
+                className="dark:bg-gray-800 dark:border-gray-600"
+              />
+              <Button
+                type="submit"
+                className="w-full bg-green-600 hover:bg-green-700 dark:bg-green-700 dark:hover:bg-green-800"
+              >
+                Send Message
+              </Button>
+
+              {status === "sending" && (
+                <p className="text-sm text-gray-500">Sending...</p>
+              )}
+              {status === "sent" && (
+                <p className="text-sm text-green-600">
+                  Message sent! We will reply soon.
+                </p>
+              )}
+              {status === "error" && (
+                <p className="text-sm text-red-600">
+                  Something went wrong. Try again later.
+                </p>
+              )}
+            </form>
+          </div>
+          <div>
             {/* <div className="rounded-lg overflow-hidden shadow-lg mb-8">
               <iframe
                 title="Torres Pest Control Location"
@@ -64,7 +254,11 @@ const ContactSection = () => {
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
                 <MapPin className="w-5 h-5 text-green-600 dark:text-green-400" />
-                <span>B11A L65 Martylville Subdivision <br/>San Lorenzo Purok 13 Brgy Ula, <br/>Tugbok, Davao City, Davao Del Sur, Philippines</span>
+                <span>
+                  B11A L65 Martylville Subdivision <br />
+                  San Lorenzo Purok 13 Brgy Ula, <br />
+                  Tugbok, Davao City, Davao Del Sur, Philippines
+                </span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-green-600 dark:text-green-400" />
@@ -104,77 +298,30 @@ const ContactSection = () => {
                 WhatsApp Us
               </Button>
             </div>
-          </div>
-          <div>
-            <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
-              Send Us a Message
-            </h3>
-            <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
-              <Input
-                name="user_name"
-                ref={nameInputRef}
-                placeholder="Your Name"
-                className="dark:bg-gray-800 dark:border-gray-600"
-              />
-              <Input
-                name="user_email"
-                placeholder="Your Email"
-                type="email"
-                className="dark:bg-gray-800 dark:border-gray-600"
-              />
-              <Input
-                name="user_phone"
-                placeholder="Your Phone Number"
-                type="phone"
-                className="dark:bg-gray-800 dark:border-gray-600"
-              />
+            <div className="mt-10 space-y-8">
+              {/* Certifications */}
+              <div>
+                <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                  Certifications
+                </h4>
+                <ul className="text-gray-700 dark:text-gray-300 text-sm space-y-1">
+                  <li>✔ DOH-Accredited Pest Control Provider</li>
+                  <li>✔ PCO Certified Technicians</li>
+                  <li>✔ 14+ Years of Local Experience</li>
+                </ul>
+              </div>
 
-              {/* 🔽 Infestation Type Dropdown */}
-              <select
-                name="infestation_type"
-                defaultValue=""
-                className="w-full px-4 py-3 rounded-md border dark:bg-gray-800 dark:border-gray-600 text-gray-700 dark:text-gray-300"
-              >
-                <option value="" disabled>
-                  Type of Infestation (optional)
-                </option>
-                <option value="none">None / Just Inquiry</option>
-                <option value="termites">Termites</option>
-                <option value="cockroaches">Cockroaches</option>
-                <option value="rodents">Rodents</option>
-                <option value="ants">Ants</option>
-                <option value="mosquitoes">Mosquitoes</option>
-                <option value="bedbugs">Bed Bugs</option>
-                <option value="others">Other Pest Problems</option>
-              </select>
-
-              <Textarea
-                name="message"
-                placeholder="Your Message"
-                rows={12}
-                className="dark:bg-gray-800 dark:border-gray-600"
-              />
-              <Button
-                type="submit"
-                className="w-full bg-green-600 hover:bg-green-700 dark:bg-green-700 dark:hover:bg-green-800"
-              >
-                Send Message
-              </Button>
-
-              {status === "sending" && (
-                <p className="text-sm text-gray-500">Sending...</p>
-              )}
-              {status === "sent" && (
-                <p className="text-sm text-green-600">
-                  Message sent! We will reply soon.
-                </p>
-              )}
-              {status === "error" && (
-                <p className="text-sm text-red-600">
-                  Something went wrong. Try again later.
-                </p>
-              )}
-            </form>
+              {/* Operating Hours */}
+              <div>
+                <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                  Operating Hours
+                </h4>
+                <ul className="text-gray-700 dark:text-gray-300 text-sm space-y-1">
+                  <li>Mon–Sat: 8:00 AM – 6:00 PM</li>
+                  <li>Sunday: Emergency Calls Only</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </div>
