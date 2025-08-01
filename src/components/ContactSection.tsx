@@ -5,6 +5,7 @@ import { MapPin, Phone, Mail, MessageCircle } from "lucide-react";
 import { useRef, useEffect, useState } from "react";
 import emailjs from "@emailjs/browser";
 import LocationMap from "./LocationMap";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const ContactSection = () => {
   const [propertyType, setPropertyType] = useState("");
@@ -13,10 +14,25 @@ const ContactSection = () => {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">(
     "idle"
   );
+  const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
+  const recaptchaRef = useRef<ReCAPTCHA | null>(null);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (!recaptchaToken) {
+      setStatus("error");
+      return;
+    }
+
     setStatus("sending");
+
+    const captchaToken = recaptchaRef.current?.getValue();
+    if (!captchaToken) {
+      setErrorMessage("Please complete the reCAPTCHA before submitting.");
+      setStatus("error");
+      return;
+    }
 
     emailjs
       .sendForm(
@@ -25,8 +41,16 @@ const ContactSection = () => {
         formRef.current!,
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       )
-      .then(() => setStatus("sent"))
-      .catch(() => setStatus("error"));
+      .then(() => {
+        setStatus("sent");
+        recaptchaRef.current?.reset();
+        setRecaptchaToken(null);
+      })
+      .catch((err) => {
+        console.error(err);
+        setErrorMessage("Something went wrong. Please try again later.");
+        setStatus("error");
+      });
   };
 
   return (
@@ -52,19 +76,19 @@ const ContactSection = () => {
             </h3>
             <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
               <Input
-                name="user_name"
+                name="inquirer_name"
                 ref={nameInputRef}
                 placeholder="Your Name"
                 className="dark:bg-gray-800 dark:border-gray-600"
               />
               <Input
-                name="user_email"
+                name="inquirer_email"
                 placeholder="Your Email"
                 type="email"
                 className="dark:bg-gray-800 dark:border-gray-600"
               />
               <Input
-                name="user_phone"
+                name="inquirer_phone"
                 placeholder="Your Phone Number"
                 type="phone"
                 className="dark:bg-gray-800 dark:border-gray-600"
@@ -213,6 +237,14 @@ const ContactSection = () => {
                 rows={12}
                 className="dark:bg-gray-800 dark:border-gray-600"
               />
+
+              <ReCAPTCHA
+                ref={recaptchaRef}
+                sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
+                onChange={(token) => setRecaptchaToken(token)}
+                theme="light" // use "dark" if preferred
+              />
+
               <Button
                 type="submit"
                 className="w-full bg-green-600 hover:bg-green-700 dark:bg-green-700 dark:hover:bg-green-800"
@@ -228,10 +260,13 @@ const ContactSection = () => {
                   Message sent! We will reply soon.
                 </p>
               )}
-              {status === "error" && (
+              {/* {status === "error" && (
                 <p className="text-sm text-red-600">
                   Something went wrong. Try again later.
                 </p>
+              )} */}
+              {status === "error" && errorMessage && (
+                <p className="text-sm text-red-600">{errorMessage}</p>
               )}
             </form>
           </div>
