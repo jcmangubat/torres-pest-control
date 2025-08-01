@@ -4,6 +4,7 @@ import AppLayout from "@/components/AppLayout";
 import tpc_grp0 from "@/assets/images/banner-about.jpg";
 import SiteBreadcrumbs from "@/components/SiteBreadCrumbs";
 import FAQs from "@/components/FAQs";
+import BenefitsSection from "@/components/BenefitsSection";
 
 const AboutPage = () => {
   return (
@@ -165,6 +166,8 @@ const AboutPage = () => {
                 </div>
               ))}
             </div>
+
+            <BenefitsSection/>
           </div>
         </section>
       </div>
