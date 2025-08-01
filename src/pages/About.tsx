@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet";
 import AppLayout from "@/components/AppLayout";
 import tpc_grp0 from "@/assets/images/banner-about.jpg";
 import SiteBreadcrumbs from "@/components/SiteBreadCrumbs";
+import FAQs from "@/components/FAQs";
 
 const AboutPage = () => {
   return (
@@ -39,7 +40,7 @@ const AboutPage = () => {
       <div className="w-full">
         {/* 🌄 Hero Banner */}
         <section
-          className="relative h-[80vh] justify-center text-center bg-black text-white flex items-end bg-fixed bg-center bg-cover"
+          className="relative h-[65vh] justify-center text-center bg-black text-white flex items-end bg-fixed bg-center bg-cover"
           style={{
             backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url(${tpc_grp0})`,
           }}
@@ -66,7 +67,7 @@ const AboutPage = () => {
         {/* 📌 Company Details */}
         <section className="py-20 px-6 md:px-12 bg-white dark:bg-gray-900">
           <div className="max-w-6xl mx-auto space-y-16">
-            {[ 
+            {[
               {
                 title: "Our Commitment",
                 content:
@@ -92,7 +93,12 @@ const AboutPage = () => {
                   idx % 2 === 1 ? "md:flex-row-reverse" : ""
                 }`}
               >
-                <div data-aos="fade-right" data-aos-delay={idx * 100}>
+                <div
+                  {...(idx !== 0 && {
+                    "data-aos": "fade-right",
+                    "data-aos-delay": idx * 100,
+                  })}
+                >
                   <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-4">
                     {item.title}
                   </h2>
@@ -162,6 +168,7 @@ const AboutPage = () => {
           </div>
         </section>
       </div>
+      <FAQs />
     </AppLayout>
   );
 };
