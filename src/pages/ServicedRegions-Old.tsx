@@ -1,14 +1,38 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import AppLayout from "@/components/AppLayout";
+import ServiceMap from "@/components/ServiceMap";
 import banner_services from "@/assets/images/banner-services.jpg";
 import SiteBreadcrumbs from "@/components/SiteBreadCrumbs";
 
+type Region = {
+  name: string;
+  position: [number, number];
+  description: string;
+};
+
 const ServicedRegionsPage = () => {
+  const [servedRegions, setServedRegions] = useState<Region[]>([]);
+
+  useEffect(() => {
+    const loadJSON = async () => {
+      const mod = await import("../assets/served-regions.json");
+      const typedRegions: Region[] = mod.default.map((r: any) => ({
+        name: r.name as string,
+        description: r.description as string,
+        position: [r.position[0], r.position[1]] as [number, number],
+      }));
+      setServedRegions(typedRegions);
+    };
+
+    loadJSON();
+  }, []);
+
   return (
     <AppLayout>
       {/* 🌄 Hero Section */}
       <section
-        className="relative h-[300px] flex items-center justify-center bg-cover bg-center"
+        className="relative h-[400px] flex items-center justify-center bg-cover bg-center"
         style={{
           backgroundImage: `url(${banner_services})`,
           backgroundAttachment: "fixed",
@@ -20,12 +44,9 @@ const ServicedRegionsPage = () => {
           data-aos="fade-up"
           data-aos-duration="1000"
         >
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Our Service Areas
-          </h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Our Service Areas</h1>
           <p className="text-lg md:text-xl max-w-2xl mx-auto text-gray-200">
-            From coastal homes to bustling cities, Torres Pest Control is
-            trusted across the Philippines.
+            From coastal homes to bustling cities, Torres Pest Control is trusted across the Philippines.
           </p>
         </div>
       </section>
@@ -35,23 +56,9 @@ const ServicedRegionsPage = () => {
         <SiteBreadcrumbs />
       </div>
 
-      {/* Embedded Google My Map */}
-      <div
-        className="container mx-auto px-4 mt-6"
-        data-aos="fade-up"
-        data-aos-delay="200"
-      >
-        <div className="w-full h-[1200px] rounded-md overflow-hidden shadow">
-          <iframe
-            src="https://www.google.com/maps/d/embed?mid=1alqUawahT3jpioPo4rSJe1JJ2qe90Ig&ehbc=2E312F&noprof=1"
-            width="100%"
-            height="100%"
-            style={{ border: 0 }}
-            allowFullScreen
-            loading="lazy"
-            title="Service Area Map"
-          ></iframe>
-        </div>
+      {/* Map and Info */}
+      <div className="container mx-auto px-4" data-aos="fade-up" data-aos-delay="200">
+        <ServiceMap regions={servedRegions} />
 
         <div
           className="text-center mt-6"

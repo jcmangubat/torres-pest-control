@@ -260,11 +260,6 @@ const ContactSection = () => {
                   Message sent! We will reply soon.
                 </p>
               )}
-              {/* {status === "error" && (
-                <p className="text-sm text-red-600">
-                  Something went wrong. Try again later.
-                </p>
-              )} */}
               {status === "error" && errorMessage && (
                 <p className="text-sm text-red-600">{errorMessage}</p>
               )}
