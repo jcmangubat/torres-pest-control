@@ -36,13 +36,18 @@ const GalleryAlbum = ({ album }) => {
   }
 
   return (
-    <div className="gallery-section bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
-      <h2 className="text-3xl font-bold mb-2 text-gray-900 dark:text-white">
-        {album.title}
-      </h2>
-      <p className="text-base text-gray-700 mb-6 dark:text-gray-300">
-        {album.description}
-      </p>
+    <div className="gallery-section bg-gray-900 text-white p-6 rounded-xl shadow-lg h-full flex flex-col">
+      <h2 className="text-xl font-semibold mb-2">{album.title}</h2>
+      <p className="text-sm text-gray-300 mb-4">{album.description}</p>
+      {/* 
+        <div className="gallery-section bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+        <h2 className="text-3xl font-bold mb-2 text-gray-900 dark:text-white">
+          {album.title}
+        </h2>
+        <p className="text-base text-gray-700 mb-6 dark:text-gray-300">
+          {album.description}
+        </p> 
+      */}
 
       <div className="image-grid">
         {previewImages.map((url, idx) => (

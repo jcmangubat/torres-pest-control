@@ -1,17 +1,30 @@
 import "@/styles/gallery.css";
 import GalleryAlbum from "./GalleryAlbum";
+import Masonry from "react-masonry-css";
 
 const GalleryAlbumsViewer = ({ albums }) => {
+  const breakpointColumnsObj = {
+    default: 2,
+    768: 1,
+  };
+
   return (
-    <section className="py-20 bg-white dark:bg-gray-900">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-10 px-4">
-        {albums.map((album, index) => (
-          <div key={index} className="w-full">
-            <GalleryAlbum album={album} />
-          </div>
-        ))}
+    <section className="bg-white dark:bg-gray-900">
+      <div className="px-4">
+        <Masonry
+          breakpointCols={breakpointColumnsObj}
+          className="flex gap-6"
+          columnClassName="masonry-column"
+        >
+          {albums.map((album, index) => (
+            <div key={index} className="mb-6">
+              <GalleryAlbum album={album} />
+            </div>
+          ))}
+        </Masonry>
       </div>
     </section>
   );
 };
+
 export default GalleryAlbumsViewer;

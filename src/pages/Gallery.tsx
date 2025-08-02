@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import AppLayout from "@/components/AppLayout";
-import banner_services from "@/assets/images/banner-services.jpg";
+import gallery_collage from "@/assets/images/gallery-collage.jpg";
 import GalleryAlbumsViewer from "@/components/GalleryAlbumsViewer";
 import SiteBreadcrumbs from "@/components/SiteBreadCrumbs";
 
@@ -29,7 +29,7 @@ const GalleryPage = () => {
       <section
         className="relative h-[400px] flex items-center justify-center bg-cover bg-center bg-gradient-to-br from-green-50 to-blue-50 dark:from-gray-800 dark:to-gray-900"
         style={{
-          backgroundImage: `url(${banner_services})`,
+          backgroundImage: `url(${gallery_collage})`,
           backgroundAttachment: "fixed",
         }}
       >
