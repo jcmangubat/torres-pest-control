@@ -1,8 +1,12 @@
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Phone, Shield, CheckCircle } from "lucide-react";
 import AdsGallery from "./AdsGallery";
-import tpc_bkg_1 from "@/assets/images/hero/tpc_hero_1.png";
 import { HERO_RESPECT_THEME } from "@/config/site-config";
+import tpc_bkg_1 from "@/assets/images/hero/tpc_hero_1.png";
+import tpc_bkg_2 from "@/assets/images/hero/tpc_hero_2.png";
+import tpc_bkg_3 from "@/assets/images/hero/tpc_hero_3.png";
+import tpc_bkg_4 from "@/assets/images/hero/tpc_hero_4.jpg";
 
 type HeroSectionProps = {
   respectTheme?: boolean;
@@ -27,35 +31,94 @@ const HeroSection = ({
   respectTheme = HERO_RESPECT_THEME,
 }: HeroSectionProps) => {
   const themeClass = respectTheme ? "" : "dark";
+  const backgroundImages = [tpc_bkg_1, tpc_bkg_2, tpc_bkg_3, tpc_bkg_4];
+
+  const [bgIndex, setBgIndex] = useState(0);
+  const [slideIndex, setSlideIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setBgIndex((prevIndex) => (prevIndex + 1) % backgroundImages.length);
+      setSlideIndex((prevIndex) => (prevIndex + 1) % heroSlides.length);
+    }, 5000); // change image every 5 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const heroSlides = [
+    {
+      text: "Your family deserves peace. Not pests.",
+      subText:
+        "Professional pest control services with 14-15 years of experience. Eco-friendly solutions that keep your family and environment safe.",
+    },
+    {
+      text: "Free inspections. Zero pressure.",
+      subText:
+        "Get honest assessments from our experts—no commitments, just helpful advice tailored to your needs.",
+    },
+    {
+      text: "Protect your home from termites before they strike.",
+      subText:
+        "Our proactive solutions shield your property from costly termite damage, using environmentally safe methods.",
+    },
+    {
+      text: "Business-friendly pest control that works after hours.",
+      subText:
+        "Flexible scheduling and discreet service designed to keep your workplace pest-free without disrupting operations.",
+    },
+    {
+      text: "Eco-smart solutions for a safer tomorrow.",
+      subText:
+        "We use low-toxicity treatments that are safe for kids, pets, and the planet—because protection shouldn’t come with compromise.",
+    },
+  ];
 
   return (
     <section
       id="hero-section"
-      // data-aos="fade-up"
-      // data-aos-delay="100"
-      // data-aos-easing="ease-out"
-      // data-aos-duration="1000"
+      data-aos="fade-up"
+      data-aos-delay="100"
+      data-aos-easing="ease-out"
+      data-aos-duration="1000"
       className={`${themeClass} relative w-full bg-gradient-to-br from-green-50 to-blue-50 dark:from-gray-900 dark:to-gray-800 py-32 md:pt-48 overflow-hidden`}
     >
-      <div
+      {/* <div
         id="hero-bg-overlay"
-        className="absolute inset-0 bg-black/20 dark:bg-black/50"
+        className="absolute inset-0 bg-black/20 dark:bg-black/50 transition-all duration-1000 ease-in-out"
         style={{
-          backgroundImage: `url(${tpc_bkg_1})`,
+          backgroundImage: `url(${backgroundImages[bgIndex]})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          // filter: "sepia(1) brightness(0.3)",
-          // filter: "sepia(.5) brightness(0.5) contrast(1.2) saturate(1.2)",
           filter: "sepia(.5) brightness(0.6) saturate(0.8) contrast(0.6)",
         }}
-      ></div>
+      ></div> */}
+      <div className="absolute inset-0">
+        {backgroundImages.map((img, i) => (
+          <div
+            key={i}
+            className={`absolute inset-0 bg-black/20 dark:bg-black/50 transition-opacity duration-1000 ease-in-out ${
+              i === bgIndex ? "opacity-100 z-10" : "opacity-0 z-0"
+            }`}
+            style={{
+              backgroundImage: `url(${img})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              filter: "sepia(.5) brightness(0.6) saturate(0.8) contrast(0.6)",
+            }}
+          />
+        ))}
+      </div>
       <div className="relative z-10 w-full px-4 md:px-12 lg:px-64">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div data-aos="zoom-in" className="text-center lg:text-left">
-            <div className="flex justify-center lg:justify-start mb-6">
+            <div
+              data-aos="zoom-in"
+              data-aos-delay="100"
+              className="flex justify-center lg:justify-start mb-6"
+            >
               <Shield className="h-16 w-16 text-green-600 dark:text-green-400" />
             </div>
-            <h1
+            {/* <h1
               data-aos="fade-up"
               data-aos-delay="100"
               className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6"
@@ -69,7 +132,25 @@ const HeroSection = ({
             >
               Professional pest control services with 14-15 years of experience.
               Eco-friendly solutions that keep your family and environment safe.
+            </p> */}
+
+            <h1
+              data-aos="fade-right"
+              data-aos-delay="100"
+              className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6 transition-opacity duration-700 ease-in-out"
+              key={heroSlides[slideIndex].text} // This helps trigger re-render animation
+            >
+              {heroSlides[slideIndex].text}
+            </h1>
+            <p
+              data-aos="fade-left"
+              data-aos-delay="200"
+              className="text-lg lg:text-xl text-gray-700 dark:text-gray-300 mb-8 transition-opacity duration-700 ease-in-out"
+              key={heroSlides[slideIndex].subText}
+            >
+              {heroSlides[slideIndex].subText}
             </p>
+
             <div
               data-aos="fade-up"
               data-aos-delay="300"
