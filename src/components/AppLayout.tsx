@@ -1,9 +1,9 @@
-import Header from "./Header";
-import Footer from "./Footer";
-import ScrollToTopButton from "./ScrollToTopButton";
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Header from "./Header";
+import Footer from "./Footer";
+import ScrollToTopButton from "./ScrollToTopButton";
 import CookieConsentBanner from "./CookieConsentBanner";
 
 const AppLayout = ({ children }: { children: React.ReactNode }) => {
