@@ -63,35 +63,169 @@
     />
 
     <meta property="og:url" content="https://torrespestcontrol.ph" />
-    <meta property="og:image" content="https://torrespestcontrol.ph/images/logo.jpg" />
+    <meta
+      property="og:image"
+      content="https://torrespestcontrol.ph/images/logo.jpg"
+    />
     <meta property="og:title" content="Torres Pest Control" />
-    <meta property="og:description" content="Effective pest control services for homes and businesses." />
+    <meta
+      property="og:description"
+      content="Effective pest control services for homes and businesses."
+    />
     <meta property="og:type" content="website" />
-    
+
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="https://torrespestcontrol.ph/images/logo.jpg" />
+    <meta
+      name="twitter:image"
+      content="https://torrespestcontrol.ph/images/logo.jpg"
+    />
 
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "Torres Pest Control",
-        "image": "https://torrespestcontrol.ph/images/logo.jpg",
-        "url": "https://torrespestcontrol.ph",
-        "telephone": "+639171391908",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Davao City",
-          "addressCountry": "PH"
-        },
-        "openingHours": "Mo-Sa 08:00-18:00",
-        "sameAs": [
-          "https://www.facebook.com/torrespestcontrolPH",
-          "https://www.instagram.com/torrespestcontrol_ph"
+        "@graph": [
+          {
+            "@type": ["LocalBusiness", "Organization"],
+            "@id": "https://torrespestcontrol.ph/#organization",
+            "name": "Torres Pest Control",
+            "url": "https://torrespestcontrol.ph",
+            "logo": {
+              "@type": "ImageObject",
+              "@id": "https://torrespestcontrol.ph/#logo",
+              "url": "https://torrespestcontrol.ph/images/logo.jpg",
+              "contentUrl": "https://torrespestcontrol.ph/images/logo.jpg",
+              "caption": "Torres Pest Control",
+              "inLanguage": "en-US",
+              "width": "600",
+              "height": "200"
+            },
+            "image": { "@id": "https://torrespestcontrol.ph/#logo" },
+            "telephone": "+63 917 139 1908",
+            "email": "info@torrespestcontrol.ph",
+            "priceRange": "₱₱₱₱",
+            "legalName": "Torres Pest Control",
+            "openingHours": [
+              "Monday 08:00-18:00",
+              "Tuesday 08:00-18:00",
+              "Wednesday 08:00-18:00",
+              "Thursday 08:00-18:00",
+              "Friday 08:00-18:00",
+              "Saturday 08:00-18:00"
+            ],
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "B11A L65 Martylville Subdivision, San Lorenzo Purok 13, Brgy. Ula, Tugbok",
+              "addressLocality": "Davao City",
+              "addressRegion": "Davao del Sur",
+              "postalCode": "8000",
+              "addressCountry": "Philippines"
+            },
+            "sameAs": [
+              "https://www.facebook.com/torrespestcontrolPH",
+              "https://www.instagram.com/torrespestcontrol_ph"
+            ],
+            "location": { "@id": "https://torrespestcontrol.ph/#place" }
+          },
+          {
+            "@type": "Place",
+            "@id": "https://torrespestcontrol.ph/#place",
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": "7.118246885181027",
+              "longitude": "125.49535579013283"
+            },
+            "hasMap": "https://www.google.com/maps/search/?api=1&query=7.118246885181027,125.49535579013283",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "B11A L65 Martylville Subdivision, San Lorenzo Purok 13, Brgy. Ula, Tugbok",
+              "addressLocality": "Davao City",
+              "addressRegion": "Davao del Sur",
+              "postalCode": "8000",
+              "addressCountry": "Philippines"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://torrespestcontrol.ph",
+            "url": "https://torrespestcontrol.ph",
+            "name": "Torres Pest Control",
+            "alternateName": "Torres Pest Control Davao",
+            "publisher": {
+              "@id": "https://torrespestcontrol.ph/#organization"
+            },
+            "inLanguage": "en-US",
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": "https://torrespestcontrol.ph/?s={search_term_string}",
+              "query-input": "required name=search_term_string"
+            }
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://torrespestcontrol.ph/#webpage",
+            "url": "https://torrespestcontrol.ph/",
+            "name": "Torres Pest Control Services in Davao City",
+            "datePublished": "2015-01-01T09:00:00+00:00",
+            "dateModified": "2025-01-01T09:00:00+00:00",
+            "about": { "@id": "https://torrespestcontrol.ph/about" },
+            "isPartOf": { "@id": "https://torrespestcontrol.ph/#organization" },
+            "primaryImageOfPage": {
+              "@type": "ImageObject",
+              "@id": "https://torrespestcontrol.ph/images/teams/tpc_983.jpg",
+              "url": "https://torrespestcontrol.ph/images/teams/tpc_983.jpg",
+              "width": "1200",
+              "height": "630",
+              "inLanguage": "en-US"
+            },
+            "inLanguage": "en-US"
+          },
+          {
+            "@type": "Article",
+            "@id": "https://torrespestcontrol.ph/#richSnippet",
+            "headline": "Torres Pest Control Services in Davao City",
+            "keywords": "Pest Control in Davao City, Pest Control in Cebu City, Pest Control in Tagum City, Pest Control in Digos City, Pest Control in Panglao Bohol, Pest Control in Tacloban City, Pest Control in Mindanao, Pest Control in Visayas, Termite Control, Cockroach Control, Approachable Pest Control Service, Experienced Pest Control, Professional Pest Control",
+            "datePublished": "2015-01-01T09:00:00+00:00",
+            "dateModified": "2025-01-01T09:00:00+00:00",
+            "description": "Torres Pest Control in Davao City provides termite, cockroach, rodent, mosquito, and general pest management services.",
+            "name": "Torres Pest Control Services in Davao City",
+            "author": {
+              "@type": "Person",
+              "@id": "https://torrespestcontrol.ph/author/admin/",
+              "name": "admin"
+            },
+            "publisher": {
+              "@id": "https://torrespestcontrol.ph/#organization"
+            },
+            "image": {
+              "@type": "ImageObject",
+              "@id": "https://torrespestcontrol.ph/wp-content/uploads/featured.jpg",
+              "url": "https://torrespestcontrol.ph/wp-content/uploads/featured.jpg",
+              "inLanguage": "en-US"
+            },
+            "mainEntityOfPage": {
+              "@id": "https://torrespestcontrol.ph/#webpage"
+            },
+            "isPartOf": { "@id": "https://torrespestcontrol.ph/" },
+            "inLanguage": "en-US"
+          },
+          {
+            "@type": "Person",
+            "@id": "https://torrespestcontrol.ph/author/admin/",
+            "name": "admin",
+            "url": "https://torrespestcontrol.ph/author/admin/",
+            "image": {
+              "@type": "ImageObject",
+              "@id": "https://secure.gravatar.com/avatar/xxx?s=96&d=mm&r=g",
+              "url": "https://secure.gravatar.com/avatar/xxx?s=96&d=mm&r=g",
+              "caption": "admin",
+              "inLanguage": "en-US"
+            },
+            "worksFor": { "@id": "https://torrespestcontrol.ph/#organization" }
+          }
         ]
       }
     </script>
-    <script type="module" crossorigin src="/assets/index-Bh7WzC3g.js"></script>
+    <script type="module" crossorigin src="/assets/index-CGKj9KuU.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-C5C8T9bP.css">
   </head>
 
