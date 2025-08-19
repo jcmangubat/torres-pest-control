@@ -1,6 +1,6 @@
 [
   {
-    "title": "🛡️ General Pest & Vermin Control",
+    "title": "General Pest & Vermin Control",
     "services": [
       {
         "icon": "Bug",
@@ -35,7 +35,7 @@
     ]
   },
   {
-    "title": "🪵 Termite Defense & Prevention",
+    "title": "Termite Defense & Prevention",
     "services": [
       {
         "icon": "Shield",
@@ -64,7 +64,7 @@
     ]
   },
   {
-    "title": "🎯 Specialized Termite Systems",
+    "title": "Specialized Termite Systems",
     "services": [
       {
         "icon": "Footprints",
@@ -87,7 +87,7 @@
     ]
   },
   {
-    "title": "🔧 Long-Term Termite Care",
+    "title": "Long-Term Termite Care",
     "services": [
       {
         "icon": "Shield",
@@ -98,7 +98,7 @@
     ]
   },
   {
-    "title": "🏡 Structural & Perimeter Shielding",
+    "title": "Structural & Perimeter Shielding",
     "services": [
       {
         "icon": "Home",
@@ -121,7 +121,7 @@
     ]
   },
   {
-    "title": "🌿 Eco-Friendly & Child-Safe Options",
+    "title": "Eco-Friendly & Child-Safe Options",
     "services": [
       {
         "icon": "Droplets",
@@ -138,7 +138,7 @@
     ]
   },
   {
-    "title": "📋 Compliance & Sanitation Support",
+    "title": "Compliance & Sanitation Support",
     "services": [
       {
         "icon": "FileText",
