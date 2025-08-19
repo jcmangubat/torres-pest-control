@@ -41,7 +41,7 @@ const AboutPage = () => {
       <div className="w-full">
         {/* 🌄 Hero Banner */}
         <section
-          className="relative h-[65vh] justify-center text-center bg-black text-white flex items-end bg-fixed bg-center bg-cover"
+          className="relative h-[65vh] justify-center text-center bg-black text-white flex items-end bg-fixed bg-center bg-cover unselectable"
           style={{
             backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url(${tpc_grp0})`,
           }}

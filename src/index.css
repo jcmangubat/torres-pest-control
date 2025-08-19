@@ -1,5 +1,4 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -91,6 +90,13 @@ html {
   }
 }
 
+.unselectable {
+  user-select: none;
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE/Edge */
+}
+
 @layer base {
   * {
     @apply border-border;
@@ -100,7 +106,8 @@ html {
     @apply bg-background text-foreground font-sans dark:bg-background dark:text-foreground;
   }
 
-  pre, code {
+  pre,
+  code {
     @apply font-mono;
   }
 }
@@ -134,3 +141,41 @@ html {
 .markdown-preview ol {
   @apply my-4 ml-6;
 }
+
+.tpc-logo {
+  min-width: 5rem;
+  min-height: 5rem;
+  max-width: 5rem;
+  max-height: 5rem;
+}
+
+@media (max-width: 560px) {
+  .hero-substance {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+} /* Phones */
+@media (max-width: 639px) {
+} /* Phones */
+@media (max-width: 767px) {
+} /* Small tablets */
+@media (max-width: 1023px) {
+} /* Tablets & small laptops */
+@media (max-width: 1279px) {
+  .tpc-banner {
+    display: none;
+  }
+  /* .tpc-logo {
+    margin: 13px;
+  } */
+} /* Laptops & desktops */
+@media (max-width: 1535px) {
+  .butts-wrapper {
+    display: grid;
+  }
+
+  /* .hero-substance {
+    padding-left: 8rem !important;
+    padding-right: 8rem !important;
+  } */
+} /* Large desktops */

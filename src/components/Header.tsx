@@ -30,7 +30,7 @@ const Header = () => {
     <header
       className={`
       transition-all duration-300 border-b border-gray-200 dark:border-gray-700
-      md:fixed md:top-0 md:left-0 md:right-0 md:z-50
+      md:fixed md:top-0 md:left-0 md:right-0 md:z-50 unselectable
       ${
         isScrolled
           ? "md:bg-white/80 md:dark:bg-gray-900/80 md:backdrop-blur-md md:shadow-lg"
@@ -47,9 +47,9 @@ const Header = () => {
               <img
                 src={tpc_00}
                 alt="Torres Pest Control Logo"
-                className="h-20- w-20 rounded-full"
+                className="tpc-logo h-20 w-20 rounded-full p-2"
               />
-              <div>
+              <div className="tpc-banner" style={{ marginLeft: 0 }}>
                 <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
                   <span className="text-red-600">TORRES</span>{" "}
                   <span className="text-blue-600">PEST CONTROL</span>

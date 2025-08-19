@@ -80,18 +80,8 @@ const HeroSection = ({
       data-aos-delay="100"
       data-aos-easing="ease-out"
       data-aos-duration="1000"
-      className={`${themeClass} relative w-full bg-gradient-to-br from-green-50 to-blue-50 dark:from-gray-900 dark:to-gray-800 py-32 md:pt-48 overflow-hidden`}
+      className={`${themeClass} unselectable relative w-full bg-gradient-to-br from-green-50 to-blue-50 dark:from-gray-900 dark:to-gray-800 py-32 md:pt-44 overflow-hidden`}
     >
-      {/* <div
-        id="hero-bg-overlay"
-        className="absolute inset-0 bg-black/20 dark:bg-black/50 transition-all duration-1000 ease-in-out"
-        style={{
-          backgroundImage: `url(${backgroundImages[bgIndex]})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          filter: "sepia(.5) brightness(0.6) saturate(0.8) contrast(0.6)",
-        }}
-      ></div> */}
       <div className="absolute inset-0">
         {backgroundImages.map((img, i) => (
           <div
@@ -103,12 +93,34 @@ const HeroSection = ({
               backgroundImage: `url(${img})`,
               backgroundSize: "cover",
               backgroundPosition: "center",
-              filter: "sepia(.5) brightness(0.6) saturate(0.8) contrast(0.6)",
+              filter:
+                "grayscale(0.3) sepia(.1) brightness(0.6) saturate(0.9) contrast(0.5)",
             }}
           />
         ))}
       </div>
-      <div className="relative z-10 w-full px-4 md:px-12 lg:px-64">
+      {/* <div
+        id="hero-bg-overlay"
+        className="absolute inset-0 bg-black/20 dark:bg-black/50 transition-all duration-1000 ease-in-out"
+        style={{
+          backgroundImage: `url(${backgroundImages[bgIndex]})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          filter: "sepia(.5) brightness(0.6) saturate(0.8) contrast(0.6)",
+        }}
+      ></div> */}
+      <div
+        className="hero-substance relative z-10 w-full 
+        xssm:px-10
+        sm:px-16
+        smmd:px-20 
+         md:px-28 
+        mdlg:px-32 
+         lg:px-36 
+        lgxl:px-56 
+         xl:px-60 
+        xl2xl:px-64"
+      >
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div data-aos="zoom-in" className="text-center lg:text-left">
             <div
@@ -118,26 +130,11 @@ const HeroSection = ({
             >
               <Shield className="h-16 w-16 text-green-600 dark:text-green-400" />
             </div>
-            {/* <h1
-              data-aos="fade-up"
-              data-aos-delay="100"
-              className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6"
-            >
-              Your family deserves peace. <i>Not pests.</i>
-            </h1>
-            <p
-              data-aos="fade-up"
-              data-aos-delay="200"
-              className="text-lg lg:text-xl text-gray-700 dark:text-gray-300 mb-8"
-            >
-              Professional pest control services with 14-15 years of experience.
-              Eco-friendly solutions that keep your family and environment safe.
-            </p> */}
 
             <h1
               data-aos="fade-right"
               data-aos-delay="100"
-              className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6 transition-opacity duration-700 ease-in-out"
+              className="text-4xl lg:text-5xl font-bold text-white-900 dark:text-white mb-6 transition-opacity duration-700 ease-in-out"
               key={heroSlides[slideIndex].text} // This helps trigger re-render animation
             >
               {heroSlides[slideIndex].text}
@@ -152,13 +149,16 @@ const HeroSection = ({
             </p>
 
             <div
+              id="butts-wrapper"
               data-aos="fade-up"
               data-aos-delay="300"
-              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8"
+              className="butts-wrapper flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8"
+              //className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8"
+              //className="flex flex-col md:flex-row"
             >
               <Button
                 size="lg"
-                className="bg-green-600 hover:bg-green-700 dark:bg-green-700 dark:hover:bg-green-800 text-white px-8 py-4 text-lg"
+                className="bg-green-600 hover:bg-green-700 dark:bg-green-700 dark:hover:bg-green-800 text-white text-lg"
                 onClick={() => (window.location.href = "tel:+639171391908")}
               >
                 <Phone className="mr-2 h-5 w-5" />
@@ -168,7 +168,7 @@ const HeroSection = ({
                 onClick={scrollToContactAndFocusName}
                 size="lg"
                 variant="outline"
-                className="border-green-600 text-green-600 hover:bg-green-50 dark:border-green-400 dark:text-green-400 dark:hover:bg-gray-800 px-8 py-4 text-lg"
+                className="border-green-600 text-green-600 hover:bg-green-50 dark:border-green-400 dark:text-green-400 dark:hover:bg-gray-800 text-lg"
               >
                 Get Free Inspection
               </Button>
@@ -178,15 +178,15 @@ const HeroSection = ({
               data-aos-delay="400"
               className="flex flex-col sm:flex-row justify-center lg:justify-start items-center gap-6 text-sm text-gray-600 dark:text-gray-400"
             >
-              <div className="flex items-center">
+              <div className="flex items-center text-white">
                 <CheckCircle className="h-5 w-5 text-green-600 dark:text-green-400 mr-2" />
                 Free Quotation
               </div>
-              <div className="flex items-center">
+              <div className="flex items-center text-white">
                 <CheckCircle className="h-5 w-5 text-green-600 dark:text-green-400 mr-2" />
                 Eco-Friendly Methods
               </div>
-              <div className="flex items-center">
+              <div className="flex items-center text-white">
                 <CheckCircle className="h-5 w-5 text-green-600 dark:text-green-400 mr-2" />
                 Trained Professionals
               </div>
@@ -197,6 +197,7 @@ const HeroSection = ({
             // data-aos="zoom-out"
             // data-aos-delay="500"
             className="flex justify-center drop-shadow-[0_10px_10px_rgba(0,0,0,0.8)]"
+            //style={{ minWidth: "447px", minHeight: "447px" }}
           >
             <AdsGallery />
           </div>

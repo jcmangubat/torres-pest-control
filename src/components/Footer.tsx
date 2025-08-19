@@ -68,7 +68,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="text-sm text-green-600 hover:underline"
               >
-                📍 View on Google Maps
+                View on Google Maps
               </a>
             </div>
           </div>

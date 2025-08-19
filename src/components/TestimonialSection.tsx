@@ -234,7 +234,7 @@ const TestimonialSection = () => {
   }, [instanceRef]);
 
   return (
-    <section id="testimonies" className="bg-gray-50 dark:bg-gray-900 py-10">
+    <section id="testimonies" className="bg-gray-50 dark:bg-gray-900 py-10 unselectable">
       <div className="container mx-auto">
         <h2 className="text-3xl font-semibold text-center text-gray-800 dark:text-white mb-8">
           What Our Clients Say

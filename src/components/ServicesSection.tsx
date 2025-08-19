@@ -97,7 +97,7 @@ const ServiceGroup = ({
     imageSrc?: string;
   }[];
 }) => (
-  <section className="mb-16">
+  <section className="mb-16 unselectable">
     <h3
       data-aos="fade-right"
       className="text-2xl font-semibold text-gray-800 dark:text-white mb-6"

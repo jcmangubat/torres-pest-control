@@ -51,7 +51,7 @@ const BenefitsSection = () => {
   return (
     <section
       id="about"
-      className="relative py-20 bg-gradient-to-br from-green-50 to-blue-50 dark:from-gray-800 dark:to-gray-900"
+      className="relative py-20 bg-gradient-to-br from-green-50 to-blue-50 dark:from-gray-800 dark:to-gray-900 unselectable"
     >
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-16">

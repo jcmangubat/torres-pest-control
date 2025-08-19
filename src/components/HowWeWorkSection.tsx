@@ -42,7 +42,7 @@ const HowWeWorkSection = () => {
   ];
 
   return (
-    <section className="pt-0 mb-10 bg-white dark:bg-gray-900 py-16 relative overflow-hidden transition-colors">
+    <section className="pt-0 mb-10 bg-white dark:bg-gray-900 py-16 relative overflow-hidden transition-colors unselectable">
       <div
         id="howwework-bg-overlay"
         className="absolute inset-0 bg-black/30 dark:bg-black/70"
