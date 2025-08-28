@@ -9,6 +9,7 @@ import TestimonialSection from "@/components/TestimonialSection";
 import StatsSection from "@/components/StatsSection";
 import ContactSection from "@/components/ContactSection";
 import HowWeWorkSection from "@/components/HowWeWorkSection";
+import BlogsSection from "@/components/BlogsSection";
 
 const Index: React.FC = () => {
   useEffect(() => {
@@ -59,6 +60,7 @@ const Index: React.FC = () => {
           <HowWeWorkSection />
           <BenefitsSection />
           <TestimonialSection />
+          <BlogsSection />
           <ContactSection />
         </div>
       </AppLayout>

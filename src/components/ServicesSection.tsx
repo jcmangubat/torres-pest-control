@@ -133,7 +133,7 @@ const ServicesSection = () => {
   // Fetch services data from JSON file
   useEffect(() => {
     const fetchServices = async () => {
-      const res = await fetch("/content/services/grouped-services.json");
+      const res = await fetch("/contents/services/grouped-services.json");
       const data = await res.json();
 
       const enriched = data.map((group: any) => ({

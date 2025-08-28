@@ -15,7 +15,7 @@ const Footer = () => {
   useEffect(() => {
     const fetchServices = async () => {
       try {
-        const res = await fetch("/content/services/grouped-services.json");
+        const res = await fetch("/contents/services/grouped-services.json");
         const data = await res.json();
         setGroupedServices(data);
       } catch {

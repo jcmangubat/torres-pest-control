@@ -19,7 +19,7 @@ const ServiceDetailPage = () => {
   useEffect(() => {
     const loadMarkdown = async () => {
       try {
-        const response = await fetch(`/content/services/${slug}.md`);
+        const response = await fetch(`/contents/services/${slug}.md`);
         const text = await response.text();
 
         // Extract title from the first line (assuming markdown title starts with '#')
@@ -39,7 +39,7 @@ const ServiceDetailPage = () => {
     // Load the list of all services
     const loadServiceList = async () => {
       try {
-        const response = await fetch("/content/services/grouped-services.json");
+        const response = await fetch("/contents/services/grouped-services.json");
         const serviceGroups = await response.json();
 
         const grouped = serviceGroups.map((group: any) => ({

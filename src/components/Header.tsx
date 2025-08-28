@@ -82,6 +82,9 @@ const Header = () => {
               <a href="/regions" className="nav-link">
                 Served Regions
               </a>
+              <a href="/blogs" className="nav-link">
+                Blogs
+              </a>
               <a href="/gallery" className="nav-link">
                 Gallery
               </a>

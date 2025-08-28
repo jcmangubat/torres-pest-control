@@ -18,12 +18,13 @@ import NotFound from "./pages/NotFound";
 import ServicedRegionsPage from "./pages/ServicedRegions";
 import ServiceDetailPage from "./pages/ServiceDetail";
 import TermsAndConditions from "./pages/TermsAndConditions";
-            
 
 // Global styles
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "leaflet/dist/leaflet.css";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import BlogPage from "./pages/BlogPage";
+import BlogDetailsPage from "./pages/BlogDetailsPage";
 
 const queryClient = new QueryClient();
 
@@ -72,6 +73,8 @@ const App = () => (
             <Route path="/certificates" element={<CertificatesPage />} />
             <Route path="/regions" element={<ServicedRegionsPage />} />
             <Route path="/gallery" element={<GalleryPage />} />
+            <Route path="/blogs" element={<BlogPage />} />
+            <Route path="/blogs/:slug" element={<BlogDetailsPage />} />
             <Route path="/terms" element={<TermsAndConditions />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />
             <Route path="*" element={<NotFound />} />
