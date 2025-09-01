@@ -394,7 +394,7 @@ run();
   first: CD F:\.AppCura\TORRESPESTCONTROL\PROJECTS\TPC-WEB
 
   1. Single run for specific date:
-     node scripts/generateArticle.cjs d=2024-12-30
+     node scripts/generateArticle.cjs d=2025-12-30
 
   
   2. Loop for all Mondays from Jan 6, 2025 to last Monday of the year:
