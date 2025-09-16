@@ -181,6 +181,14 @@ const Footer = () => {
             &copy; {new Date().getFullYear()} Torres Pest Control. All rights reserved.
           </p>
         </div>
+        <div className="text-center text-xs mt-2">
+          <p className="text-muted-foreground">
+            Made with ❤ by {" "}
+            <Link to="#" className="hover:text-primary transition-colors">
+              AppCura IT Ventures
+            </Link>
+          </p>
+        </div>
       </div>
     </footer>
   );
