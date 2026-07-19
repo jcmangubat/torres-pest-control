@@ -54,27 +54,29 @@ const SEOHead = ({ title, date, excerpt, tags, author, image }) => (
 
 const markdownComponents: Components = {
   h1: ({ node, ...props }) => (
-    <h1 className="text-3xl font-bold mb-6" {...props} />
+    <h1 className="text-3xl font-bold mb-6 text-gray-900 dark:text-gray-100" {...props} />
   ),
   h2: ({ node, ...props }) => (
-    <h2 className="text-2xl font-bold mb-4" {...props} />
+    <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-gray-100" {...props} />
   ),
   h3: ({ node, ...props }) => (
-    <h3 className="text-xl font-semibold mb-3" {...props} />
+    <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-gray-100" {...props} />
   ),
   p: ({ node, ...props }) => (
-    <p className="leading-relaxed text-gray-800 mb-4" {...props} />
+    <p className="leading-relaxed text-gray-800 dark:text-gray-200 mb-4" {...props} />
   ),
   ul: ({ node, ...props }) => (
-    <ul className="list-disc list-inside space-y-2 mb-4" {...props} />
+    <ul className="list-disc list-inside space-y-2 mb-4 text-gray-800 dark:text-gray-200" {...props} />
   ),
   ol: ({ node, ...props }) => (
-    <ol className="list-decimal list-inside space-y-2 mb-4" {...props} />
+    <ol className="list-decimal list-inside space-y-2 mb-4 text-gray-800 dark:text-gray-200" {...props} />
   ),
-  li: ({ node, ...props }) => <li className="mb-2" {...props} />,
+  li: ({ node, ...props }) => (
+    <li className="mb-2 text-gray-800 dark:text-gray-200" {...props} />
+  ),
   blockquote: ({ node, ...props }) => (
     <blockquote
-      className="border-l-4 border-gray-300 pl-4 italic text-gray-600 mb-6"
+      className="border-l-4 border-gray-300 dark:border-gray-600 pl-4 italic text-gray-600 dark:text-gray-300 mb-6"
       {...props}
     />
   ),
@@ -217,8 +219,8 @@ const BlogDetailsPage: React.FC = () => {
                 </article>
 
                 {blogArticle.tags && blogArticle.tags.length > 0 && (
-                  <div className="mt-8 border-t pt-4">
-                    <h6 className="text-sm text-gray-500 mb-2">Tags</h6>
+                  <div className="mt-8 border-t border-gray-200 dark:border-gray-700 pt-4">
+                    <h6 className="text-sm text-gray-500 dark:text-gray-400 mb-2">Tags</h6>
                     <div className="flex flex-wrap gap-2">
                       {blogArticle.tags.map((tag, index) => (
                         <span
@@ -235,24 +237,24 @@ const BlogDetailsPage: React.FC = () => {
 
               <aside className="md:col-span-3">
                 <div className="space-y-6">
-                  <div className="border rounded-lg p-5 shadow-sm">
-                    <h5 className="uppercase text-sm font-semibold border-b pb-2 mb-3">
+                  <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-5 shadow-sm">
+                    <h5 className="uppercase text-sm font-semibold border-b border-gray-200 dark:border-gray-700 pb-2 mb-3 text-gray-900 dark:text-gray-100">
                       Start Now Your Project With Us
                     </h5>
-                    <p className="text-gray-700 mb-4">
+                    <p className="text-gray-700 dark:text-gray-300 mb-4">
                       Site visits, planning sessions, and trusted advice—just
                       one click away.
                     </p>
                     <a
                       href="/#contact"
-                      className="inline-block bg-gray-900 text-white px-4 py-2 rounded-lg text-sm uppercase tracking-wide hover:bg-gray-700 transition"
+                      className="inline-block bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 px-4 py-2 rounded-lg text-sm uppercase tracking-wide hover:bg-gray-700 dark:hover:bg-white transition"
                     >
                       Contact Us Now
                     </a>
                   </div>
 
-                  <div className="border rounded-lg p-5 shadow-sm">
-                    <h5 className="uppercase text-sm font-semibold border-b pb-2 mb-3">
+                  <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-5 shadow-sm">
+                    <h5 className="uppercase text-sm font-semibold border-b border-gray-200 dark:border-gray-700 pb-2 mb-3 text-gray-900 dark:text-gray-100">
                       Other Articles
                     </h5>
                     {/* Additional sidebar content */}

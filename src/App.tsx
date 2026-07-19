@@ -1,30 +1,30 @@
 // External libraries
-import { useEffect } from "react";
+import { Suspense, lazy, useEffect } from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
-// UI and theme components
-import { ThemeProvider } from "@/components/theme-provider";
+// UI components
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 
-// Pages
+// Homepage stays eager for fast first paint; other routes are code-split
 import Index from "./pages/Index";
-import AboutPage from "./pages/About";
-import CertificatesPage from "./pages/Certificates";
-import GalleryPage from "./pages/Gallery";
-import NotFound from "./pages/NotFound";
-import ServicedRegionsPage from "./pages/ServicedRegions";
-import ServiceDetailPage from "./pages/ServiceDetail";
-import TermsAndConditions from "./pages/TermsAndConditions";
+
+const AboutPage = lazy(() => import("./pages/About"));
+const CertificatesPage = lazy(() => import("./pages/Certificates"));
+const GalleryPage = lazy(() => import("./pages/Gallery"));
+const NotFound = lazy(() => import("./pages/NotFound"));
+const ServicedRegionsPage = lazy(() => import("./pages/ServicedRegions"));
+const ServiceDetailPage = lazy(() => import("./pages/ServiceDetail"));
+const TermsAndConditions = lazy(() => import("./pages/TermsAndConditions"));
+const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
+const BlogPage = lazy(() => import("./pages/BlogPage"));
+const BlogDetailsPage = lazy(() => import("./pages/BlogDetailsPage"));
 
 // Global styles
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "leaflet/dist/leaflet.css";
-import PrivacyPolicy from "./pages/PrivacyPolicy";
-import BlogPage from "./pages/BlogPage";
-import BlogDetailsPage from "./pages/BlogDetailsPage";
 
 const queryClient = new QueryClient();
 
@@ -58,14 +58,20 @@ const ScrollToHash = () => {
 };
 
 const App = () => (
-  <ThemeProvider defaultTheme="light">
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <ScrollToTop />
-          <ScrollToHash />
+  <QueryClientProvider client={queryClient}>
+    <TooltipProvider>
+      <Toaster />
+      <Sonner />
+      <BrowserRouter>
+        <ScrollToTop />
+        <ScrollToHash />
+        <Suspense
+          fallback={
+            <div className="flex min-h-[40vh] items-center justify-center text-muted-foreground">
+              Loading…
+            </div>
+          }
+        >
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/services/:slug" element={<ServiceDetailPage />} />
@@ -79,10 +85,10 @@ const App = () => (
             <Route path="/privacy" element={<PrivacyPolicy />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
-        </BrowserRouter>
-      </TooltipProvider>
-    </QueryClientProvider>
-  </ThemeProvider>
+        </Suspense>
+      </BrowserRouter>
+    </TooltipProvider>
+  </QueryClientProvider>
 );
 
 export default App;

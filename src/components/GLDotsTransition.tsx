@@ -34,21 +34,35 @@ const fragmentShader = `
   }
 `;
 
-type TransitionPlaneProps = {
-  fromTexture: THREE.Texture;
-  toTexture: THREE.Texture;
-  progress: number;
-  dots?: number;
-  center?: [number, number];
-};
+function loadTexture(src: string): Promise<THREE.Texture> {
+  return new Promise((resolve, reject) => {
+    const loader = new THREE.TextureLoader();
+    loader.load(
+      src,
+      (tex) => {
+        tex.minFilter = THREE.LinearFilter;
+        tex.generateMipmaps = false;
+        resolve(tex);
+      },
+      undefined,
+      reject
+    );
+  });
+}
 
 function TransitionPlane({
   fromTexture,
   toTexture,
   progress,
   dots = 20,
-  center = [0.5, 0.5],
-}: TransitionPlaneProps) {
+  center = [0.5, 0.5] as [number, number],
+}: {
+  fromTexture: THREE.Texture;
+  toTexture: THREE.Texture;
+  progress: number;
+  dots?: number;
+  center?: [number, number];
+}) {
   const materialRef = useRef<THREE.ShaderMaterial>(null);
   const { size } = useThree();
 
@@ -72,7 +86,6 @@ function TransitionPlane({
     });
   }, [fromTexture, toTexture, dots, center]);
 
-  // Get the image aspect ratio
   const textureSize = fromTexture.image
     ? [fromTexture.image.width, fromTexture.image.height]
     : [1, 1];
@@ -84,10 +97,8 @@ function TransitionPlane({
   let scaleY = 1;
 
   if (imageAspect > canvasAspect) {
-    // Image is wider than canvas
     scaleX = canvasAspect / imageAspect;
   } else {
-    // Image is taller
     scaleY = imageAspect / canvasAspect;
   }
 
@@ -101,29 +112,23 @@ function TransitionPlane({
 
 function TransitionController({
   setProgress,
-  setIndex,
-  setTransitioning,
+  onComplete,
   transitioning,
   progressRef,
-  textures,
 }: {
   setProgress: (val: number) => void;
-  setIndex: (fn: (i: number) => number) => void;
-  setTransitioning: (b: boolean) => void;
+  onComplete: () => void;
   transitioning: boolean;
   progressRef: React.MutableRefObject<number>;
-  textures: THREE.Texture[];
 }) {
-  useFrame((state, delta) => {
-    if (transitioning) {
-      progressRef.current = Math.min(progressRef.current + delta * 0.5, 1);
-      setProgress(progressRef.current);
-      if (progressRef.current >= 1) {
-        progressRef.current = 0;
-        setProgress(0);
-        setIndex((i) => (i + 1) % textures.length);
-        setTransitioning(false);
-      }
+  useFrame((_state, delta) => {
+    if (!transitioning) return;
+    progressRef.current = Math.min(progressRef.current + delta * 0.5, 1);
+    setProgress(progressRef.current);
+    if (progressRef.current >= 1) {
+      progressRef.current = 0;
+      setProgress(0);
+      onComplete();
     }
   });
   return null;
@@ -133,36 +138,105 @@ type GLDotsTransitionProps = {
   images: string[];
 };
 
-export function GLDotsTransition({ images }: { images: string[] }) {
+/** Only keep current + next textures in GPU memory. */
+export function GLDotsTransition({ images }: GLDotsTransitionProps) {
   const [index, setIndex] = useState(0);
   const [progress, setProgress] = useState(0);
   const [transitioning, setTransitioning] = useState(false);
+  const [fromTexture, setFromTexture] = useState<THREE.Texture | null>(null);
+  const [toTexture, setToTexture] = useState<THREE.Texture | null>(null);
+  const [failed, setFailed] = useState(false);
+  const [reduceMotion, setReduceMotion] = useState(false);
   const progressRef = useRef(0);
-
-  const textures = useMemo(() => {
-    return images.map((src) => {
-      const tex = new THREE.TextureLoader().load(src);
-      tex.minFilter = THREE.LinearFilter;
-      tex.generateMipmaps = false;
-      return tex;
-    });
-  }, [images]);
-
-  const fromTexture = textures[index];
-  const toTexture = textures[(index + 1) % textures.length];
+  const cacheRef = useRef<Map<string, THREE.Texture>>(new Map());
 
   useEffect(() => {
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const update = () => setReduceMotion(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
+
+  useEffect(() => {
+    if (!images.length) return;
+    let cancelled = false;
+
+    const ensure = async (src: string) => {
+      const cached = cacheRef.current.get(src);
+      if (cached) return cached;
+      const tex = await loadTexture(src);
+      cacheRef.current.set(src, tex);
+      // Cap cache so we never hold all 100 textures
+      if (cacheRef.current.size > 4) {
+        const keys = [...cacheRef.current.keys()];
+        for (const key of keys) {
+          if (key === src) continue;
+          if (cacheRef.current.size <= 4) break;
+          const old = cacheRef.current.get(key);
+          old?.dispose();
+          cacheRef.current.delete(key);
+        }
+      }
+      return tex;
+    };
+
+    (async () => {
+      try {
+        const fromSrc = images[index % images.length];
+        const toSrc = images[(index + 1) % images.length];
+        const [from, to] = await Promise.all([ensure(fromSrc), ensure(toSrc)]);
+        if (cancelled) return;
+        setFromTexture(from);
+        setToTexture(to);
+      } catch {
+        if (!cancelled) setFailed(true);
+      }
+    })();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [images, index]);
+
+  useEffect(() => {
+    if (reduceMotion || failed || images.length < 2) return;
     const timer = setInterval(() => {
       setTransitioning(true);
     }, 5000);
     return () => clearInterval(timer);
+  }, [reduceMotion, failed, images.length]);
+
+  useEffect(() => {
+    return () => {
+      cacheRef.current.forEach((tex) => tex.dispose());
+      cacheRef.current.clear();
+    };
   }, []);
+
+  if (failed || reduceMotion || !fromTexture || !toTexture) {
+    const src = images[index % images.length] ?? images[0];
+    if (!src) return null;
+    return (
+      <img
+        src={src}
+        alt=""
+        className="h-full w-full object-cover"
+        loading="lazy"
+        decoding="async"
+      />
+    );
+  }
 
   return (
     <Canvas
       orthographic
       camera={{ position: [0, 0, 1], zoom: 1 }}
       style={{ width: "100%", height: "100%" }}
+      aria-hidden
+      onCreated={({ gl }) => {
+        gl.setClearColor(0x000000, 0);
+      }}
     >
       <TransitionPlane
         fromTexture={fromTexture}
@@ -171,11 +245,12 @@ export function GLDotsTransition({ images }: { images: string[] }) {
       />
       <TransitionController
         setProgress={setProgress}
-        setIndex={setIndex}
-        setTransitioning={setTransitioning}
         transitioning={transitioning}
         progressRef={progressRef}
-        textures={textures}
+        onComplete={() => {
+          setTransitioning(false);
+          setIndex((i) => (i + 1) % images.length);
+        }}
       />
     </Canvas>
   );

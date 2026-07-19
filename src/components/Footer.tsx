@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Facebook, Instagram, Youtube } from "lucide-react";
+import { Facebook, Instagram } from "lucide-react";
 import slugify from "slugify";
 import { Link } from "react-router-dom";
 import tpc_00 from "@/assets/images/tpc_00.jpg";
@@ -151,14 +151,6 @@ const Footer = () => {
                 aria-label="Instagram"
               >
                 <Instagram className="w-6 h-6 text-pink-500 hover:text-pink-600" />
-              </a>
-              <a
-                href="https://youtube.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="YouTube"
-              >
-                <Youtube className="w-6 h-6 text-red-600 hover:text-red-700" />
               </a>
             </div>
 

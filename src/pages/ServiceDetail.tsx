@@ -82,7 +82,7 @@ const ServiceDetailPage = () => {
         />
         <meta
           property="og:image"
-          content="https://torrespestcontrol.ph/images/og-banner.jpg"
+          content="https://torrespestcontrol.ph/images/torres-pest-control-banner.jpg"
         />
         <meta name="robots" content="index, follow" />
         <link

@@ -2,16 +2,20 @@ import { Button } from "@/components/ui/button";
 import { useTheme } from "./theme-provider";
 import { Moon, Sun } from "lucide-react";
 import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { useIsMobile } from "@/hooks/use-mobile";
 import MobileNav from "./MobileNav";
 import tpc_00 from "@/assets/images/tpc_00.jpg";
-import tpc_01 from "@/assets/images/tpc_01.jpg";
-import { Facebook, Instagram, Youtube } from "lucide-react";
+import { Facebook, Instagram } from "lucide-react";
 
 const Header = () => {
   const { theme, setTheme } = useTheme();
   const [isScrolled, setIsScrolled] = useState(false);
   const isMobile = useIsMobile();
+  const location = useLocation();
+  const isHome = location.pathname === "/";
+  // Transparent overlay only when fixed header sits on the home hero (md+)
+  const overHero = isHome && !isScrolled && !isMobile;
 
   const toggleTheme = () => {
     setTheme(theme === "dark" ? "light" : "dark");
@@ -22,6 +26,7 @@ const Header = () => {
       setIsScrolled(window.scrollY > 50);
     };
 
+    handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -29,33 +34,50 @@ const Header = () => {
   return (
     <header
       className={`
-      transition-all duration-300 border-b border-gray-200 dark:border-gray-700
+      transition-all duration-300
       md:fixed md:top-0 md:left-0 md:right-0 md:z-50 unselectable
       ${
-        isScrolled
-          ? "md:bg-white/80 md:dark:bg-gray-900/80 md:backdrop-blur-md md:shadow-lg"
-          : "bg-white dark:bg-gray-900 shadow-sm"
+        overHero
+          ? "border-b border-transparent bg-transparent md:bg-transparent"
+          : isScrolled
+            ? "border-b border-gray-200 dark:border-gray-700 md:bg-white/80 md:dark:bg-gray-900/80 md:backdrop-blur-md md:shadow-lg"
+            : "border-b border-gray-200 bg-white shadow-sm dark:border-gray-700 dark:bg-gray-900"
       }
     `}
     >
-      {/* <div className="w-full px-6 py-4 max-w-full lg:max-w-7xl xl:max-w-screen-xl"> */}
-      <div className="w-full px-6 max-w-full xl:max-w-none">
-        <div className="flex items-center justify-between w-full">
+      <div className="w-full max-w-full px-6 xl:max-w-none">
+        <div className="flex w-full items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-2">
             <a href="/" className="flex items-center space-x-2">
               <img
                 src={tpc_00}
                 alt="Torres Pest Control Logo"
-                className="tpc-logo h-20 w-20 rounded-full p-2"
+                className={`tpc-logo h-20 w-20 rounded-full p-2 ${
+                  overHero ? "bg-white/90" : ""
+                }`}
               />
               <div className="tpc-banner" style={{ marginLeft: 0 }}>
-                <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
-                  <span className="text-red-600">TORRES</span>{" "}
-                  <span className="text-blue-600">PEST CONTROL</span>
-                </h1>
                 <p
-                  className="text-sm text-gray-600 dark:text-gray-300"
+                  className={`text-2xl font-bold ${
+                    overHero ? "text-white" : "text-gray-900 dark:text-white"
+                  }`}
+                >
+                  <span className={overHero ? "text-[#ff4d52]" : "text-red-600"}>
+                    TORRES
+                  </span>{" "}
+                  <span
+                    className={overHero ? "text-[#6bb3f0]" : "text-blue-600"}
+                  >
+                    PEST CONTROL
+                  </span>
+                </p>
+                <p
+                  className={`text-sm ${
+                    overHero
+                      ? "text-white/70"
+                      : "text-gray-600 dark:text-gray-300"
+                  }`}
                   style={{ paddingLeft: "0.25rem" }}
                 >
                   Your Trusted Pest Control Specialist
@@ -66,7 +88,14 @@ const Header = () => {
 
           {/* Center Nav */}
           {!isMobile && (
-            <nav className="hidden md:flex items-center space-x-6 mx-auto">
+            <nav
+              className={`mx-auto hidden items-center space-x-6 md:flex ${
+                overHero
+                  ? "[&_.nav-link]:text-white/90 [&_.nav-link:hover]:text-white"
+                  : ""
+              }`}
+              aria-label="Primary"
+            >
               <a href="/#services" className="nav-link">
                 Services
               </a>
@@ -101,7 +130,10 @@ const Header = () => {
                 variant="ghost"
                 size="sm"
                 onClick={toggleTheme}
-                className="p-2"
+                aria-label={
+                  theme === "dark" ? "Switch to light mode" : "Switch to dark mode"
+                }
+                className={`p-2 ${overHero ? "text-white hover:bg-white/10 hover:text-white" : ""}`}
               >
                 {theme === "dark" ? (
                   <Sun className="h-5 w-5" />
@@ -114,22 +146,29 @@ const Header = () => {
                 href="https://www.facebook.com/torrespestcontrolPH"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Facebook"
               >
-                <Facebook className="w-7 h-7 text-blue-600 hover:text-blue-800 transition" />
+                <Facebook
+                  className={`h-7 w-7 transition ${
+                    overHero
+                      ? "text-white/90 hover:text-white"
+                      : "text-blue-600 hover:text-blue-800"
+                  }`}
+                />
               </a>
               <a
                 href="https://www.instagram.com/torrespestcontrol_ph"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Instagram"
               >
-                <Instagram className="w-7 h-7 text-pink-500 hover:text-pink-600 transition" />
-              </a>
-              <a
-                href="https://youtube.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Youtube className="w-7 h-7 text-red-600 hover:text-red-700 transition" />
+                <Instagram
+                  className={`h-7 w-7 transition ${
+                    overHero
+                      ? "text-white/90 hover:text-white"
+                      : "text-pink-500 hover:text-pink-600"
+                  }`}
+                />
               </a>
             </div>
           )}

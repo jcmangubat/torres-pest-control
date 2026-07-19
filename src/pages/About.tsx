@@ -32,7 +32,7 @@ const AboutPage = () => {
         <meta property="og:url" content="https://torrespestcontrol.ph/about" />
         <meta
           property="og:image"
-          content="https://torrespestcontrol.ph/images/og-banner.jpg"
+          content="https://torrespestcontrol.ph/images/torres-pest-control-banner.jpg"
         />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://torrespestcontrol.ph/about" />

@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { MapPin, Phone, Mail, MessageCircle } from "lucide-react";
-import { useRef, useEffect, useState } from "react";
+import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import LocationMap from "./LocationMap";
 import ReCAPTCHA from "react-google-recaptcha";
@@ -77,30 +77,59 @@ const ContactSection = () => {
               Send Us a Message
             </h3>
             <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
-              <Input
-                name="inquirer_name"
-                ref={nameInputRef}
-                placeholder="Your Name"
-                className="dark:bg-gray-800 dark:border-gray-600"
-              />
-              <Input
-                name="inquirer_email"
-                placeholder="Your Email"
-                type="email"
-                className="dark:bg-gray-800 dark:border-gray-600"
-              />
-              <Input
-                name="inquirer_phone"
-                placeholder="Your Phone Number"
-                type="phone"
-                className="dark:bg-gray-800 dark:border-gray-600"
-              />
+              <div>
+                <label htmlFor="contact-name" className="sr-only">
+                  Your Name
+                </label>
+                <Input
+                  id="contact-name"
+                  name="inquirer_name"
+                  ref={nameInputRef}
+                  placeholder="Your Name"
+                  required
+                  autoComplete="name"
+                  className="dark:bg-gray-800 dark:border-gray-600"
+                />
+              </div>
+              <div>
+                <label htmlFor="contact-email" className="sr-only">
+                  Your Email
+                </label>
+                <Input
+                  id="contact-email"
+                  name="inquirer_email"
+                  placeholder="Your Email"
+                  type="email"
+                  required
+                  autoComplete="email"
+                  className="dark:bg-gray-800 dark:border-gray-600"
+                />
+              </div>
+              <div>
+                <label htmlFor="contact-phone" className="sr-only">
+                  Your Phone Number
+                </label>
+                <Input
+                  id="contact-phone"
+                  name="inquirer_phone"
+                  placeholder="Your Phone Number"
+                  type="tel"
+                  required
+                  autoComplete="tel"
+                  className="dark:bg-gray-800 dark:border-gray-600"
+                />
+              </div>
 
-              <select
-                name="infestation_type"
-                defaultValue=""
-                className="w-full px-4 py-3 rounded-md border dark:bg-gray-800 dark:border-gray-600 text-gray-700 dark:text-gray-300"
-              >
+              <div>
+                <label htmlFor="infestation-type" className="sr-only">
+                  Type of Infestation
+                </label>
+                <select
+                  id="infestation-type"
+                  name="infestation_type"
+                  defaultValue=""
+                  className="w-full px-4 py-3 rounded-md border dark:bg-gray-800 dark:border-gray-600 text-gray-700 dark:text-gray-300"
+                >
                 <option value="" disabled>
                   Type of Infestation (optional)
                 </option>
@@ -125,15 +154,22 @@ const ContactSection = () => {
                 <option value="ticks">Ticks (on pets or in the yard)</option>
                 <option value="Wasps">Wasps (Lampinig / Paper Wasps)</option>
                 <option value="others">Other Pest Problems</option>
-              </select>
+                </select>
+              </div>
 
-              {/* 🏠 Property Type Dropdown */}
-              <select
-                name="property_type"
-                defaultValue=""
-                required
-                className="w-full px-4 py-3 rounded-md border dark:bg-gray-800 dark:border-gray-600 text-gray-700 dark:text-gray-300"
-              >
+              {/* Property Type Dropdown */}
+              <div>
+                <label htmlFor="property-type" className="sr-only">
+                  Property type
+                </label>
+                <select
+                  id="property-type"
+                  name="property_type"
+                  value={propertyType}
+                  onChange={(e) => setPropertyType(e.target.value)}
+                  required
+                  className="w-full px-4 py-3 rounded-md border dark:bg-gray-800 dark:border-gray-600 text-gray-700 dark:text-gray-300"
+                >
                 <option value="" disabled>
                   What type of property you’d like us to visit for free?
                 </option>
@@ -179,14 +215,20 @@ const ContactSection = () => {
                 {/* Other */}
                 <option value="vacant">Vacant Lot / Construction Site</option>
                 <option value="other">Other (Please Specify in Message)</option>
-              </select>
+                </select>
+              </div>
 
-              {/* 📅 Preferred Day to Call */}
-              <select
-                name="preferred_day"
-                defaultValue=""
-                className="w-full px-4 py-3 rounded-md border dark:bg-gray-800 dark:border-gray-600 text-gray-700 dark:text-gray-300"
-              >
+              {/* Preferred Day to Call */}
+              <div>
+                <label htmlFor="preferred-day" className="sr-only">
+                  Preferred day to call
+                </label>
+                <select
+                  id="preferred-day"
+                  name="preferred_day"
+                  defaultValue=""
+                  className="w-full px-4 py-3 rounded-md border dark:bg-gray-800 dark:border-gray-600 text-gray-700 dark:text-gray-300"
+                >
                 <option value="" disabled>
                   Preferred Day to Call
                 </option>
@@ -198,14 +240,20 @@ const ContactSection = () => {
                 <option value="friday">Friday</option>
                 <option value="saturday">Saturday</option>
                 <option value="sunday">Sunday</option>
-              </select>
+                </select>
+              </div>
 
-              {/* ⏰ Preferred Time to Call */}
-              <select
-                name="preferred_time"
-                defaultValue=""
-                className="w-full px-4 py-3 rounded-md border dark:bg-gray-800 dark:border-gray-600 text-gray-700 dark:text-gray-300"
-              >
+              {/* Preferred Time to Call */}
+              <div>
+                <label htmlFor="preferred-time" className="sr-only">
+                  Preferred time to call
+                </label>
+                <select
+                  id="preferred-time"
+                  name="preferred_time"
+                  defaultValue=""
+                  className="w-full px-4 py-3 rounded-md border dark:bg-gray-800 dark:border-gray-600 text-gray-700 dark:text-gray-300"
+                >
                 <option value="" disabled>
                   Preferred Time to Call
                 </option>
@@ -214,31 +262,51 @@ const ContactSection = () => {
                 <option value="afternoon">Afternoon (1PM – 4PM)</option>
                 <option value="evening">Evening (6PM – 8PM)</option>
                 <option value="urgent">Emergency / Urgent</option>
-              </select>
+                </select>
+              </div>
 
               {/* Conditionally show extra fields */}
               {(propertyType === "commercial" ||
                 propertyType === "warehouse") && (
-                <Input
-                  name="business_name"
-                  placeholder="Business Name"
-                  className="dark:bg-gray-800 dark:border-gray-600"
-                />
+                <div>
+                  <label htmlFor="business-name" className="sr-only">
+                    Business Name
+                  </label>
+                  <Input
+                    id="business-name"
+                    name="business_name"
+                    placeholder="Business Name"
+                    className="dark:bg-gray-800 dark:border-gray-600"
+                  />
+                </div>
               )}
 
               {propertyType === "agricultural" && (
-                <Input
-                  name="farm_area"
-                  placeholder="Farm Area Size (e.g. 3 hectares)"
+                <div>
+                  <label htmlFor="farm-area" className="sr-only">
+                    Farm Area Size
+                  </label>
+                  <Input
+                    id="farm-area"
+                    name="farm_area"
+                    placeholder="Farm Area Size (e.g. 3 hectares)"
+                    className="dark:bg-gray-800 dark:border-gray-600"
+                  />
+                </div>
+              )}
+              <div>
+                <label htmlFor="contact-message" className="sr-only">
+                  Your Message
+                </label>
+                <Textarea
+                  id="contact-message"
+                  name="message"
+                  placeholder="Your Message"
+                  rows={12}
+                  required
                   className="dark:bg-gray-800 dark:border-gray-600"
                 />
-              )}
-              <Textarea
-                name="message"
-                placeholder="Your Message"
-                rows={12}
-                className="dark:bg-gray-800 dark:border-gray-600"
-              />
+              </div>
 
               <ReCAPTCHA
                 ref={recaptchaRef}
@@ -327,7 +395,7 @@ const ContactSection = () => {
                 <ul className="text-gray-700 dark:text-gray-300 text-sm space-y-1">
                   <li>✔ DOH-Accredited Pest Control Provider</li>
                   <li>✔ PCO Certified Technicians</li>
-                  <li>✔ 14+ Years of Local Experience</li>
+                  <li>✔ 15+ Years of Local Experience</li>
                 </ul>
               </div>
 

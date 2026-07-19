@@ -1,11 +1,49 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .font-display {
+    font-family: "Barlow Condensed", sans-serif;
+  }
+  .font-body {
+    font-family: "Figtree", sans-serif;
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply text-sm font-medium text-gray-700 transition-colors hover:text-green-600 dark:text-gray-300 dark:hover:text-green-400;
+  }
+}
+
+@keyframes hero-kenburns {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.08);
+  }
+}
+
+.hero-kenburns {
+  animation: hero-kenburns 5.5s ease-out forwards;
+}
+
 html {
   scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-kenburns {
+    animation: none;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 @layer base {
@@ -187,6 +225,34 @@ html {
   font-size: 1.25rem !important;
   line-height: 1.75;
   color: #333;
+}
+
+.dark .markdown-responsive {
+  color: #e5e7eb;
+}
+
+.dark .markdown-responsive a {
+  color: #93c5fd;
+}
+
+.dark .markdown-responsive strong,
+.dark .markdown-responsive b {
+  color: #f9fafb;
+}
+
+.dark .markdown-responsive em,
+.dark .markdown-responsive i {
+  color: #d1d5db;
+}
+
+.dark .markdown-responsive code {
+  color: #f3f4f6;
+  background-color: rgb(31 41 55);
+}
+
+.dark .markdown-responsive blockquote {
+  color: #d1d5db;
+  border-color: #4b5563;
 }
 
 /* in BlogDetailsPage.module.css */
